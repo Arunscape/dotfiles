@@ -5,15 +5,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 # Aliases
 alias vi=vim
 alias fucking=sudo
-alias ls=lsd
+alias ls=exa
+alias f=fuck
 
-# Functions
-yarn(){
-	command yarn $* | lolcat
-}
-google-chrome-unstable(){
-	command google-chrome-unstable --force-dark-mode $*
-}
 
 # Start sway automatically
 if [ "$(tty)" = "/dev/tty1" ]; then
