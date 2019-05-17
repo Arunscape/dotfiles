@@ -2,6 +2,8 @@
 export PATH="$(yarn global bin):$PATH"
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
+export BEMENU_BACKEND=wayland
+
 # Aliases
 alias vi=vim
 alias fucking=sudo
@@ -14,3 +16,5 @@ if [ "$(tty)" = "/dev/tty1" ]; then
 	sway
 	exit 0
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

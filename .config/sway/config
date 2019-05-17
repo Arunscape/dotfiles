@@ -18,7 +18,8 @@ set $term kitty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec
-set $menu j4-dmenu-desktop [--dmenu="dmenu -i"] [--term="i3-sensible-terminal"]
+set $menu j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:DejaVu Sans Mono 12"' --term='kitty'
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -59,11 +60,11 @@ output HDMI-A-1 resolution 1920x1080 position 0,0
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
     input "1267:12384:ELAN0501:01_04F3:3060_Touchpad" {
         tap enabled
         natural_scroll enabled
     }
+
 ### Key bindings
 #
 # Basics:
@@ -76,16 +77,6 @@ output HDMI-A-1 resolution 1920x1080 position 0,0
 
     # start your launcher
     bindsym $mod+d exec $menu
-#    bindsym $mod+d exec rofi -show run -modi run -location 1 -width 100 \
-#                -lines 2 -line-margin 0 -line-padding 1 \
-#                -separator-style none -font "mono 10" -columns 9 -bw 0 \
-#                -disable-history \
-#                -hide-scrollbar \
-#                -color-window "#222222, #222222, #b1b4b3" \
-#                -color-normal "#222222, #b1b4b3, #222222, #005577, #b1b4b3" \
-#                -color-active "#222222, #b1b4b3, #222222, #007763, #b1b4b3" \
-#                -color-urgent "#222222, #b1b4b3, #222222, #77003d, #b1b4b3" \
-#                -kb-row-select "Tab" -kb-row-tab ""
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -173,7 +164,7 @@ output HDMI-A-1 resolution 1920x1080 position 0,0
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
-    # NOTE: I disabled this
+    # I DISABLED THIS ONE
     # move focus to the parent container
     #bindsym $mod+a focus parent
 #
@@ -218,7 +209,17 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    swaybar_command waybar
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
 }
 
 include /etc/sway/config.d/*
