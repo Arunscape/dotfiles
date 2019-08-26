@@ -18,3 +18,5 @@ if [ "$(tty)" = "/dev/tty1" ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval $(thefuck --alias)
