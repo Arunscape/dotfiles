@@ -1,0 +1,4 @@
+DEBUG: Rustup: updateToolchains: this.toolchains=[{"channel":"nightly","host":"x86_64-unknown-linux-gnu","isDefault":true}]
+DEBUG: activate: processPossibleSetButMissingUserToolchain: toolchainKind=toolchain
+DEBUG: activate: processPossibleSetButMissingUserToolchain: no user toolchain
+DEBUG: activate: handleMissingRustupUserToolchain: toolchainKind=toolchain

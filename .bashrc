@@ -1,13 +1,13 @@
 # Environment variables
 export PATH="$(yarn global bin):$PATH"
-export PATH=$PATH:$HOME/.local/bin
+#export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export BEMENU_BACKEND=wayland
 
 # Aliases
 alias vi=vim
 alias fucking=sudo
-alias ls=exa
+alias ls=lsd
 alias f=fuck
 
 

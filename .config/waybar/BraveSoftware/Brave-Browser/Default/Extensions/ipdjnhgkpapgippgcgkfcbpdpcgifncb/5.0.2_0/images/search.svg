@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="612px" height="612px" viewBox="0 0 612 612" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="search" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M606.209,578.714 L448.198,423.228 C489.576,378.272 515,318.817 515,253.393 C514.98,113.439 399.704,0 257.493,0 C115.282,0 0.006,113.439 0.006,253.393 C0.006,393.347 115.282,506.786 257.493,506.786 C318.938,506.786 375.294,485.533 419.561,450.2 L578.185,606.299 C585.914,613.913 598.462,613.913 606.191,606.299 C613.938,598.686 613.938,586.328 606.209,578.714 Z M257.493,467.8 C137.167,467.8 39.624,371.807 39.624,253.393 C39.624,134.979 137.167,38.986 257.493,38.986 C377.82,38.986 475.362,134.979 475.362,253.393 C475.362,371.807 377.82,467.8 257.493,467.8 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

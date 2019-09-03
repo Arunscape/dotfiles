@@ -1,3 +1,4 @@
+mkdir -p $HOME/.config 
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.config/kitty/ ~/.config/

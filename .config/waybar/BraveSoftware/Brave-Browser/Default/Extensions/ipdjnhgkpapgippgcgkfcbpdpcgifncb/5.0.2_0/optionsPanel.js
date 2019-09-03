@@ -1,0 +1,1 @@
+window.settingsOnly = true;
