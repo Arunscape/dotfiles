@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir -p $HOME/.config 
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
