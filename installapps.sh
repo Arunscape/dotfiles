@@ -22,8 +22,9 @@ kitty \
 openssh \
 yarn \
 ripgrep \
-wl-clipboard
-
+wl-clipboard \
+grim \
+slurp
 
 rustup default nightly
 
