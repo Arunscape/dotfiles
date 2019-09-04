@@ -247,3 +247,5 @@ bindsym $mod+z workspace next
 # move workspace to monitor
 bindsym $mod+Shift+period move workspace to output right
 bindsym $mod+Shift+comma move workspace to output Left
+
+libinput-gestures-setup start

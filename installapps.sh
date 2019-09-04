@@ -21,8 +21,11 @@ ntfs-3g \
 kitty \
 openssh \
 yarn \
-ripgrep
+ripgrep \
+wl-clipboard
 
+
+rustup default nightly
 
 yay -S --noconfirm --needed \
 vscodium-bin \
