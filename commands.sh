@@ -6,6 +6,13 @@ sudo systemctl enable connman
 sudo systemctl start connman
 
 
+echo "Rank mirrors? (y/n)"
+read RANKMIRRORS
+if [ "$RANKMIRRORS" == "y" ]
+then
+        bash rankmirrors.sh
+fi
+
 echo "Setup ALL THE THINGS? (y/n)"
 read ALLTHETHINGS
 if [ "$ALLTHETHINGS" == "y" ]
@@ -13,7 +20,6 @@ then
     bash symlinks.sh
     bash gitconfig.sh
     bash ualbertawifi.sh
-    bash rankmirrors.sh
     bash installapps.sh
     sudo systemctl enable docker
 exit
@@ -38,13 +44,6 @@ read UALBERTAWIFI
 if [ "$UALBERTAWIFI" == "y" ]
 then
 	bash ualbertawifi.sh
-fi
-
-echo "Rank mirrors? (y/n)"
-read RANKMIRRORS
-if [ "$RANKMIRRORS" == "y" ]
-then
-        bash rankmirrors.sh
 fi
 
 echo "Install apps? (y/n)"

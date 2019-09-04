@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo pacman -S --noconfirm --needed \
 vim \
 mesa \
@@ -17,7 +19,9 @@ python \
 btrfs-progs \
 ntfs-3g \
 kitty \
-openssh
+openssh \
+yarn \
+ripgrep
 
 
 yay -S --noconfirm --needed \
