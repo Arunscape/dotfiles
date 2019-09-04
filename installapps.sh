@@ -25,5 +25,5 @@ vscodium-bin \
 brave-dev-bin \
 spotify \
 sway-git \
-brillo \
-ttf-twemoji
+ttf-twemoji \
+ulauncher
