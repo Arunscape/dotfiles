@@ -14,3 +14,4 @@ tags
 EOF
 
 git config --global core.excludesfile $HOME/.gitignore_global
+git config --global credential.helper /usr/lib/git-core/git-credential-libsecret

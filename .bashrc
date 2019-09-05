@@ -2,7 +2,7 @@
 export PATH="$(yarn global bin):$PATH"
 #export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
-#export BEMENU_BACKEND=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Aliases
 alias vi=vim
