@@ -28,7 +28,14 @@ slurp \
 i3blocks \
 android-udev \
 gimp \
-p7zip
+p7zip \
+gnome-keyring \
+seahorse \
+acpi \
+alsa-utils \
+lm_sensors \
+sysstat \
+bc
 
 rustup default nightly
 
