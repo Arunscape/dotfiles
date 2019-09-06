@@ -11,7 +11,6 @@ alias ls=lsd
 alias f=fuck
 alias grep=rg
 
-
 # Start sway automatically
 if [ "$(tty)" = "/dev/tty1" ]; then
 	sway
