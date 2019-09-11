@@ -42,9 +42,38 @@ call plug#begin('~/.vim/plugged')
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'rust-lang/rust.vim'
+Plug 'vim-latex/vim-latex'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 "colorscheme badwolf
+colorscheme gruvbox
+set background=dark
 
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" General colors
+if has('gui_running') || has('nvim')
+    hi Normal 		guifg=#f6f3e8 guibg=#242424
+else
+    " Set the terminal default background and foreground colors, thereby
+    " improving performance by not needing to set these colors on empty cells.
+    hi Normal guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+    let &t_ti = &t_ti . "\033]10;#f6f3e8\007\033]11;#242424\007"
+    let &t_te = &t_te . "\033]110\007\033]111\007"
+endif
