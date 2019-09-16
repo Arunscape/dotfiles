@@ -25,3 +25,6 @@ then
 
     ln -sf ~/dotfiles/.config/libinput-gestures.conf ~/.config/libinput-gestures.conf
 fi
+
+sudo groupadd plugdev
+sudo usermod -aG plugdev $USER
