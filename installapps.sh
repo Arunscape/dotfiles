@@ -35,7 +35,8 @@ acpi \
 alsa-utils \
 lm_sensors \
 sysstat \
-bc
+bc \
+fish
 
 rustup default nightly
 
@@ -45,4 +46,5 @@ brave-dev-bin \
 spotify \
 sway-git \
 ttf-twemoji \
-ulauncher
+ulauncher \
+starship
