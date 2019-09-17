@@ -22,21 +22,16 @@ kitty \
 openssh \
 yarn \
 ripgrep \
-wl-clipboard \
 grim \
 slurp \
 i3blocks \
 android-udev \
 gimp \
 p7zip \
-gnome-keyring \
-seahorse \
-acpi \
-alsa-utils \
-lm_sensors \
-sysstat \
-bc \
-fish
+fish \
+dash \
+ranger \
+w3m
 
 rustup default nightly
 
@@ -47,4 +42,5 @@ spotify \
 sway-git \
 ttf-twemoji \
 ulauncher \
-starship
+starship \
+wl-clipboard-git

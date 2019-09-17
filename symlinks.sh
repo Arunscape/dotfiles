@@ -10,6 +10,9 @@ ln -sf ~/dotfiles/.config/i3blocks/ ~/.config/
 #ln -sf ~/dotfiles/.Xresources ~/.Xresources
 #ln -sf ~/dotfiles/.config/waybar ~/.config/
 ln -sf ~/dotfiles/.config/fish/ ~/.config/
+ln -sf ~/dotfiles/.config/kak/ ~/.config/
+ln -sf /bin/dash /bin/sh
+
 curl -Lo $HOME/Excision_APEX_3840x2160_Wallpaper.jpg https://github.com/Arunscape/arch-install-config/raw/master/configs/home/Excision_APEX_3840x2160_Wallpaper.jpg
 
 curl -Lo $HOME/.config/kitty/theme.conf https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/gruvbox_dark.conf
