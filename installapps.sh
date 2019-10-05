@@ -31,7 +31,8 @@ p7zip \
 fish \
 dash \
 ranger \
-w3m
+gnome-keyring \
+alsa-utils \
 
 rustup default nightly
 
