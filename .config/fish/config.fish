@@ -15,7 +15,10 @@ end
 set PATH $PATH (yarn global bin)
 # set PATH $PATH $HOME/.local/bin
 set PATH $PATH $HOME/.cargo/bin
+set PATH $PATH ~/Android/Sdk/platform-tools
+set PATH $PATH ~Android/Sdk/tools
 
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
 set -g fish_emoji_width 2
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x ANDROID_HOME ~/Android/Sdk
