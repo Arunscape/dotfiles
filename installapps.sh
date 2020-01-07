@@ -1,7 +1,21 @@
 #!/bin/bash
 
+sudo pacman -S --noconfirm --needed rustup
+
+yay -S --noconfirm --needed \
+vscodium-bin \
+brave-dev-bin \
+spotify \
+sway-git \
+ttf-joypixels \
+ulauncher \
+starship \
+wl-clipboard-git \
+bat \
+universal-ctags-git
+
 sudo pacman -S --noconfirm --needed \
-vim \
+neovim \
 mesa \
 noto-fonts \
 otf-fira-code \
@@ -11,10 +25,6 @@ thefuck \
 lsd \
 sl \
 lolcat \
-rustup \
-docker \
-docker-compose \
-rustup \
 python \
 btrfs-progs \
 ntfs-3g \
@@ -33,15 +43,11 @@ dash \
 ranger \
 gnome-keyring \
 alsa-utils \
+fzf \
+texlive-most \
+biber \
+zathura \
+zathura-pdf-poppler
 
 rustup default nightly
 
-yay -S --noconfirm --needed \
-vscodium-bin \
-brave-dev-bin \
-spotify \
-sway-git \
-ttf-twemoji \
-ulauncher \
-starship \
-wl-clipboard-git

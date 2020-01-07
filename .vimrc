@@ -23,30 +23,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'itchyny/lightline.vim'
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'tpope/vim-eunuch'
-"Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-"Plug 'editorconfig/editorconfig-vim'
-"Plug 'mattn/emmet-vim'
-Plug 'dense-analysis/ale'
-"Plug 'airblade/vim-gitgutter'
-"Plug 'janko-m/vim-test'
-"Plug 'sjl/badwolf'
 Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'romgrk/winteract.vim'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'rust-lang/rust.vim'
-"Plug 'vim-latex/vim-latex'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rhysd/vim-grammarous'
+Plug 'neomake/neomake'
 call plug#end()
 
 "colorscheme badwolf
@@ -218,3 +204,5 @@ let g:omni_sql_no_default_maps = 1
 
 
 set tabstop=2 shiftwidth=2 expandtab
+
+call neomake#configure#automake('nrwi', 500)
