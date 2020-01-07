@@ -34,3 +34,8 @@ fi
 
 sudo groupadd plugdev
 sudo usermod -aG plugdev $USER
+
+sudo bash -c "cat > /etc/NetworkManager/conf.d/dns-servers.conf << EOF
+[global-dns-domain-*]
+servers=1.1.1.1,1.0.0.1,2606:4700:4700::1111,2606:4700:4700::1001
+EOF"

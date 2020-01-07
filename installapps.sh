@@ -47,7 +47,8 @@ fzf \
 texlive-most \
 biber \
 zathura \
-zathura-pdf-poppler
+zathura-pdf-poppler \
+nm-connection-editor
 
 rustup default nightly
 
