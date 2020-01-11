@@ -236,6 +236,7 @@ include /etc/sway/config.d/*
 default_border none
 #deprecated use default_border instead
 #new_window pixel 0
+default_floating_border none
 
 #gaps
 gaps inner 5
