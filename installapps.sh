@@ -48,7 +48,9 @@ texlive-most \
 biber \
 zathura \
 zathura-pdf-poppler \
-nm-connection-editor
+nm-connection-editor \
+sysstat \
+acpi
 
 rustup default nightly
 

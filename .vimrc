@@ -33,6 +33,7 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rhysd/vim-grammarous'
 Plug 'neomake/neomake'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 "colorscheme badwolf
@@ -206,3 +207,18 @@ let g:omni_sql_no_default_maps = 1
 set tabstop=2 shiftwidth=2 expandtab
 
 call neomake#configure#automake('nrwi', 500)
+
+let g:indent_guides_enable_on_vim_startup = 1
+
+autocmd bufreadpre *.tex setlocal textwidth=80
+
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
