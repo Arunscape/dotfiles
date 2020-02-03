@@ -1,6 +1,6 @@
 # Environment variables
 export PATH="$(yarn global bin):$PATH"
-#export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 

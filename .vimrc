@@ -222,3 +222,4 @@ let g:vimtex_compiler_latexmk = {
     \   '-interaction=nonstopmode',
     \ ],
     \}
+let g:vimtex_view_general_viewer = 'zathura'
