@@ -22,5 +22,5 @@ set -gx _JAVA_AWT_WM_NONREPARENTING 1
 set -g fish_emoji_width 2
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ANDROID_HOME ~/Android/Sdk
-
 set -x VISUAL nvim
+set -x GTK_THEME Adapta-Nokto-Eta
