@@ -12,7 +12,8 @@ ulauncher \
 starship \
 wl-clipboard-git \
 bat \
-universal-ctags-git
+universal-ctags-git \
+neovim-remote
 
 sudo pacman -S --noconfirm --needed \
 neovim \
@@ -50,7 +51,8 @@ zathura \
 zathura-pdf-poppler \
 nm-connection-editor \
 sysstat \
-acpi
+acpi \
+pygmentize
 
 rustup default nightly
 

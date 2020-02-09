@@ -23,4 +23,8 @@
       }
     }
   }
-  }}
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust"
+  ]
+}

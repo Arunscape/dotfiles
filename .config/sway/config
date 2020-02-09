@@ -257,3 +257,4 @@ bindsym $mod+Shift+comma move workspace to output Left
 exec --no-startup-id libinput-gestures-setup start
 
 #exec --no-startup-id 'nm-applet --indicator'
+exec wl-paste -t text --watch clipman store

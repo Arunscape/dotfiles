@@ -8,9 +8,6 @@ if not functions -q fisher
     fish -c fisher
 end
 
-if test (tty) = "/dev/tty1"
-    exec sway
-end
 
 set PATH $PATH (yarn global bin)
 # set PATH $PATH $HOME/.local/bin
@@ -24,3 +21,8 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ANDROID_HOME ~/Android/Sdk
 set -x VISUAL nvim
 set -x GTK_THEME Adapta-Nokto-Eta
+set -gx MOZ_ENABLE_WAYLAND 1
+
+if test (tty) = "/dev/tty1"
+    exec sway
+end

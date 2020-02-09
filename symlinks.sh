@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir -p $HOME/.config 
+mkdir -p $HOME/.vim 
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.config/kitty/ ~/.config/
@@ -15,6 +16,7 @@ ln -sf /bin/dash /bin/sh
 ln -sf ~/dotfiles/.config/nvim/ ~/.config/
 ln -sf ~/dotfiles/.config/ranger/ ~/.config/
 ln -sf ~/dotfiles/.config/zathura/ ~/.config/
+ln -sf ~/dotfiles/.vim/coc.vim ~/.vim/coc.vim
 
 curl -Lo $HOME/Excision_APEX_3840x2160_Wallpaper.jpg https://github.com/Arunscape/arch-install-config/raw/master/configs/home/Excision_APEX_3840x2160_Wallpaper.jpg
 
