@@ -38,6 +38,7 @@ fi
 
 sudo groupadd plugdev
 sudo usermod -aG plugdev $USER
+sudo usermod -aG video $USER
 
 sudo bash -c "cat > /etc/NetworkManager/conf.d/dns-servers.conf << EOF
 [global-dns-domain-*]

@@ -3,7 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-
+font Fira Code 10
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -258,3 +258,12 @@ exec --no-startup-id libinput-gestures-setup start
 
 #exec --no-startup-id 'nm-applet --indicator'
 exec wl-paste -t text --watch clipman store
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+
+
+bindsym XF86MonBrightnessDown exec brillo -U 5
+bindsym XF86MonBrightnessUp exec brillo -A 5
