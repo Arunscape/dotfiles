@@ -20,7 +20,7 @@ set -g fish_emoji_width 2
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ANDROID_HOME ~/Android/Sdk
 set -x VISUAL nvim
-set -x GTK_THEME Adapta-Nokto-Eta
+set -x GTK_THEME Qogir-dark
 set -gx MOZ_ENABLE_WAYLAND 1
 
 if test (tty) = "/dev/tty1"
