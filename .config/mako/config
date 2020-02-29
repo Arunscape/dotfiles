@@ -14,8 +14,6 @@ text-color=#777777
 [urgency=high]
 background-color=#ff000099
 
-[app-name="Brave Dev"]
-default-timeout=1
-
-[app-name="brave-dev-bin"]
+[app-name="Brave"]
+ignore-timeout=1
 default-timeout=1
