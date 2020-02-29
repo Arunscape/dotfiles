@@ -52,7 +52,8 @@ zathura-pdf-poppler \
 nm-connection-editor \
 sysstat \
 acpi \
-pygmentize
+pygmentize \
+mako
 
 rustup default nightly
 

@@ -35,6 +35,9 @@ let g:gruvbox_italic=1
 set termguicolors
 
 let g:vimtex_compiler_progname = 'nvr'
+let g:tex_flavor='latex'
+autocmd Filetype tex,latex setlocal sw=2
+autocmd bufreadpre *.tex setlocal textwidth=80
 
 "ctags
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -44,7 +47,6 @@ set tabstop=2 shiftwidth=2 expandtab
 
 call neomake#configure#automake('nrwi', 500)
 
-autocmd bufreadpre *.tex setlocal textwidth=80
 
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -57,8 +59,14 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 let g:vimtex_view_general_viewer = 'zathura'
+"let g:vimtex_view_method='zathura'
+hi Conceal guibg=NONE guifg=White
 
 highlight Normal guibg=NONE ctermbg=NONE
 highlight SignColumn guibg=NONE ctermbg=NONE
 
-"source ~/.vim/coc.vim
+source ~/.vim/coc.vim
+
+setlocal spell
+set spelllang=en_ca
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u

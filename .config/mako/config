@@ -1,0 +1,21 @@
+font= Fira Code 10
+background-color=#00000099
+text-color=#ffffff
+border-color=#333333
+#border-size=10
+#border-color=#00000055
+#margin=25
+default-timeout=60000
+
+[hidden]
+format=(and %h more)
+text-color=#777777
+
+[urgency=high]
+background-color=#ff000099
+
+[app-name="Brave Dev"]
+default-timeout=1
+
+[app-name="brave-dev-bin"]
+default-timeout=1
