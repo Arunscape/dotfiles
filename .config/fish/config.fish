@@ -1,4 +1,4 @@
-eval (starship init fish)
+starship init fish | source
 
 thefuck --alias | source
 
