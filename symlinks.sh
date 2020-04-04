@@ -19,6 +19,7 @@ ln -sf ~/dotfiles/.config/ranger/ ~/.config/
 ln -sf ~/dotfiles/.config/zathura/ ~/.config/
 ln -sf ~/dotfiles/.vim/coc.vim ~/.vim/coc.vim
 ln -sf ~/dotfiles/.config/mako ~/.config/
+ln -sf ~/.dotfiles/.config/wallpaper ~/.config/wallpaper
 
 curl -Lo $HOME/Excision_APEX_3840x2160_Wallpaper.jpg https://github.com/Arunscape/arch-install-config/raw/master/configs/home/Excision_APEX_3840x2160_Wallpaper.jpg
 

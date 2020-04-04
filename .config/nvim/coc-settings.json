@@ -26,5 +26,6 @@
   },
   "coc.preferences.formatOnSaveFiletypes": [
     "rust"
-  ]
+  ],
+  "python.jediEnabled": false
 }

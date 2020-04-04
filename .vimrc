@@ -59,7 +59,6 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 let g:vimtex_view_general_viewer = 'zathura'
-"let g:vimtex_view_method='zathura'
 hi Conceal guibg=NONE guifg=White
 
 highlight Normal guibg=NONE ctermbg=NONE
