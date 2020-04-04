@@ -28,6 +28,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rhysd/vim-grammarous'
 Plug 'neomake/neomake'
 Plug 'thaerkh/vim-indentguides'
+Plug 'ap/vim-css-color'
 call plug#end()
 
 colorscheme gruvbox
