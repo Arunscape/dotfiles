@@ -23,12 +23,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rhysd/vim-grammarous'
 Plug 'neomake/neomake'
 Plug 'thaerkh/vim-indentguides'
 Plug 'ap/vim-css-color'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 colorscheme gruvbox
