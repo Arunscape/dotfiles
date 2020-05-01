@@ -27,5 +27,6 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "rust"
   ],
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "rust.clippy_preference": "on"
 }

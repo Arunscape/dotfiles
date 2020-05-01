@@ -25,7 +25,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (which-key dap-mode lsp-treemacs lsp-ivy helm-lsp company-lsp lsp-ui lsp-mode treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs auctex kaolin-themes use-package))))
+    (slime which-key dap-mode lsp-treemacs lsp-ivy helm-lsp company-lsp lsp-ui lsp-mode treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs auctex kaolin-themes use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -152,3 +152,6 @@
 (use-package which-key
   :config
   (which-key-mode))
+
+(use-package slime)
+(setq inferior-lisp-program "sbcl")
