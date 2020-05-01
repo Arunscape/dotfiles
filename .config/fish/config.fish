@@ -1,4 +1,3 @@
-starship init fish | source
 
 thefuck --alias | source
 
@@ -23,6 +22,8 @@ set -x ANDROID_HOME ~/Android/Sdk
 set -x VISUAL nvim
 set -x GTK_THEME Qogir-dark
 set -gx MOZ_ENABLE_WAYLAND 1
+
+starship init fish | source
 
 if test (tty) = "/dev/tty1"
     exec sway
