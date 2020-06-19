@@ -28,5 +28,6 @@
     "rust"
   ],
   "python.jediEnabled": false,
-  "rust.clippy_preference": "on"
+  "rust.clippy_preference": "on",
+  "eslint.autoFixOnSave": "true"
 }
