@@ -21,7 +21,7 @@ set -g fish_emoji_width 2
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ANDROID_HOME ~/Android/Sdk
 set -x VISUAL nvim
-set -x GTK_THEME Qogir-dark
+set -x GTK_THEME Materia-dark
 set -gx MOZ_ENABLE_WAYLAND 1
 
 starship init fish | source

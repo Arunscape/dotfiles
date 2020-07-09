@@ -36,7 +36,9 @@ wl-clipboard \
 discord \
 mako \
 rustup \
-clang
+clang \
+materia-gtk-theme \
+
 
 
 yay -S --noconfirm --needed \
