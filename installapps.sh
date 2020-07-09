@@ -38,6 +38,7 @@ mako \
 rustup \
 clang \
 materia-gtk-theme \
+pulseaudio
 
 
 
@@ -46,7 +47,8 @@ ttf-twemoji \
 starship \
 universal-ctags-git \
 ripgrep-all \
-spotify
+spotify \
+ytop
 
 
 rustup default nightly
