@@ -1,59 +1,50 @@
 #!/bin/bash
 
-sudo pacman -S --noconfirm --needed rustup
-
-yay -S --noconfirm --needed \
-vscodium-bin \
-brave-dev-bin \
-spotify \
-sway-git \
-ttf-joypixels \
-ulauncher \
-starship \
-wl-clipboard-git \
-bat \
-universal-ctags-git \
-neovim-remote
-
 sudo pacman -S --noconfirm --needed \
 neovim \
-mesa \
 noto-fonts \
-otf-fira-code \
+ttf-fira-code \
+fish \
 firefox-developer-edition \
 vlc \
 thefuck \
 lsd \
+bat \
 sl \
 lolcat \
-python \
-btrfs-progs \
-ntfs-3g \
 kitty \
 openssh \
-yarn \
 ripgrep \
 grim \
 slurp \
-i3blocks \
 android-udev \
 gimp \
 p7zip \
 fish \
 dash \
 ranger \
-gnome-keyring \
-alsa-utils \
 fzf \
 texlive-most \
 biber \
 zathura \
 zathura-pdf-poppler \
-nm-connection-editor \
-sysstat \
-acpi \
 pygmentize \
+rustup \
+sway \
+wofi \
+wl-clipboard \
+discord \
 mako
+
+
+yay -S --noconfirm --needed \
+ttf-twemoji \
+ulauncher \
+starship \
+universal-ctags-git \
+ripgrep-all \
+spotify
+
 
 rustup default nightly
 
