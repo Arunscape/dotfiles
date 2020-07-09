@@ -7,9 +7,10 @@ if not functions -q fisher
     fish -c fisher
 end
 
+if type -sq $yarn
+    set PATH $PATH (yarn global bin)
+end
 
-set PATH $PATH (yarn global bin)
-# set PATH $PATH $HOME/.local/bin
 set PATH $PATH $HOME/.cargo/bin
 set PATH $PATH ~/Android/Sdk/platform-tools
 set PATH $PATH ~Android/Sdk/tools

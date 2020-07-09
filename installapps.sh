@@ -2,20 +2,20 @@
 
 sudo pacman -S --noconfirm --needed \
 neovim \
+firefox-developer-edition \
 noto-fonts \
 ttf-fira-code \
 fish \
-firefox-developer-edition \
 vlc \
 thefuck \
 lsd \
 bat \
 sl \
+ripgrep \
 lolcat \
 kitty \
 openssh \
 openssl \
-ripgrep \
 grim \
 slurp \
 android-udev \
@@ -30,12 +30,13 @@ biber \
 zathura \
 zathura-pdf-poppler \
 pygmentize \
-rustup \
 sway \
 wofi \
 wl-clipboard \
 discord \
-mako
+mako \
+rustup \
+clang
 
 
 yay -S --noconfirm --needed \
