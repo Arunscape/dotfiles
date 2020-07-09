@@ -43,7 +43,6 @@ materia-gtk-theme \
 
 yay -S --noconfirm --needed \
 ttf-twemoji \
-ulauncher \
 starship \
 universal-ctags-git \
 ripgrep-all \
