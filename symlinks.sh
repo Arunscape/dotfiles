@@ -2,22 +2,17 @@
 
 mkdir -p $HOME/.config 
 mkdir -p $HOME/.vim 
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.makepkg.conf ~/.makepkg.conf
-ln -sf ~/dotfiles/.config/kitty/ ~/.config/
-ln -sf ~/dotfiles/.config/sway/ ~/.config/
-ln -sf ~/dotfiles/.config/fish/ ~/.config/
+ln -sf $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -sf $HOME/dotfiles/.vimrc $HOME/.vimrc
+ln -sf $HOME/dotfiles/.makepkg.conf $HOME/.makepkg.conf
+ln -sf $HOME/dotfiles/.config/kitty/ $HOME/.config/
+ln -sf $HOME/dotfiles/.config/sway/ $HOME/.config/
+ln -sf $HOME/dotfiles/.config/fish/ $HOME/.config/
 ln -sf /bin/dash /bin/sh
-ln -sf ~/dotfiles/.config/nvim/ ~/.config/
-ln -sf ~/dotfiles/.config/ranger/ ~/.config/
-ln -sf ~/dotfiles/.config/zathura/ ~/.config/
-ln -sf ~/dotfiles/.vim/coc.vim ~/.vim/coc.vim
-ln -sf ~/dotfiles/.config/mako ~/.config/
-ln -sf ~/dotfiles/.config/wallpaper ~/.config/wallpaper
-ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
-# ln -sf ~/dotfiles/.config/i3blocks/ ~/.config/
-#ln -sf ~/dotfiles/.xinitrc ~/.xinitrc
-#ln -sf ~/dotfiles/.Xresources ~/.Xresources
-#ln -sf ~/dotfiles/.config/waybar ~/.config/
-# ln -sf ~/dotfiles/.config/kak/ ~/.config/
+ln -sf $HOME/dotfiles/.config/nvim/ $HOME/.config/
+ln -sf $HOME/dotfiles/.config/ranger/ $HOME/.config/
+ln -sf $HOME/dotfiles/.config/zathura/ $HOME/.config/
+ln -sf $HOME/dotfiles/.vim/coc.vim $HOME/.vim/coc.vim
+ln -sf $HOME/dotfiles/.config/mako $HOME/.config/
+ln -sf $HOME/dotfiles/.config/wallpaper $HOME/.config/wallpaper
+ln -sf $HOME/dotfiles/.emacs.d $HOME/.emacs.d
