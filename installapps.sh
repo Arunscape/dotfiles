@@ -14,6 +14,7 @@ sl \
 lolcat \
 kitty \
 openssh \
+openssl \
 ripgrep \
 grim \
 slurp \
