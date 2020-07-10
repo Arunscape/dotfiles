@@ -38,7 +38,8 @@ mako \
 rustup \
 clang \
 materia-gtk-theme \
-pulseaudio
+pulseaudio \
+i3status
 
 
 

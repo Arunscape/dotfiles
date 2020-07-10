@@ -16,3 +16,4 @@ ln -sf $HOME/dotfiles/.vim/coc.vim $HOME/.vim/coc.vim
 ln -sf $HOME/dotfiles/.config/mako $HOME/.config/
 ln -sf $HOME/dotfiles/.config/wallpaper $HOME/.config/wallpaper
 ln -sf $HOME/dotfiles/.emacs.d $HOME/.emacs.dln -sf $HOME/dotfiles/.config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf
+ln -sf $HOME/dotfiles/.config/i3status/ $HOME/.config/
