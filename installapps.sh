@@ -50,7 +50,8 @@ starship \
 universal-ctags-git \
 ripgrep-all \
 spotify \
-ytop
+ytop \
+texlive-latexindent-meta
 
 
 rustup default nightly
