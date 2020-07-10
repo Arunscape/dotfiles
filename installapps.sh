@@ -6,7 +6,7 @@ firefox-developer-edition \
 noto-fonts \
 ttf-fira-code \
 fish \
-vlc \
+mpv \
 thefuck \
 lsd \
 bat \
@@ -39,6 +39,7 @@ rustup \
 clang \
 materia-gtk-theme \
 pulseaudio \
+alsa-utils \
 i3status
 
 
