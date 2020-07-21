@@ -13,7 +13,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec
-set $menu dmenu_path | wofi --insensitive --allow-images --allow-markup --show drun | xargs swaymsg exec
+set $menu wofi
 
 ### Output configuration
 #
@@ -203,13 +203,7 @@ bindsym $mod+r mode "resize"
 #}
 
 bar {
-	position top	
-	status_command i3status
-
-  colors {
-    statusline #ffffff
-    background #000000
-  }
+  swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
