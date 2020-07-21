@@ -23,9 +23,10 @@ set -x ANDROID_HOME ~/Android/Sdk
 set -x VISUAL nvim
 set -x GTK_THEME Materia-dark
 set -gx MOZ_ENABLE_WAYLAND 1
+set -x QT_QPA_PLATFORM wayland
 
 starship init fish | source
 
 if test (tty) = "/dev/tty1"
-    exec sway
+    exec sway --my-next-gpu-wont-be-nvidia
 end

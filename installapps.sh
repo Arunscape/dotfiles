@@ -40,7 +40,8 @@ clang \
 materia-gtk-theme \
 pulseaudio \
 alsa-utils \
-i3status
+otf-font-awesome \
+waybar
 
 
 
