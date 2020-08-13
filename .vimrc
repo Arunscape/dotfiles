@@ -28,10 +28,10 @@ Plug 'rhysd/vim-grammarous'
 Plug 'neomake/neomake'
 Plug 'thaerkh/vim-indentguides'
 Plug 'ap/vim-css-color'
-Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme base16-chalk
 let g:gruvbox_italic=1
 set termguicolors
 
