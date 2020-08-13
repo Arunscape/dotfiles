@@ -29,9 +29,12 @@ Plug 'neomake/neomake'
 Plug 'thaerkh/vim-indentguides'
 Plug 'ap/vim-css-color'
 Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 colorscheme base16-chalk
+let g:airline_theme='base16-chalk'
 let g:gruvbox_italic=1
 set termguicolors
 
