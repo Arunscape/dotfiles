@@ -20,7 +20,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'rhysd/vim-grammarous'
 Plug 'thaerkh/vim-indentguides'
 Plug 'ap/vim-css-color'
 Plug 'chriskempson/base16-vim'
@@ -31,8 +30,6 @@ call plug#end()
 
 colorscheme base16-chalk
 let g:airline_theme='base16-chalk'
-let g:gruvbox_italic=1
-set termguicolors
 
 "ctags
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -40,10 +37,12 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 set tabstop=2 shiftwidth=2 expandtab
 
-hi Conceal guibg=NONE guifg=White
+"highlight Conceal guibg=NONE
+"highlight Normal guibg=NONE ctermbg=NONE
+"highlight SignColumn guibg=NONE ctermbg=NONE
+highlight clear SignColumn
+highlight clear LineNr
 
-highlight Normal guibg=NONE ctermbg=NONE
-highlight SignColumn guibg=NONE ctermbg=NONE
 
 source ~/.vim/coc.vim
 
