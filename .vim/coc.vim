@@ -1,3 +1,35 @@
+let g:coc_global_extensions = [
+      \'coc-json',
+      \'coc-rust-analyzer',
+      \'coc-actions',
+      \'coc-clangd',
+      \'coc-css',
+      \'coc-eslint',
+      \'coc-explorer',
+      \'coc-flutter',
+      \'coc-fzf-preview',
+      \'coc-git',
+      \'coc-go',
+      \'coc-html',
+      \'coc-java',
+      \'coc-yaml',
+      \'coc-sh',
+      \'coc-tasks',
+      \'coc-template',
+      \'coc-texlab',
+      \'coc-tsserver',
+      \'coc-xml',
+      \'coc-yank',
+      \'coc-python',
+      \'coc-prettier',
+      \'coc-bibtex',
+      \'coc-docker',
+      \'coc-dictionary',
+      \'coc-tag',
+      \'coc-word',
+      \'coc-emoji'
+      \]
+
 " if hidden is not set, TextEdit might fail.
 set hidden
 

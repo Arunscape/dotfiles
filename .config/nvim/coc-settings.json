@@ -1,33 +1,10 @@
 {
 "languageserver": {
-    "digestif": {
-      "command": "digestif",
-      "filetypes": ["tex", "plaintex", "context"]
-    },
-    "haskell": {
-    "command": "hie-wrapper",
-    "args": ["--lsp"],
-    "rootPatterns": [
-      "stack.yaml",
-      "cabal.config",
-      "package.yaml"
-    ],
-    "filetypes": [
-      "hs",
-      "lhs",
-      "haskell"
-    ],
-    "initializationOptions": {
-      "languageServerHaskell": {
-        "hlintOn": true
-      }
-    }
-  }
   },
   "coc.preferences.formatOnSaveFiletypes": [
     "rust"
   ],
   "python.jediEnabled": false,
-  "rust.clippy_preference": "on",
+  "rust-analyzer.checkOnSave.command": "clippy",
   "eslint.autoFixOnSave": "true"
 }
