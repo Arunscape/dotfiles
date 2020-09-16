@@ -23,7 +23,8 @@ set -x ANDROID_HOME ~/Android/Sdk
 set -x VISUAL nvim
 set -x GTK_THEME Materia-dark
 set -gx MOZ_ENABLE_WAYLAND 1
-set -x QT_QPA_PLATFORM wayland
+set -x QT_QPA_PLATFORM wayland-egl
+set -x QT_WAYLAND_DISABLE_WINDOWDECORATION 1
 
 starship init fish | source
 
