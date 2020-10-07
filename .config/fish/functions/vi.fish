@@ -1,3 +1,17 @@
 function vi
-	vim $argv
+	if type -q nvim
+		nvim $argv
+	else if command -v vim > /dev/null
+		command vim $argv
+	else
+		command vi $argv
+	end
+end
+
+function vim
+	if type -q nvim
+		nvim $argv
+	else
+		command vim $argv
+	end
 end

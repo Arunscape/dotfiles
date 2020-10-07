@@ -1,3 +1,7 @@
 function grep
-	rg $argv
+	if type -q rg
+		rg $argv
+	else
+		command grep $argv
+	end
 end
