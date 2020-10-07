@@ -19,6 +19,6 @@ ln -sf $HOME/dotfiles/.config/wallpaper $HOME/.config/wallpaper
 ln -sf $HOME/dotfiles/.emacs.d $HOME/.emacs.dln -sf $HOME/dotfiles/.config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf
 ln -sf $HOME/dotfiles/.config/wofi $HOME/.config/
 ln -sf $HOME/dotfiles/.config/waybar $HOME/.config/
-ln -sf $HOME/dotfiles/.config/base16-shell $HOME/base16-shell
+ln -sf $HOME/dotfiles/.config/base16-shell $HOME/.config/base16-shell
 
 sudo ln -sf /bin/dash /bin/sh
