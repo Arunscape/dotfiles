@@ -28,13 +28,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-"colorscheme base16-irblack
-"let g:airline_theme='base16-irblack'
-colorscheme base16-chalk
-let g:airline_theme='base16_chalk'
-let g:airline_powerline_fonts = 1
-set t_Co=256
-let base16colorspace=256
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 "ctags
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
