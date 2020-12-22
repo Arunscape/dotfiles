@@ -1,0 +1,1 @@
+/home/arunscape/.fzf/shell/key-bindings.fish
