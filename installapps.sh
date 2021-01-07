@@ -41,7 +41,12 @@ materia-gtk-theme \
 pulseaudio \
 alsa-utils \
 otf-font-awesome \
-waybar
+waybar \
+xorg-xwayland \
+pavucontrol \
+nodejs \
+yarn \
+github-cli
 
 
 
@@ -52,7 +57,9 @@ universal-ctags-git \
 ripgrep-all \
 spotify \
 ytop \
-texlive-latexindent-meta
+texlive-latexindent-meta \
+minecraft \
+nvidia-prime
 
 
 rustup default nightly
