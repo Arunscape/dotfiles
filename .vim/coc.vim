@@ -27,7 +27,8 @@ let g:coc_global_extensions = [
       \'coc-dictionary',
       \'coc-tag',
       \'coc-word',
-      \'coc-emoji'
+      \'coc-emoji',
+      \'coc-cmake'
       \]
 
 " if hidden is not set, TextEdit might fail.

@@ -32,6 +32,8 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+"hi Normal ctermbg=none
+"hi NonText ctermbg=none
 
 "ctags
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -49,5 +51,5 @@ highlight Pmenu ctermbg=238 gui=bold
 
 source ~/.vim/coc.vim
 
-setlocal spell
+"setlocal spell
 set spelllang=en_ca
