@@ -22,5 +22,7 @@ ln -sf $HOME/dotfiles/.config/wofi $HOME/.config/
 ln -sf $HOME/dotfiles/.config/waybar $HOME/.config/
 ln -sf $HOME/dotfiles/.config/base16-shell $HOME/.config/base16-shell
 ln -sf $HOME/dotfiles/.minecraft/minecraft.sh $HOME/.minecraft/minecraft.sh
+ln -sf $HOME/dotfiles/.doom.d $HOME/.doom.d
+ln -sf $HOME/dotfiles/.emacs.d $HOME/.emacs.d
 
 sudo ln -sf /bin/dash /bin/sh
