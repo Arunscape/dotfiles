@@ -6,5 +6,7 @@
   ],
   "python.jediEnabled": false,
   "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.updates.prompt": false,
+  "rust-analyzer.updates.channel": "nightly",
   "eslint.autoFixOnSave": "true"
 }
