@@ -10,6 +10,10 @@ alias ls=lsd
 alias f=fuck
 alias grep=rg
 
+if [[ $TERM = dumb ]]; then
+    return
+fi
+
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
