@@ -1,4 +1,6 @@
 fish_variables 
 completions/**
 functions/*fzf*
+functions/base16*
+conf.d/__*
 

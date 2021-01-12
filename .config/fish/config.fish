@@ -26,11 +26,6 @@ type -q thefuck; and thefuck --alias | source
 type -q gh; and gh completion -s fish | source
 type -q bat; and set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
-if status --is-interactive
-    set BASE16_SHELL "$HOME/.config/base16-shell/"
-    source "$BASE16_SHELL/profile_helper.fish"
-end
-
 # emacs tramp
 if test "$TERM" = "dumb"
   function fish_prompt
