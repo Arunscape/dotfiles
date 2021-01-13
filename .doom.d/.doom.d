@@ -1,1 +1,0 @@
-/home/arunscape/dotfiles/.doom.d
