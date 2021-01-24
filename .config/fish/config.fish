@@ -9,6 +9,7 @@ set PATH $PATH ~/Android/Sdk/platform-tools
 set PATH $PATH ~Android/Sdk/tools
 set PATH $PATH ~/go/bin
 set PATH $PATH ~/.emacs.d/bin
+set PATH $PATH ~/.deno/bin
 
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
 set -g fish_emoji_width 2

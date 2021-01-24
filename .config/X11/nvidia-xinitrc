@@ -1,3 +1,4 @@
+\
 if [ # -gt 0 ]
 then
   $*
@@ -7,5 +8,6 @@ else
   export SSH_AUTH_SOCK
   export XDG_SESSION_TYPE=x11
   export GDK_BACKEND=x11
-  exec gnome-session
+  exec i3
 fi
+
