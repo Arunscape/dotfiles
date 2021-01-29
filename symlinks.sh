@@ -25,5 +25,7 @@ ln -sf $HOME/dotfiles/.minecraft/minecraft.sh $HOME/.minecraft/minecraft.sh
 ln -sf $HOME/dotfiles/.doom.d $HOME
 ln -sf $HOME/dotfiles/.config/X11/nvidia-xinitrc $HOME/.config/X11/nvidia-xinitrc
 ln -sf $HOME/dotfiles/.config/picom $HOME/.config
+ln -sf $HOME/dotfiles/.config/i3 $HOME/.config
+ln -sf $HOME/dotfiles/.config/i3status-rust $HOME/.config
 
 sudo ln -sf /bin/dash /bin/sh
