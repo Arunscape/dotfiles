@@ -19,7 +19,7 @@ set -gx MOZ_ENABLE_WAYLAND 1
 set -x QT_WAYLAND_DISABLE_WINDOWDECORATION 1
 #set -Ux ANDROID_SDK_ROOT /opt/android-sdk
 #set -U fish_user_paths /opt/android-sdk/emulator $fish_user_paths
-#set -U fish_user_paths /opt/android-sdk/platform-tools $fish_user_paths
+set -U fish_user_paths /opt/android-sdk/platform-tools $fish_user_paths &
 #set -x CHROME_EXECUTABLE google-chrome-stable
 
 type -q starship; and starship init fish | source &
