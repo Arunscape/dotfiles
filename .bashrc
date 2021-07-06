@@ -18,3 +18,4 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -x "$(command -v thefuck)" ] && eval $(thefuck --alias)
+. "$HOME/.cargo/env"
