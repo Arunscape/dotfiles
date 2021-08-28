@@ -42,5 +42,61 @@ vim.api.nvim_set_keymap("", "<leader>p", [["+p]], {noremap = true, silent = true
 
 require('plugins')
 --vim.cmd 'PackerClean'
---vim.cmd 'autocmd User PackerComplete'
 --vim.cmd 'PackerSync'
+
+vim.cmd('colorscheme base16-chalk')
+
+vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
+
+
+local function setup_servers()
+  require'lspinstall'.setup()
+
+  local languages = {
+    "bash",
+    "cmake",
+    "cpp",
+    "css",
+    "dockerfile",
+    "elixir",
+--    "go",
+    "graphql",
+    "haskell",
+    "html",
+    "java",
+    "json",
+    "kotlin",
+    "latex",
+    "lua",
+    "python",
+    "ruby",
+    "rust",
+    "svelte",
+    "tailwindcss",
+    "typescript",
+    "vim",
+    "yaml",
+    "deno",
+  }
+
+
+  local servers = {}
+  for _, lang in pairs(require'lspinstall'.installed_servers()) do
+    servers[lang] = true
+  end
+
+  for _, lang in pairs(languages) do
+    if not servers[lang] then
+      require'lspinstall'.install_server(lang)
+    end
+    require'lspconfig'[lang].setup{}
+  end
+end
+
+-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+require'lspinstall'.post_install_hook = function ()
+  setup_servers() -- reload installed servers
+  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+end
+
+setup_servers()
