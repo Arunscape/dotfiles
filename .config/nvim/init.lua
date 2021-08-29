@@ -59,7 +59,7 @@ local function setup_servers()
     "css",
     "dockerfile",
     "elixir",
---    "go",
+    "go",
     "graphql",
     "haskell",
     "html",
@@ -80,6 +80,8 @@ local function setup_servers()
   }
 
 
+  vim.cmd("let g:coq_settings = { 'auto_start': v:true }")
+
   local servers = {}
   for _, lang in pairs(require'lspinstall'.installed_servers()) do
     servers[lang] = true
@@ -89,7 +91,9 @@ local function setup_servers()
     if not servers[lang] then
       require'lspinstall'.install_server(lang)
     end
-    require'lspconfig'[lang].setup{}
+    require'lspconfig'[lang].setup(require"coq".lsp_ensure_capabilities(
+--
+    ))
   end
 end
 
@@ -100,3 +104,4 @@ require'lspinstall'.post_install_hook = function ()
 end
 
 setup_servers()
+

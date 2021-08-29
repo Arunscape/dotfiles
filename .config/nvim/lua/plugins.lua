@@ -20,4 +20,6 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
   use 'kabouzeid/nvim-lspinstall'
+  use { 'ms-jpq/coq_nvim', branch = 'coq'} -- fast as fuck completion
+  use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
 end)
