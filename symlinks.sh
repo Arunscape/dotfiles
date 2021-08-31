@@ -18,7 +18,6 @@ ln -sf $HOME/dotfiles/.config/libinput-gestures.conf $HOME/.config/libinput-gest
 ln -sf $HOME/dotfiles/.config/wofi $HOME/.config/
 ln -sf $HOME/dotfiles/.config/waybar $HOME/.config/
 ln -sf $HOME/dotfiles/.config/base16-shell $HOME/.config/base16-shell
-ln -sf $HOME/dotfiles/.minecraft/minecraft.sh $HOME/.minecraft/minecraft.sh
 ln -sf $HOME/dotfiles/.doom.d $HOME
 ln -sf $HOME/dotfiles/.config/X11/nvidia-xinitrc $HOME/.config/X11/nvidia-xinitrc
 ln -sf $HOME/dotfiles/.config/picom $HOME/.config

@@ -5,8 +5,8 @@ if not functions -q fisher
 end
 
 set PATH $PATH ~/.cargo/bin
-set PATH $PATH ~/Android/Sdk/platform-tools
-set PATH $PATH ~Android/Sdk/tools
+#set PATH $PATH ~/Android/Sdk/platform-tools
+#set PATH $PATH ~Android/Sdk/tools
 set PATH $PATH ~/go/bin
 set PATH $PATH ~/.emacs.d/bin
 set PATH $PATH ~/.deno/bin

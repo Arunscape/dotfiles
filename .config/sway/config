@@ -58,9 +58,12 @@ bindswitch --reload --locked lid:off output $laptop enable
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-    input "1267:12384:ELAN0501:01_04F3:3060_Touchpad" {
+    input type:touchpad {
         tap enabled
         natural_scroll enabled
+        dwt disabled
+        accel_profile "flat"
+        pointer_accel 1
     }
 
 ### Key bindings
