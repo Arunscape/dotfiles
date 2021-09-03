@@ -38,7 +38,6 @@ mako \
 rustup \
 clang \
 materia-gtk-theme \
-waybar \
 xorg-xwayland \
 github-cli \
 mesa \
@@ -47,11 +46,14 @@ steam \
 bluez \
 bluez-utils \
 pipewire \
-pipewire-pulse
+pipewire-pulse \
+arch-wiki-lite \
+man-db
 
 
 
-yay -S --needed \
+
+paru -S --needed \
 ttf-twemoji \
 starship \
 universal-ctags-git \

@@ -1,18 +1,15 @@
 theme = "space-villain"
 icons = "awesome5"
 
-[[block]]
-block = "backlight"
-device = "intel_backlight"
 
 [[block]]
-block = "pomodoro"
-length = 25
-break_length = 5
-message = "Take a break!"
-break_message = "Back to work!"
-use_nag = true
-nag_path = "i3-nagbar"
+block = "focused_window"
+max_width = 50
+show_marks = "visible"
+
+[[block]]
+block = "backlight"
+device = "amdgpu_bl0"
 
 #[[block]]
 #block = "bluetooth"
@@ -22,7 +19,7 @@ nag_path = "i3-nagbar"
 [[block]]
 block = "music"
 player = "spotify"
-buttons = ["play", "next"]
+buttons = ["play", "prev", "next"]
 
 [[block]]
 block = "sound"
@@ -30,7 +27,7 @@ format = "{output_name} {volume}"
 step_width = 1
 [block.mappings]
 "alsa_output.usb-Logitech_G560_Gaming_Speaker_00000000-00.analog-stereo" = "🔈"
-"alsa_output.pci-0000_00_1b.0.analog-stereo" = "🎧"
+"alsa_output.pci-0000_04_00.6.analog-stereo" = "🎧"
 
 #[[block]]
 #block = "speedtest"
@@ -40,9 +37,8 @@ step_width = 1
 [[block]]
 block = "net"
 device = "wlan0"
-format = "{ssid} {signal_strength} {ip} {speed_down} {graph_down}"
+format = "{ssid} {signal_strength} {speed_up} {speed_down}"
 interval = 5
-use_bits = false
 
 [[block]]
 block = "disk_space"
@@ -54,46 +50,36 @@ interval = 20
 warning = 20.0
 alert = 10.0
 
-[[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
 
 [[block]]
 block = "cpu"
 interval = 1
 
 [[block]]
-block = "nvidia_gpu"
-label = "GTX 1060"
-show_memory = true
-show_clocks = true
-interval = 1
-
-[[block]]
-block = "temperature"
-collapsed = false
-interval = 10
-format = "{min}° min, {max}° max, {average}° avg"
-chip = "*-isa-*"
-inputs = ["CPUTIN", "SYSTIN"]
-
+block = "memory"
+format_mem = "{mem_used}/{mem_total}({mem_used_percents})"
+format_swap = "{swap_used}/{swap_total}({swap_used_percents})"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 5
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
 
 #[[block]]
-#block = "pacman"
-#interval = 600
-#format = "{pacman} + {aur} = {both} updates available"
-#format_singular = "{both} update available"
-#format_up_to_date = "system up to date"
-#critical_updates_regex = "(linux |linux-lts|linux-zen)"
-## aur_command should output available updates to stdout (ie behave as echo -ne "update\n")
-#aur_command = "pikaur -Qua"
+#block = "temperature"
+#collapsed = false
+#interval = 10
+#format = "{min} min, {max} max, {average} avg"
+#chip = "*-isa-*"
+#inputs = ["CPUTIN", "SYSTIN"]
 
 [[block]]
-block = "load"
-interval = 1
-format = "{1m}"
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
 
 [[block]]
 block = "time"
