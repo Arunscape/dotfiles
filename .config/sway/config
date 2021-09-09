@@ -263,7 +263,7 @@ client.focused_inactive #1c0500 #1c0500 #f6dda2 #1c0500   #1c0500
 #client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 #client.urgent           #2f343a #900000 #ffffff #900000   #900000
 
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland QT_QPA_PLATFORM=wayland-egl QT_WAYLAND_FORCE_DPI=physical QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland QT_QPA_PLATFORM=wayland-egl QT_WAYLAND_FORCE_DPI=physical QT_WAYLAND_DISABLE_WINDOWDECORATION=1 MOZ_ENABLE_WAYLAND=1 _JAVA_AWT_WM_NONREPARENTING=1 
 
 set $gnome-schema org.gnome.desktop.interface
 
