@@ -23,4 +23,5 @@ return require('packer').startup(function()
   use { 'ms-jpq/coq_nvim', branch = 'coq'} -- fast as fuck completion
   use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
   use 'kosayoda/nvim-lightbulb'
+  use 'nvim-lua/lsp_extensions.nvim'
 end)

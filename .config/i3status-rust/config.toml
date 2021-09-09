@@ -1,5 +1,6 @@
 theme = "space-villain"
 icons = "awesome5"
+scrolling = "natural"
 
 
 [[block]]
@@ -23,7 +24,8 @@ buttons = ["play", "prev", "next"]
 
 [[block]]
 block = "sound"
-format = "{output_name} {volume}"
+#format = "{output_name} {volume}"
+format = "{output_description} {volume}"
 step_width = 1
 [block.mappings]
 "alsa_output.usb-Logitech_G560_Gaming_Speaker_00000000-00.analog-stereo" = "🔈"
