@@ -35,7 +35,6 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -52,5 +51,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-(custom-set-variables '(org-trello-files '("~/trello.org")))
