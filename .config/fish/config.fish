@@ -27,6 +27,8 @@ type -q thefuck; and thefuck --alias | source &
 type -q gh; and gh completion -s fish | source &
 type -q bat; and set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
+test -e ~/.secrets.fish && source ~/.secrets.fish
+
 # emacs tramp
 if test "$TERM" = "dumb"
   function fish_prompt

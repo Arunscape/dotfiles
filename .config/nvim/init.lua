@@ -52,6 +52,63 @@ vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 
+require('formatter').setup({
+  filetype = {
+    rust = {
+      -- Rustfmt
+      function()
+        return {
+          exe = "rustfmt",
+          args = {"--emit=stdout"},
+          stdin = true
+        }
+      end
+    },
+    javascript = {
+      -- prettier
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
+          stdin = true
+        }
+      end
+    },
+    sh = {
+        -- Shell Script Formatter
+       function()
+         return {
+           exe = "shfmt",
+           args = { "-i", 2 },
+           stdin = true,
+         }
+       end,
+   },
+   lua = {
+        -- luafmt
+        function()
+          return {
+            exe = "luafmt",
+            args = {"--indent-count", 2, "--stdin"},
+            stdin = true
+          }
+        end
+    },
+    cpp = {
+        -- clang-format
+       function()
+          return {
+            exe = "clang-format",
+            args = {"--assume-filename", vim.api.nvim_buf_get_name(0)},
+            stdin = true,
+            cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.
+          }
+        end
+    },
+  }
+})
+-- Provided by setup function
+--nnoremap <silent> <leader>f :Format<CR>
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -66,6 +123,13 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+vim.api.nvim_exec([[
+augroup Format
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
+]], true)
 
 local function setup_servers()
   require'lspinstall'.setup()
@@ -98,7 +162,7 @@ local function setup_servers()
   }
 
 
-  vim.cmd("let g:coq_settings = { 'auto_start': v:true }")
+  vim.cmd("let g:coq_settings = { 'auto_start': 'shut-up' }")
 
   local servers = {}
   for _, lang in pairs(require'lspinstall'.installed_servers()) do
