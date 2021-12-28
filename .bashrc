@@ -4,11 +4,6 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 # Aliases
-alias vi=vim
-alias fucking=sudo
-alias ls=lsd
-alias f=fuck
-alias grep=rg
 
 if [[ $TERM = dumb ]]; then
     return

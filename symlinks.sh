@@ -13,12 +13,10 @@ ln -sf $HOME/dotfiles/.config/ranger/ $HOME/.config/
 ln -sf $HOME/dotfiles/.config/zathura/ $HOME/.config/
 ln -sf $HOME/dotfiles/.config/mako $HOME/.config/
 ln -sf $HOME/dotfiles/.config/wallpaper $HOME/.config/wallpaper
-ln -sf $HOME/dotfiles/.emacs.d $HOME/.emacs.d
 ln -sf $HOME/dotfiles/.config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf
 ln -sf $HOME/dotfiles/.config/wofi $HOME/.config/
 ln -sf $HOME/dotfiles/.config/base16-shell $HOME/.config/base16-shell
 ln -sf $HOME/dotfiles/.doom.d $HOME
-ln -sf $HOME/dotfiles/.config/X11/nvidia-xinitrc $HOME/.config/X11/nvidia-xinitrc
 ln -sf $HOME/dotfiles/.config/picom $HOME/.config
 ln -sf $HOME/dotfiles/.config/i3 $HOME/.config
 ln -sf $HOME/dotfiles/.config/i3status-rust $HOME/.config

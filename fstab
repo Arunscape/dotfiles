@@ -1,0 +1,1 @@
+LABEL=NAS /home/arunscape/nas btrfs defaults,noatime,compress-force=zstd,autodefrag 0 0
