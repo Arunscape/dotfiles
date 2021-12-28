@@ -3,7 +3,8 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-font Fira Code 10
+#font Fira Code 10
+font Fira Code 7
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -26,7 +27,7 @@ output * bg ~/.config/wallpaper fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output HDMI-A-1 resolution 1920x1080 position 0,0
+output HDMI-A-1 resolution 3840x2160 position 0,0
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
@@ -58,9 +59,12 @@ bindswitch --reload --locked lid:off output $laptop enable
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-    input "1267:12384:ELAN0501:01_04F3:3060_Touchpad" {
+    input type:touchpad {
         tap enabled
         natural_scroll enabled
+        dwt disabled
+        accel_profile "flat"
+        pointer_accel 1
     }
 
 ### Key bindings
@@ -206,7 +210,8 @@ bindsym $mod+r mode "resize"
 #}
 
 bar {
-  swaybar_command waybar
+  status_command i3status-rs
+  position top
 }
 
 include /etc/sway/config.d/*
@@ -257,4 +262,14 @@ client.focused          #1c0500 #ac9a71 #f6dda2 #FAA754   #CD5E34
 client.focused_inactive #1c0500 #1c0500 #f6dda2 #1c0500   #1c0500
 #client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 #client.urgent           #2f343a #900000 #ffffff #900000   #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland QT_QPA_PLATFORM=wayland-egl QT_WAYLAND_FORCE_DPI=physical QT_WAYLAND_DISABLE_WINDOWDECORATION=1 MOZ_ENABLE_WAYLAND=1 _JAVA_AWT_WM_NONREPARENTING=1 
+
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Materia-dark'
+#    gsettings set $gnome-schema icon-theme 'Your icon theme'
+#    gsettings set $gnome-schema cursor-theme 'Your cursor Theme'
+#    gsettings set $gnome-schema font-name 'Your font name'
+}

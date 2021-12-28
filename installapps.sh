@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S --noconfirm --needed \
+sudo pacman -S --needed \
 neovim \
 firefox-developer-edition \
 noto-fonts \
@@ -38,30 +38,31 @@ mako \
 rustup \
 clang \
 materia-gtk-theme \
-pulseaudio \
-alsa-utils \
-otf-font-awesome \
-waybar \
 xorg-xwayland \
-pavucontrol \
-nodejs \
-yarn \
-github-cli
+github-cli \
+mesa \
+emacs \
+steam \
+bluez \
+bluez-utils \
+pipewire \
+pipewire-pulse \
+arch-wiki-lite \
+man-db
 
 
 
-yay -S --noconfirm --needed \
+
+paru -S --needed \
 ttf-twemoji \
 starship \
 universal-ctags-git \
 ripgrep-all \
 spotify \
-ytop \
 texlive-latexindent-meta \
-minecraft \
-nvidia-prime
-
-
-rustup default nightly
+minecraft
 
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
