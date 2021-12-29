@@ -1,0 +1,3 @@
+function minexmr
+  sudo nice -n 19 xmrig -o ca.minexmr.com:443 -u 89uzt9WNeXmQYGn6P5CbVo9wo67qm2mULepyXvyjS5UDaHduSDkVtKPiGQo9nTGitCLLQ1F8hg6LYeN99ujv1Gh72HARnPu -k --tls --rig-id desktop --donate-level 0
+end
