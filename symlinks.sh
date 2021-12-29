@@ -1,7 +1,7 @@
 #!/bin/bash
+set +e
 
 mkdir -p $HOME/.config
-mkdir $HOME/.config/X11
 ln -sf $HOME/dotfiles/.bashrc $HOME/.bashrc
 ln -sf $HOME/dotfiles/.makepkg.conf $HOME/.makepkg.conf
 ln -sf $HOME/dotfiles/.latexmkrc $HOME/.latexmkrc

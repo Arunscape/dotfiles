@@ -17,6 +17,7 @@ set -x VISUAL nvim
 #set -U fish_user_paths /opt/android-sdk/emulator $fish_user_paths
 set -U fish_user_paths /opt/android-sdk/platform-tools $fish_user_paths
 #set -x CHROME_EXECUTABLE google-chrome-stable
+set -x DOCKER_HOST "unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 type -q starship; and starship init fish | source &
 type -q thefuck; and thefuck --alias | source &
