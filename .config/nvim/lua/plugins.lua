@@ -14,15 +14,15 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'RRethy/nvim-base16'
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  use 'nvim-lua/lsp_extensions.nvim'
+  use 'simrat39/rust-tools.nvim'
   use 'sbdchd/neoformat'
   use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-  use 'kabouzeid/nvim-lspinstall'
   use { 'ms-jpq/coq_nvim', branch = 'coq'} -- fast as fuck completion
   use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
   use 'kosayoda/nvim-lightbulb'
-  use 'mhartington/formatter.nvim'
-  use 'nvim-lua/lsp_extensions.nvim'
 end)
