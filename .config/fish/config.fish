@@ -10,6 +10,7 @@ set PATH $PATH ~/.cargo/bin
 set PATH $PATH ~/go/bin
 set PATH $PATH ~/.emacs.d/bin
 set PATH $PATH ~/.deno/bin
+set PATH $PATH ~/.local/bin
 
 #set -g fish_emoji_width 2
 set -x VISUAL nvim
