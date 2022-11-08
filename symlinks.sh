@@ -21,5 +21,6 @@ ln -sf $HOME/dotfiles/.config/picom $HOME/.config
 ln -sf $HOME/dotfiles/.config/i3 $HOME/.config
 ln -sf $HOME/dotfiles/.config/i3status-rust $HOME/.config
 ln -sf $HOME/dotfiles/.config/paru $HOME/.config
+ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
 
 sudo ln -sf /bin/dash /bin/sh

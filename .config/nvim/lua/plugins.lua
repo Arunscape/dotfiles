@@ -1,28 +1,37 @@
-local fn = vim.fn
-
--- Auto install packer.nvim
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-
-if fn.isdirectory(install_path) == 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  vim.cmd 'autocmd User PackerComplete ++once'
-  require('packer').sync()
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
-return require('packer').startup(function()
-  -- Packer can manage itself
+local packer_bootstrap = ensure_packer()
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'RRethy/nvim-base16'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use 'nvim-lua/lsp_extensions.nvim'
-  use 'simrat39/rust-tools.nvim'
-  use 'sbdchd/neoformat'
-  use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-  use { 'ms-jpq/coq_nvim', branch = 'coq'} -- fast as fuck completion
-  use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
-  use 'kosayoda/nvim-lightbulb'
+  use 'ms-jpq/coq_nvim'
+  use 'ms-jpq/coq.artifacts'
+  use 'ms-jpq/thirdparty'
+  use 'RRethy/nvim-base16'
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
+
