@@ -64,7 +64,7 @@ require("mason-lspconfig").setup({
       "lemminx",
       "yamlls",
     },
-    automatic_installation = false,
+    automatic_installation = true,
 })
 
 vim.g.coq_settings = {
