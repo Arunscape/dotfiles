@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
+eval $(thefuck --alias)
 
 vim() {
 	if hash nvim 2>/dev/null; then
@@ -142,4 +143,17 @@ ls() {
   fi
 }
 
-test -f ~/.atb.zshrc && source ~/.atb.zshrc
+ranger() {
+  tempfile=$(mktemp)
+
+  command ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+  test -f "$tempfile" && 
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+      cd -- "$(cat "$tempfile")"
+    fi
+  rm -f -- "$tempfile"
+}
+
+[ -f ~/.atb.zsh ] && source ~/.atb.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden'

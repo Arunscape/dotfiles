@@ -7,6 +7,7 @@ if [ $ANSWER == "yes" ]
 then
     git config --global user.email "8227297+Arunscape@users.noreply.github.com"
     git config --global user.name "Arunscape"
+    git config --global push.autoSetupRemote true
 fi
 
 cat > $HOME/.gitignore_global << EOF
