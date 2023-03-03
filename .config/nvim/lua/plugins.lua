@@ -25,8 +25,12 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'ms-jpq/coq_nvim'
   use 'ms-jpq/coq.artifacts'
-  use 'ms-jpq/thirdparty'
-  use 'RRethy/nvim-base16'
+  use {
+    'ms-jpq/thirdparty',
+    branch = '3p',
+  }
+  --use 'RRethy/nvim-base16'
+  use 'EdenEast/nightfox.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
