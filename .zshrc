@@ -8,7 +8,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+if [ $TERM = "dumb" ]; then
+  ZSH_THEME="bira"
+else
+  ZSH_THEME="robbyrussell"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -75,7 +79,9 @@ plugins=(
 	zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
+if [ $TERM != "dumb" ]; then
+  source $ZSH/oh-my-zsh.sh
+fi
 
 # User configuration
 
@@ -105,8 +111,13 @@ source $ZSH/oh-my-zsh.sh
 
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
-eval $(thefuck --alias)
+[ -f ~/.atb.zsh ] && source ~/.atb.zsh
+if [ $TERM != "dumb" ]; then
+  eval "$(starship init zsh)"
+  eval $(thefuck --alias)
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  export FZF_DEFAULT_COMMAND='rg --files --hidden'
+fi
 
 vim() {
 	if hash nvim 2>/dev/null; then
@@ -154,6 +165,3 @@ ranger() {
   rm -f -- "$tempfile"
 }
 
-[ -f ~/.atb.zsh ] && source ~/.atb.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
