@@ -19,6 +19,9 @@ set -x VISUAL nvim
 set -U fish_user_paths /opt/android-sdk/platform-tools $fish_user_paths
 #set -x CHROME_EXECUTABLE google-chrome-stable
 set -x DOCKER_HOST "unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+set -x SDL_VIDEODRIVER wayland
+set -x MOZ_ENABLE_WAYLAND 1
+set -x GTK_THEME Catppuccin-blue:dark
 
 type -q starship; and starship init fish | source &
 type -q thefuck; and thefuck --alias | source &

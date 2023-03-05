@@ -89,9 +89,15 @@ require("mason-lspconfig").setup_handlers {
 
 --vim.cmd('colorscheme base16-chalk')
 
-require('nightfox').setup({
-  options = {
-    transparent = true
-  },
+--require('nightfox').setup({
+--  options = {
+--    transparent = true
+--  },
+--})
+--vim.cmd('colorscheme carbonfox')
+
+require("catppuccin").setup({
+    flavour = "mocha",
+    transparent_background = true,
 })
-vim.cmd('colorscheme carbonfox')
+vim.cmd.colorscheme "catppuccin"

@@ -30,7 +30,8 @@ return require('packer').startup(function(use)
     branch = '3p',
   }
   --use 'RRethy/nvim-base16'
-  use 'EdenEast/nightfox.nvim'
+  --use 'EdenEast/nightfox.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

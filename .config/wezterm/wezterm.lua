@@ -22,18 +22,18 @@ end)
 
 return {
   font = wezterm.font 'Monocraft',
-  color_scheme = "carbonfox",
+  color_scheme = "Catppuccin Mocha",
   window_background_opacity = window_background_opacity,
   keys = {
     {
       key = 'LeftArrow',
       mods = 'CTRL',
-      action = wezterm.action.EmitEvent 'decrease-opacity',
+      action = wezterm.action.EmitEvent 'increase-opacity',
     },
     {
       key = 'RightArrow',
       mods = 'CTRL',
-      action = wezterm.action.EmitEvent 'increase-opacity',
+      action = wezterm.action.EmitEvent 'decrease-opacity',
     },
   },
 --  debug_key_events = true,
