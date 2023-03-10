@@ -37,39 +37,28 @@ vim.opt.smartindent = true
 vim.opt.wildignore = {'*/cache/*', '*/tmp/*', "*/target/*", "*/build/*", "*/node_modules/*"}
 
 --vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
+-- leader+y to copy to system clipboard
 vim.api.nvim_set_keymap("", "<leader>y", [["+y]], {noremap = true, silent = true})
+-- leader+p to paste from system clipboard
 vim.api.nvim_set_keymap("", "<leader>p", [["+p]], {noremap = true, silent = true})
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+-- leader+t to toggle file view
+local nvimtree = require('nvim-tree.api')
+vim.keymap.set("n", '<leader>t', nvimtree.tree.toggle, {})
 
 require('plugins')
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { 
-      "sumneko_lua", 
-      "rust_analyzer", 
-      "bashls",
-      "awk_ls",
-      "cssmodules_ls",
-      "dockerls",
-      "eslint",
-      "grammarly",
-      "graphql",
-      "html",
-      "jsonls",
-      "tsserver",
-      "pyright",
-      "taplo", --toml
-      "vimls",
-      "lemminx",
-      "yamlls",
-    },
     automatic_installation = true,
+    automatic_setup = true,
 })
 
-vim.g.coq_settings = {
-  auto_start = 'shut-up',
-}
 local coq = require "coq"
 require("mason-lspconfig").setup_handlers {
         -- The first entry (without a key) will be the default handler
@@ -87,6 +76,12 @@ require("mason-lspconfig").setup_handlers {
         -- end
 }
 
+require("mason-null-ls").setup({
+    automatic_installation = true,
+    automatic_setup = true,
+})
+require('mason-null-ls').setup_handlers()
+
 --vim.cmd('colorscheme base16-chalk')
 
 --require('nightfox').setup({
@@ -99,5 +94,46 @@ require("mason-lspconfig").setup_handlers {
 require("catppuccin").setup({
     flavour = "mocha",
     transparent_background = true,
+    integrations = {
+      coc_nvim = true,
+      treesitter = true,
+      indent_blankline = {
+        enabled = true,
+        colored_indent_levels = true,
+      },
+      markdown = true,
+      mason = true,
+      nvimtree = true,
+      telescope = true,
+      gitsigns = true,
+    }
 })
 vim.cmd.colorscheme "catppuccin"
+
+require'nvim-treesitter.configs'.setup {
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = {'org'},
+  },
+}
+
+require('telescope').setup{}
+require('telescope').load_extension('fzf')
+
+require("nvim-tree").setup({
+  filters = {
+    dotfiles = true,
+  },
+})
+
+require('gitsigns').setup()
+require("indent_blankline").setup {}
+require('orgmode').setup_ts_grammar()
+
+vim.cmd("autocmd BufWritePre lua vim.lsp.buf.format()")
+
+vim.g.coq_settings = {
+  auto_start = 'shut-up',
+}
