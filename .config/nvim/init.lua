@@ -43,6 +43,6 @@ vim.api.nvim_set_keymap("", "<leader>y", [["+y]], { noremap = true, silent = tru
 vim.api.nvim_set_keymap("", "<leader>p", [["+p]], { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>f', function()
-  vim.lsp.buf.format{async=true}
+  vim.lsp.buf.format { async = true }
 end, {})
 require('plugins')

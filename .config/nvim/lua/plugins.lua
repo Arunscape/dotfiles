@@ -33,8 +33,8 @@ local plugins = {
           gitsigns = true,
         }
       })
-     vim.cmd.colorscheme "catppuccin"
-    end 
+      vim.cmd.colorscheme "catppuccin"
+    end
   },
   {
     'ms-jpq/coq_nvim',
@@ -56,9 +56,9 @@ local plugins = {
   'neovim/nvim-lspconfig',
   {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = { 
+    dependencies = {
       'neovim/nvim-lspconfig',
-      'williamboman/mason.nvim' ,
+      'williamboman/mason.nvim',
       'ms-jpq/coq_nvim',
       'ms-jpq/coq.artifacts',
       'ms-jpq/coq.thirdparty',
@@ -120,7 +120,7 @@ local plugins = {
         -- ["rust_analyzer"] = function ()
         --     require("rust-tools").setup {}
         -- end
-	      ["lua_ls"] = function()
+        ["lua_ls"] = function()
           require("lspconfig")["lua_ls"].setup {
             coq.lsp_ensure_capabilities {
               settings = {
@@ -153,7 +153,7 @@ local plugins = {
     branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('telescope').setup{}
+      require('telescope').setup {}
       require('telescope').load_extension('fzf')
 
       local builtin = require('telescope.builtin')
@@ -166,10 +166,10 @@ local plugins = {
   {
     'nvim-treesitter/nvim-treesitter',
     build = function()
-        require("nvim-treesitter.install").update({ with_sync = true })
+      require("nvim-treesitter.install").update({ with_sync = true })
     end,
     config = function()
-      require('nvim-treesitter.configs').setup{
+      require('nvim-treesitter.configs').setup {
         auto_install = true,
         highlight = {
           enable = true,
@@ -182,7 +182,7 @@ local plugins = {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      require('nvim-tree').setup{
+      require('nvim-tree').setup {
         filters = {
           dotfiles = true,
         },
@@ -199,7 +199,7 @@ local plugins = {
     'nvim-orgmode/orgmode',
     --ft= {'org'},
     config = function()
-      require('orgmode').setup{}
+      require('orgmode').setup {}
       require('orgmode').setup_ts_grammar()
     end
   },
@@ -207,11 +207,3 @@ local plugins = {
 
 local opts = nil
 require("lazy").setup(plugins, opts)
-
-
-
-
-
-
-
-
