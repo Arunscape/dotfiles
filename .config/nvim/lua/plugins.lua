@@ -205,14 +205,6 @@ local plugins = {
   'lukas-reineke/indent-blankline.nvim',
   'github/copilot.vim',
   {
-    'nvim-orgmode/orgmode',
-    --ft= {'org'},
-    config = function()
-      require('orgmode').setup {}
-      require('orgmode').setup_ts_grammar()
-    end
-  },
-  {
     'akinsho/bufferline.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = true,
