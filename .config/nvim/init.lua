@@ -45,4 +45,9 @@ vim.api.nvim_set_keymap("", "<leader>p", [["+p]], { noremap = true, silent = tru
 vim.keymap.set('n', '<leader>f', function()
   vim.lsp.buf.format { async = true }
 end, {})
+
+vim.g.coq_settings = {
+  auto_start = 'shut-up',
+}
+
 require('plugins')

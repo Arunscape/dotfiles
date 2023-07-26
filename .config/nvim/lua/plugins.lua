@@ -216,7 +216,8 @@ local plugins = {
     'akinsho/bufferline.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = true,
-  }
+  },
+  'simrat39/rust-tools.nvim'
 }
 
 local opts = nil

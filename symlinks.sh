@@ -24,5 +24,6 @@ ln -sf $HOME/dotfiles/.config/paru $HOME/.config
 ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -sf $HOME/dotfiles/.config/wezterm $HOME/.config
 ln -sf $HOME/dotfiles/.config/eww $HOME/.config
+ln -sf $HOME/dotfiles/.config/hypr $HOME/.config
 
 sudo ln -sf /bin/dash /bin/sh
