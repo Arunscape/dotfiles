@@ -1,0 +1,82 @@
+---
+- name: I use Arch, btw
+  hosts: localhost
+  connection: local
+  vars_files:
+    - vars/pacman_packages.yml
+    - vars/aur_packages.yml
+
+  tasks:
+    - name: Update pacman.conf Settings
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/pacman.conf
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+      loop:
+        - { regexp: '^#Color', line: 'Color' }
+        - { regexp: '^#VerbosePkgLists', line: 'VerbosePkgLists' }
+        - { regexp: '^#ParallelDownloads', line: 'ParallelDownloads = 12' }
+    - name: ILoveCandy
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/pacman.conf
+        line: ILoveCandy
+        insertafter: '^Color'
+
+    - name: Install packages
+      become: true
+      ansible.builtin.package:
+        name: "{{ pacman_packages }}"
+        state: present
+
+    - name: Create AUR-Builder User
+      become: true
+      ansible.builtin.user:
+        name: aur_builder
+
+    - name: Give aur_builder user Pacman privileges
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/aur_builder-allow-to-sudo-pacman
+        state: present
+        line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+        validate: /usr/sbin/visudo -cf %s
+        create: true
+        mode: "0440"
+
+    - name: Install paru
+      become: true
+      become_user: aur_builder
+      args:
+        creates: /usr/bin/paru
+      ansible.builtin.shell: |
+        set -o pipefail
+        git clone https://aur.archlinux.org/paru.git
+        cd paru
+        yes | makepkg -si
+        cd -
+        rm -rf paru
+
+    # idk why this fails
+    - name: Install AUR packages
+      become: true
+      become_user: aur_builder
+      ignore_errors: true # noqa: ignore-errors
+      community.general.pacman:
+        executable: paru
+        name: "{{ aur_packages }}"
+        state: present
+
+    - name: Check if dotfiles cloned
+      ansible.builtin.stat:
+        path: /home/arunscape/dotfiles
+      register: dotfiles_folder
+
+    - name: Clone dotfiles
+      when: not dotfiles_folder.stat.exists
+      ansible.builtin.git: # noqa: git-latest
+        repo: https://github.com/Arunscape/dotfiles.git
+        dest: /home/arunscape/dotfiles
+
+# sudo usermod -aG input $USER

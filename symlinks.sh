@@ -5,25 +5,41 @@ mkdir -p $HOME/.config
 ln -sf $HOME/dotfiles/.bashrc $HOME/.bashrc
 ln -sf $HOME/dotfiles/.makepkg.conf $HOME/.makepkg.conf
 ln -sf $HOME/dotfiles/.latexmkrc $HOME/.latexmkrc
-ln -sf $HOME/dotfiles/.config/kitty/ $HOME/.config/
-ln -sf $HOME/dotfiles/.config/sway/ $HOME/.config/
-ln -sf $HOME/dotfiles/.config/fish/ $HOME/.config/
-ln -sf $HOME/dotfiles/.config/nvim/ $HOME/.config/
-ln -sf $HOME/dotfiles/.config/ranger/ $HOME/.config/
-ln -sf $HOME/dotfiles/.config/zathura/ $HOME/.config/
-ln -sf $HOME/dotfiles/.config/mako $HOME/.config/
 ln -sf $HOME/dotfiles/.config/wallpaper $HOME/.config/wallpaper
 ln -sf $HOME/dotfiles/.config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf
-ln -sf $HOME/dotfiles/.config/wofi $HOME/.config/
-ln -sf $HOME/dotfiles/.config/base16-shell $HOME/.config/base16-shell
-ln -sf $HOME/dotfiles/.doom.d $HOME
-ln -sf $HOME/dotfiles/.config/picom $HOME/.config
-ln -sf $HOME/dotfiles/.config/i3 $HOME/.config
-ln -sf $HOME/dotfiles/.config/i3status-rust $HOME/.config
-ln -sf $HOME/dotfiles/.config/paru $HOME/.config
 ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
-ln -sf $HOME/dotfiles/.config/wezterm $HOME/.config
-ln -sf $HOME/dotfiles/.config/eww $HOME/.config
-ln -sf $HOME/dotfiles/.config/hypr $HOME/.config
 
-sudo ln -sf /bin/dash /bin/sh
+
+ln_overwrite_folder(){
+    # $1 is the source
+    # $2 is the destination
+
+    mkdir -p deleteme
+
+    # if ~/$1 not a link move it to a folder
+    [ ! -L $HOME/$1 ] && mv $HOME/$1 deleteme
+
+    ln -sf $HOME/dotfiles/$1 $2
+
+    [ -d deleteme/$1 ] && echo consider deleting: deleteme/$1
+
+}
+
+ln_overwrite_folder .doom.d $HOME
+ln_overwrite_folder .config/kitty/ $HOME/.config/
+ln_overwrite_folder .config/sway/ $HOME/.config/
+ln_overwrite_folder .config/fish/ $HOME/.config/
+ln_overwrite_folder .config/nvim/ $HOME/.config/
+ln_overwrite_folder .config/ranger/ $HOME/.config/
+ln_overwrite_folder .config/zathura/ $HOME/.config/
+ln_overwrite_folder .config/mako $HOME/.config/
+ln_overwrite_folder .config/wofi $HOME/.config/
+ln_overwrite_folder .config/picom $HOME/.config
+ln_overwrite_folder .config/i3 $HOME/.config
+ln_overwrite_folder .config/i3status-rust $HOME/.config
+ln_overwrite_folder .config/paru $HOME/.config
+ln_overwrite_folder .config/wezterm $HOME/.config
+ln_overwrite_folder .config/eww $HOME/.config
+ln_overwrite_folder .config/hypr $HOME/.config
+
+[ -f /bin/dash ] && sudo ln -sf /bin/dash /bin/sh
