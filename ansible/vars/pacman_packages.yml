@@ -1,33 +1,48 @@
 pacman_packages:
   - ansible
   - ansible-lint
+  - arch-wiki-docs
   - base
   - base-devel
+  - bat
   - btrfs-progs
   - code
   - dash
   - dhcpcd
   - efibootmgr
+  - emacs-nativecomp
   - firefox-developer-edition
   - fish
+  - fzf
   - git
+  - grim
   - hyprland
+  - intellij-idea-community-edition
   - linux
   - linux-lts
   - linux-zen
+  - man-pages
+  - neofetch
   - neovim
   - noto-fonts
   - noto-fonts-emoji
+  - obsidian
   - pipewire
-  - steam
-  - vulkan-radeon
-  - wezterm
-  - wireplumber
-  - starship
-  - wofi
-  - fzf
-  - thefuck
-  - neofetch
   - ripgrep
-  - bat
+  - rust-analyzer
+  - rustup
+  - slurp
+  - starship
+  - steam
+  - thefuck
+  - vulkan-radeon
   - waybar
+  - wezterm
+  - wofi
+  - hyprpaper
+  - greetd-tuigreet
+  - jdk-openjdk
+  - spotify-launcher
+  - 
+
+

@@ -30,6 +30,11 @@
         name: "{{ pacman_packages }}"
         state: present
 
+    - name: Set Rust version # noqa: no-changed-when
+      ansible.builtin.shell: |
+        rustup default stable
+        rustup update
+
     - name: Create AUR-Builder User
       become: true
       ansible.builtin.user:
@@ -78,5 +83,32 @@
       ansible.builtin.git: # noqa: git-latest
         repo: https://github.com/Arunscape/dotfiles.git
         dest: /home/arunscape/dotfiles
+
+    - name: Symlinks # noqa: no-changed-when
+      ansible.builtin.shell: |
+        ../symlinks.sh
+
+    - name: Greetd setup
+      ansible.builtin.copy:
+        dest: /etc/greetd/config.toml
+        mode: "0664"
+        content: |
+          [terminal]
+          vt = 1
+
+          [default_session]
+          command = "tuigreet --cmd Hyprland"
+
+          [initial_session]
+          command = "Hyprland"
+          user = "arunscape"
+
+    - name: Make dash default sh # noqa: no-changed-when
+      ansible.builtin.shell: |
+        [ -f /bin/dash ] && sudo ln -sf /bin/dash /bin/sh
+    
+    # - name: Harden ssh
+
+
 
 # sudo usermod -aG input $USER

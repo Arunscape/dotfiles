@@ -17,7 +17,7 @@ ln_overwrite_folder(){
     mkdir -p deleteme
 
     # if ~/$1 not a link move it to a folder
-    [ ! -L $HOME/$1 ] && mv $HOME/$1 deleteme
+    [ ! -L "$HOME/$1" ] && [ -d "$HOME/$1" ] && mv -f $HOME/$1 deleteme
 
     ln -sf $HOME/dotfiles/$1 $2
 
@@ -25,15 +25,17 @@ ln_overwrite_folder(){
 
 }
 
+# https://unix.stackexchange.com/questions/29769/trailing-slashes-on-symbolic-links-to-directories
+# no trailing slashes for this to work!
 ln_overwrite_folder .doom.d $HOME
-ln_overwrite_folder .config/kitty/ $HOME/.config/
-ln_overwrite_folder .config/sway/ $HOME/.config/
-ln_overwrite_folder .config/fish/ $HOME/.config/
-ln_overwrite_folder .config/nvim/ $HOME/.config/
-ln_overwrite_folder .config/ranger/ $HOME/.config/
-ln_overwrite_folder .config/zathura/ $HOME/.config/
-ln_overwrite_folder .config/mako $HOME/.config/
-ln_overwrite_folder .config/wofi $HOME/.config/
+ln_overwrite_folder .config/kitty $HOME/.config
+ln_overwrite_folder .config/sway $HOME/.config
+ln_overwrite_folder .config/fish $HOME/.config
+ln_overwrite_folder .config/nvim $HOME/.config
+ln_overwrite_folder .config/ranger $HOME/.config
+ln_overwrite_folder .config/zathura $HOME/.config
+ln_overwrite_folder .config/mako $HOME/.config
+ln_overwrite_folder .config/wofi $HOME/.config
 ln_overwrite_folder .config/picom $HOME/.config
 ln_overwrite_folder .config/i3 $HOME/.config
 ln_overwrite_folder .config/i3status-rust $HOME/.config
@@ -41,5 +43,4 @@ ln_overwrite_folder .config/paru $HOME/.config
 ln_overwrite_folder .config/wezterm $HOME/.config
 ln_overwrite_folder .config/eww $HOME/.config
 ln_overwrite_folder .config/hypr $HOME/.config
-
-[ -f /bin/dash ] && sudo ln -sf /bin/dash /bin/sh
+ln_overwrite_folder .config/waybar $HOME/.config
