@@ -5,6 +5,7 @@
   vars_files:
     - vars/pacman_packages.yml
     - vars/aur_packages.yml
+    
 
   tasks:
     - name: Update pacman.conf Settings
@@ -17,6 +18,7 @@
         - { regexp: '^#Color', line: 'Color' }
         - { regexp: '^#VerbosePkgLists', line: 'VerbosePkgLists' }
         - { regexp: '^#ParallelDownloads', line: 'ParallelDownloads = 12' }
+
     - name: ILoveCandy
       become: true
       ansible.builtin.lineinfile:
@@ -30,7 +32,7 @@
         name: "{{ pacman_packages }}"
         state: present
 
-    - name: Set Rust version # noqa: no-changed-when
+    - name: Rustup default stable # noqa: no-changed-when
       ansible.builtin.shell: |
         rustup default stable
         rustup update
@@ -64,12 +66,20 @@
         rm -rf paru
 
     # idk why this fails
+    # - name: Install AUR packages
+    #   become: true
+    #   become_user: aur_builder
+    #   ignore_errors: true # noqa: ignore-errors
+    #   community.general.pacman:
+    #     executable: paru
+    #     name: "{{ aur_packages }}"
+    #     state: present
+
     - name: Install AUR packages
       become: true
       become_user: aur_builder
-      ignore_errors: true # noqa: ignore-errors
-      community.general.pacman:
-        executable: paru
+      kewlfft.aur.aur:
+        use: paru
         name: "{{ aur_packages }}"
         state: present
 
@@ -85,10 +95,13 @@
         dest: /home/arunscape/dotfiles
 
     - name: Symlinks # noqa: no-changed-when
+      async: true
+      poll: 0
       ansible.builtin.shell: |
         ../symlinks.sh
 
     - name: Greetd setup
+      become: true
       ansible.builtin.copy:
         dest: /etc/greetd/config.toml
         mode: "0664"
@@ -103,12 +116,49 @@
           command = "Hyprland"
           user = "arunscape"
 
+    - name: Enable Services
+      become: true
+      async: true
+      poll: 0
+      ansible.builtin.service:
+        name: "{{ item }}"
+        enabled: true
+      loop:
+        - greetd
+        - zfs-import-cache.service
+
     - name: Make dash default sh # noqa: no-changed-when
+      become: true
+      async: true
+      poll: 0
       ansible.builtin.shell: |
         [ -f /bin/dash ] && sudo ln -sf /bin/dash /bin/sh
-    
-    # - name: Harden ssh
 
+    - name: Harden SSH
+      ansible.builtin.include_tasks: tasks/ssh.yml
 
+    - name: Add myself to groups
+      become: true
+      async: true
+      poll: 0
+      ansible.builtin.user:
+        name: arunscape
+        groups:
+          - input
 
-# sudo usermod -aG input $USER
+    - name: Restart pipewire
+      async: true
+      poll: 0
+      ansible.builtin.systemd_service:
+        name: pipewire
+        state: restarted
+        scope: user
+        
+  handlers:
+    - name: Restart sshd
+      become: true
+      async: true
+      ansible.builtin.service:
+        name: sshd
+        state: reloaded
+        enabled: true

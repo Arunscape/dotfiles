@@ -6,43 +6,53 @@ pacman_packages:
   - base-devel
   - bat
   - btrfs-progs
+  - clang
   - code
   - dash
   - dhcpcd
-  - efibootmgr
+  - discord
   - emacs-nativecomp
   - firefox-developer-edition
   - fish
   - fzf
+  - gamemode
   - git
+  - greetd-tuigreet
   - grim
   - hyprland
+  - hyprpaper
   - intellij-idea-community-edition
+  - jdk-openjdk
   - linux
+  - linux-headers
   - linux-lts
+  - linux-lts-headers
   - linux-zen
+  - linux-zen-headers
+  - man-db
   - man-pages
   - neofetch
   - neovim
+  - noise-suppression-for-voice
   - noto-fonts
   - noto-fonts-emoji
   - obsidian
+  - openssh
+  - pavucontrol
   - pipewire
   - ripgrep
   - rust-analyzer
   - rustup
   - slurp
+  - spotify-launcher
   - starship
   - steam
   - thefuck
   - vulkan-radeon
   - waybar
   - wezterm
+  - wl-clipboard
   - wofi
-  - hyprpaper
-  - greetd-tuigreet
-  - jdk-openjdk
-  - spotify-launcher
-  - 
+  
 
 

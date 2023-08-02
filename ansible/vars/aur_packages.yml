@@ -5,6 +5,5 @@ aur_packages:
   - proton-ge-custom-bin
   - otf-monocraft
   - zfs-dkms
+  - zfs-utils
   - prismlauncher
-  - pavucontrol
-  - clang

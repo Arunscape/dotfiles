@@ -23,6 +23,8 @@ ln_overwrite_folder(){
 
     [ -d deleteme/$1 ] && echo consider deleting: deleteme/$1
 
+    echo linked $HOME/$1
+
 }
 
 # https://unix.stackexchange.com/questions/29769/trailing-slashes-on-symbolic-links-to-directories
@@ -44,3 +46,4 @@ ln_overwrite_folder .config/wezterm $HOME/.config
 ln_overwrite_folder .config/eww $HOME/.config
 ln_overwrite_folder .config/hypr $HOME/.config
 ln_overwrite_folder .config/waybar $HOME/.config
+ln_overwrite_folder .config/pipewire $HOME/.config
