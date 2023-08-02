@@ -5,7 +5,7 @@
 @define-color bg2 #494d64;
 
  * {
-    font-family: 'JetBrains Mono Nerd Font', monospace;
+    font-family: 'Monocraft', monospace;
     font-size: 14px;
  }
 
@@ -16,7 +16,7 @@
     border: 3px solid @accent;
     border-radius: 7px;
     background-color: @bg;
-    animation: slideIn 0.5s ease-in-out both;
+    /*animation: slideIn 0.5s ease-in-out both;*/
  }
 
  /* Slide In */
@@ -36,7 +36,7 @@
     padding: 10px;
     border: none;
     background-color: @bg;
-    animation: fadeIn 0.5s ease-in-out both;
+    /*animation: fadeIn 0.5s ease-in-out both;*/
  }
 
  /* Fade In */
@@ -81,7 +81,7 @@
     padding: 10px;
     border: none;
     color: @txt;
-    animation: fadeIn 0.5s ease-in-out both;
+    /*animation: fadeIn 0.5s ease-in-out both;*/
  }
 
  /* Selected Entry */
