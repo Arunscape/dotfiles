@@ -5,7 +5,6 @@
   vars_files:
     - vars/pacman_packages.yml
     - vars/aur_packages.yml
-    
 
   tasks:
     - name: Update pacman.conf Settings
@@ -126,6 +125,7 @@
       loop:
         - greetd
         - zfs-import-cache.service
+        - sshd
 
     - name: Make dash default sh # noqa: no-changed-when
       become: true
@@ -135,7 +135,16 @@
         [ -f /bin/dash ] && sudo ln -sf /bin/dash /bin/sh
 
     - name: Harden SSH
-      ansible.builtin.include_tasks: tasks/ssh.yml
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+      loop:
+        - { regexp: '^#PermitRootLogin', line: 'PermitRootLogin no' }
+        - { regexp: '^#PasswordAuthentication', line: 'PasswordAuthentication no'}
+      notify:
+        - reload sshd
 
     - name: Add myself to groups
       become: true
@@ -153,11 +162,12 @@
         name: pipewire
         state: restarted
         scope: user
-        
+
   handlers:
     - name: Restart sshd
       become: true
       async: true
+      poll: 0
       ansible.builtin.service:
         name: sshd
         state: reloaded
