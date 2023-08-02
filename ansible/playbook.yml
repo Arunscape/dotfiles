@@ -115,6 +115,14 @@
           command = "Hyprland"
           user = "arunscape"
 
+    # find a way to add a when condition
+    # - name: Set zfs import cache file
+    #   become: true
+    #   async: true
+    #   poll: 0
+    #   ansible.builtin.shell: |
+    #     zpool set cachefile=/etc/zfs/zpool.cache znas
+
     - name: Enable Services
       become: true
       async: true
@@ -125,6 +133,7 @@
       loop:
         - greetd
         - zfs-import-cache.service
+        - zfs-mount.service
         - sshd
 
     - name: Make dash default sh # noqa: no-changed-when
@@ -162,6 +171,12 @@
         name: pipewire
         state: restarted
         scope: user
+
+    - name: GTK prefer dark # noqa: no-changed-when
+      async: true
+      poll: 0
+      ansible.builtin.shell: |
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
   handlers:
     - name: Restart sshd

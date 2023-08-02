@@ -1,1 +1,23 @@
-LABEL=NAS /home/arunscape/nas btrfs defaults,noatime,compress-force=zstd,autodefrag 0 0
+LABEL=NAS /run/media/arunscape/nas btrfs defaults,noatime,compress=zstd,autodefrag,space_cache=v2 0 0
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/mapper/ainstnvme0n1p2
+UUID=e9c6e50c-c20b-4177-b974-246b7ec1286c	/         	btrfs     	rw,noatime,autodefrag,compress=zstd,discard=async,ssd,space_cache=v2,subvolid=256,subvol=/@	0 0
+
+# /dev/mapper/ainstnvme0n1p2
+UUID=e9c6e50c-c20b-4177-b974-246b7ec1286c	/.snapshots	btrfs     	rw,noatime,autodefrag,compress=zstd,discard=async,ssd,space_cache=v2,subvolid=260,subvol=/@.snapshots	0 0
+
+# /dev/nvme0n1p1
+UUID=D068-DCCE      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/mapper/ainstnvme0n1p2
+UUID=e9c6e50c-c20b-4177-b974-246b7ec1286c	/home     	btrfs     	rw,noatime,autodefrag,compress=zstd,discard=async,ssd,space_cache=v2,subvolid=257,subvol=/@home	0 0
+
+# /dev/mapper/ainstnvme0n1p2
+UUID=e9c6e50c-c20b-4177-b974-246b7ec1286c	/var/cache/pacman/pkg	btrfs     	rw,noatime,autodefrag,compress=zstd,discard=async,ssd,space_cache=v2,subvolid=259,subvol=/@pkg	0 0
+
+# /dev/mapper/ainstnvme0n1p2
+UUID=e9c6e50c-c20b-4177-b974-246b7ec1286c	/var/log  	btrfs     	rw,noatime,autodefrag,compress=zstd,discard=async,ssd,space_cache=v2,subvolid=258,subvol=/@log	0 0
+

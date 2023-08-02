@@ -53,6 +53,7 @@ pacman_packages:
   - wezterm
   - wl-clipboard
   - wofi
+  - htop
   
 
 
