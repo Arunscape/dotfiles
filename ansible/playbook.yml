@@ -164,6 +164,7 @@
         groups:
           - input
 
+    # todo: add when condition
     - name: Restart pipewire
       async: true
       poll: 0

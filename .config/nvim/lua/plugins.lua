@@ -36,116 +36,9 @@ local plugins = {
       vim.cmd.colorscheme "catppuccin"
     end
   },
-  {
-    'ms-jpq/coq_nvim',
-    config = function()
-      vim.g.coq_settings = {
-        auto_start = 'shut-up',
-      }
-    end
-  },
-  'ms-jpq/coq.artifacts',
-  {
-    'ms-jpq/coq.thirdparty',
-    branch = '3p',
-  },
-  {
-    'williamboman/mason.nvim',
-    config = true,
-  },
-  'neovim/nvim-lspconfig',
-  {
-    'williamboman/mason-lspconfig.nvim',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'williamboman/mason.nvim',
-      'ms-jpq/coq_nvim',
-      'ms-jpq/coq.artifacts',
-      'ms-jpq/coq.thirdparty',
-    },
-    config = function()
-      require('mason-lspconfig').setup({
-        automatic_installation = true,
-        ensure_installed = {
-          "awk_ls",
-          "ansiblels",
-          "bashls",
-          "clangd",
-          "neocmake",
-          "cssls",
-          "denols",
-          "dockerls",
-          "docker_compose_language_service",
-          "efm",
-          "gopls",
-          "grammarly",
-          "graphql",
-          "html",
-          --"hls",
-          "jsonls",
-          --"julials",
-          "kotlin_language_server",
-          "pyright",
-          "prosemd_lsp",
-          "rust_analyzer",
-          "rnix",
-          --"ocamllsp",
-          "openscad_lsp",
-          "prismals",
-          "lua_ls",
-          "svelte",
-          "sqlls",
-          "solidity",
-          "taplo",
-          "tailwindcss",
-          "lemminx",
-          "texlab",
-          "tsserver",
-          "vimls",
-          "yamlls",
-        },
-      })
-      local coq = require "coq"
-      require("mason-lspconfig").setup_handlers {
-        -- The first entry (without a key) will be the default handler
-        -- and will be called for each installed server that doesn't have
-        -- a dedicated handler.
-        function(server_name) -- default handler (optional)
-          require("lspconfig")[server_name].setup {
-            coq.lsp_ensure_capabilities {}
-          }
-        end,
-        -- Next, you can provide a dedicated handler for specific servers.
-        -- For example, a handler override for the `rust_analyzer`:
-        -- ["rust_analyzer"] = function ()
-        --     require("rust-tools").setup {}
-        -- end
-        ["lua_ls"] = function()
-          require("lspconfig")["lua_ls"].setup {
-            coq.lsp_ensure_capabilities {
-              settings = {
-                Lua = {
-                  diagnostics = {
-                    globals = { "vim" },
-                  },
-                },
-                workspace = {
-                  library = vim.api.nvim_get_runtime_file("", true),
-                },
-                telemetry = {
-                  enable = false,
-                },
-              },
-            },
-          }
-        end,
-
-      }
-    end
-  },
   'mfussenegger/nvim-dap',
   {
-    'nvim-telescope/telescope-fzf-native.nvim',
+    'nvim-telescope/telescope-fzy-native.nvim',
     build = 'make'
   },
   {
@@ -154,7 +47,7 @@ local plugins = {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('telescope').setup {}
-      require('telescope').load_extension('fzf')
+      require('telescope').load_extension('fzy_native')
 
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -203,13 +96,77 @@ local plugins = {
   },
   'lewis6991/gitsigns.nvim',
   'lukas-reineke/indent-blankline.nvim',
-  'github/copilot.vim',
   {
     'akinsho/bufferline.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = true,
   },
-  'simrat39/rust-tools.nvim'
+  'simrat39/rust-tools.nvim',
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    lazy = true,
+    config = function()
+      -- This is where you modify the settings for lsp-zero
+      -- Note: autocompletion settings will not take effect
+
+      require('lsp-zero.settings').preset({})
+    end
+  },
+
+  -- Autocompletion
+  {
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    dependencies = {
+      {'L3MON4D3/LuaSnip'},
+    },
+    config = function()
+      -- Here is where you configure the autocompletion settings.
+      -- The arguments for .extend() have the same shape as `manage_nvim_cmp`: 
+      -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
+
+      require('lsp-zero.cmp').extend()
+
+      -- And you can configure cmp even more, if you want to.
+      local cmp = require('cmp')
+      local cmp_action = require('lsp-zero.cmp').action() 
+
+      cmp.setup({
+        mapping = {
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+          ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        }
+      })
+    end
+  },
+  {
+    'neovim/nvim-lspconfig',
+    cmd = 'LspInfo',
+    event = {'BufReadPre', 'BufNewFile'},
+    dependencies = {
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'williamboman/mason-lspconfig.nvim'},
+      {'williamboman/mason.nvim'},
+    },
+    config = function()
+      -- This is where all the LSP shenanigans will live
+
+      local lsp = require('lsp-zero')
+
+      lsp.on_attach(function(client, bufnr)
+        -- see :help lsp-zero-keybindings
+        -- to learn the available actions
+        lsp.default_keymaps({buffer = bufnr})
+      end)
+
+      -- (Optional) Configure lua language server for neovim
+      require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+      lsp.setup()
+    end
+  },
 }
 
 local opts = nil
