@@ -14,3 +14,4 @@ type -q bat; and set -x MANPAGER "sh -c 'col -bx | bat -l man -p'" &
 # https://github.com/python-poetry/poetry/issues/5929
 #type -q poetry; and poetry completions fish | source &
 
+set -Ua fish_user_paths $HOME/.cargo/bin

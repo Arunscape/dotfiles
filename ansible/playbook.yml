@@ -134,6 +134,7 @@
         - greetd
         - zfs-import-cache.service
         - zfs-mount.service
+        - zfs-import.target
         - sshd
 
     - name: Make dash default sh # noqa: no-changed-when

@@ -86,7 +86,7 @@ local plugins = {
     config = function()
       require('nvim-tree').setup {
         filters = {
-          dotfiles = true,
+          dotfiles = false,
         },
       }
       -- leader+t to toggle file view
@@ -119,18 +119,18 @@ local plugins = {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      {'L3MON4D3/LuaSnip'},
+      { 'L3MON4D3/LuaSnip' },
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
-      -- The arguments for .extend() have the same shape as `manage_nvim_cmp`: 
+      -- The arguments for .extend() have the same shape as `manage_nvim_cmp`:
       -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
 
       require('lsp-zero.cmp').extend()
 
       -- And you can configure cmp even more, if you want to.
       local cmp = require('cmp')
-      local cmp_action = require('lsp-zero.cmp').action() 
+      local cmp_action = require('lsp-zero.cmp').action()
 
       cmp.setup({
         mapping = {
@@ -144,11 +144,11 @@ local plugins = {
   {
     'neovim/nvim-lspconfig',
     cmd = 'LspInfo',
-    event = {'BufReadPre', 'BufNewFile'},
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'williamboman/mason-lspconfig.nvim'},
-      {'williamboman/mason.nvim'},
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'williamboman/mason-lspconfig.nvim' },
+      { 'williamboman/mason.nvim' },
     },
     config = function()
       -- This is where all the LSP shenanigans will live
@@ -158,7 +158,7 @@ local plugins = {
       lsp.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
-        lsp.default_keymaps({buffer = bufnr})
+        lsp.default_keymaps({ buffer = bufnr })
       end)
 
       -- (Optional) Configure lua language server for neovim
@@ -167,6 +167,16 @@ local plugins = {
       lsp.setup()
     end
   },
+  {
+    'Exafunction/codeium.vim',
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end
+  }
 }
 
 local opts = nil

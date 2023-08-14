@@ -7,3 +7,4 @@ aur_packages:
   - zfs-dkms
   - zfs-utils
   - prismlauncher
+  - catppuccin-gtk-theme-mocha

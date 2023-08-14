@@ -21,9 +21,10 @@ wezterm.on('increase-opacity', function(window, _pane)
 end)
 
 return {
-  font = wezterm.font 'Monocraft',
+  font = wezterm.font 'Monocraft Nerd Font',
   color_scheme = "Catppuccin Mocha",
   window_background_opacity = window_background_opacity,
+  scrollback_lines = 10000,
   keys = {
     {
       key = 'LeftArrow',
@@ -34,6 +35,11 @@ return {
       key = 'RightArrow',
       mods = 'CTRL',
       action = wezterm.action.EmitEvent 'decrease-opacity',
+    },
+    {
+      key = 'w',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.DisableDefaultAssignment,
     },
   },
 --  debug_key_events = true,

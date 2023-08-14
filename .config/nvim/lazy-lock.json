@@ -3,6 +3,7 @@
   "bufferline.nvim": { "branch": "main", "commit": "99f0932365b34e22549ff58e1bea388465d15e99" },
   "catppuccin": { "branch": "main", "commit": "737f60a3a25c79d9bb9574092f6c6c958a3d747a" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
+  "codeium.vim": { "branch": "main", "commit": "3387991fc87288ed4281ff665645c11de5833cf5" },
   "gitsigns.nvim": { "branch": "main", "commit": "11b80e7eea249affc8776483272bcfc627b5552a" },
   "indent-blankline.nvim": { "branch": "master", "commit": "4541d690816cb99a7fc248f1486aa87f3abce91c" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },

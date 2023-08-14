@@ -54,6 +54,10 @@ pacman_packages:
   - wl-clipboard
   - wofi
   - htop
+  - mpv
+  - cargo-watch
+  - zathura-pdf-mupdf
+  - gnome-disk-utility
   
 
 

@@ -14,8 +14,9 @@
 		 :orientation "v" 
 		 :vexpand "false" 
 		 :hexpand "false"
-(left)
-(right)))
+     (left)
+     (center)
+     (right)))
 
 
 (defwidget left []
@@ -45,6 +46,12 @@
     (button :onclick "hyprctl dispatch workspace 10" 10)))
 
 
+(defwidget center[]
+  (box :orientation "h"
+       :halign "center"
+       windowtitle))
+
+
 (defwidget right []
 	(box :orientation "h" 
 		 :space-evenly "false" 
@@ -53,5 +60,8 @@
 		 time
   ))
 
+(defpoll windowtitle :interval "1s"
+  `hyprctl activewindow | grep title | cut -d ' ' -f3`)
+
 (defpoll time :interval "1s"
-  "date")
+  `date '+%A, %B %-d %G %R:%S'`)
