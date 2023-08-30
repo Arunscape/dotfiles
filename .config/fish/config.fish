@@ -10,6 +10,7 @@ type -q starship; and starship init fish | source &
 type -q thefuck; and thefuck --alias | source &
 type -q gh; and gh completion -s fish | source &
 type -q bat; and set -x MANPAGER "sh -c 'col -bx | bat -l man -p'" &
+type -q opam; and eval eval (opam env --switch=default)
 # open issue:
 # https://github.com/python-poetry/poetry/issues/5929
 #type -q poetry; and poetry completions fish | source &

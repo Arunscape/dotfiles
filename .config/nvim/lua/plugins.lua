@@ -27,7 +27,7 @@ local plugins = {
             colored_indent_levels = true,
           },
           markdown = true,
-          mason = true,
+          --mason = true,
           nvimtree = true,
           telescope = true,
           gitsigns = true,
