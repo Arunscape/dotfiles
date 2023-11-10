@@ -136,6 +136,7 @@
         - zfs-mount.service
         - zfs-import.target
         - sshd
+        - libvirtd.socket
 
     - name: Make dash default sh # noqa: no-changed-when
       become: true
@@ -164,6 +165,8 @@
         name: arunscape
         groups:
           - input
+          - libvirt
+          - games
 
     # todo: add when condition
     - name: Restart pipewire
