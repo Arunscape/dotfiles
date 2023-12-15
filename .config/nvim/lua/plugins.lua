@@ -1,5 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+local uv = vim.uv or vim.loop
+if not uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -12,6 +13,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  'mfussenegger/nvim-dap',
+  'nvim-telescope/telescope-fzy-native.nvim',
+  'lewis6991/gitsigns.nvim',
+  'simrat39/rust-tools.nvim',
+  'nvim-lua/plenary.nvim',
+  { 'L3MON4D3/LuaSnip' },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -20,26 +28,22 @@ local plugins = {
         flavour = "mocha",
         transparent_background = true,
         integrations = {
-          coc_nvim = true,
+          cmp = true,
+          telescope = true,
           treesitter = true,
           indent_blankline = {
             enabled = true,
             colored_indent_levels = true,
           },
           markdown = true,
-          --mason = true,
           nvimtree = true,
-          telescope = true,
           gitsigns = true,
+          illuminate = true,
+          semantic_tokens = true,
         }
       })
       vim.cmd.colorscheme "catppuccin"
     end
-  },
-  'mfussenegger/nvim-dap',
-  {
-    'nvim-telescope/telescope-fzy-native.nvim',
-    build = 'make'
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -57,30 +61,6 @@ local plugins = {
     end
   },
   {
-    'nvim-treesitter/nvim-treesitter',
-    build = function()
-      require("nvim-treesitter.install").update({ with_sync = true })
-    end,
-    config = function()
-      local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-      parser_config.org = {
-        install_info = {
-          url = 'https://github.com/milisims/tree-sitter-org',
-          revision = 'main',
-          files = { 'src/parser.c', 'src/scanner.cc' },
-        },
-        filetype = 'org',
-      }
-      require('nvim-treesitter.configs').setup {
-        auto_install = true,
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = { 'org' },
-        },
-      }
-    end
-  },
-  {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
@@ -94,24 +74,25 @@ local plugins = {
       vim.keymap.set("n", '<leader>t', nvimtree.tree.toggle, {})
     end
   },
-  'lewis6991/gitsigns.nvim',
-  'lukas-reineke/indent-blankline.nvim',
   {
     'akinsho/bufferline.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = true,
   },
-  'simrat39/rust-tools.nvim',
   {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     lazy = true,
-    config = function()
-      -- This is where you modify the settings for lsp-zero
-      -- Note: autocompletion settings will not take effect
-
-      require('lsp-zero.settings').preset({})
-    end
+    config = false,
+    init = function()
+      -- Disable automatic setup, we are doing it manually
+      vim.g.lsp_zero_extend_cmp = 0
+      vim.g.lsp_zero_extend_lspconfig = 0
+    end,
+  },
+  {
+    'williamboman/mason.nvim',
+    lazy = false,
+    config = true,
   },
 
   -- Autocompletion
@@ -123,95 +104,125 @@ local plugins = {
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
-      -- The arguments for .extend() have the same shape as `manage_nvim_cmp`:
-      -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
-
-      require('lsp-zero.cmp').extend()
+      local lsp_zero = require('lsp-zero')
+      lsp_zero.extend_cmp()
 
       -- And you can configure cmp even more, if you want to.
       local cmp = require('cmp')
-      local cmp_action = require('lsp-zero.cmp').action()
+      local cmp_action = lsp_zero.cmp_action()
 
       cmp.setup({
-        mapping = {
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'nvim_lua' },
+          { name = "codeium" },
+          { name = 'path' },
+        },
+        formatting = lsp_zero.cmp_format(),
+        mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-        }
+          ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        })
       })
     end
   },
+
+  -- LSP
   {
     'neovim/nvim-lspconfig',
-    cmd = 'LspInfo',
+    cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason-lspconfig.nvim' },
-      { 'williamboman/mason.nvim' },
     },
     config = function()
       -- This is where all the LSP shenanigans will live
+      local lsp_zero = require('lsp-zero')
+      lsp_zero.extend_lspconfig()
 
-      local lsp = require('lsp-zero')
-
-      lsp.on_attach(function(client, bufnr)
+      lsp_zero.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
-        lsp.default_keymaps({ buffer = bufnr })
+        lsp_zero.default_keymaps({ buffer = bufnr })
       end)
 
-      -- (Optional) Configure lua language server for neovim
-      require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-      require('lspconfig').rust_analyzer.setup {
-        -- Other Configs ...
-        settings = {
-          ["rust-analyzer"] = {
-            -- Other Settings ...
-            procMacro = {
-              ignored = {
-                  leptos_macro = {
-                      "server",
-                      "component",
+      require('mason-lspconfig').setup({
+        ensure_installed = {
+          "ansiblels",
+          "bashls",
+          "clangd",
+          "cmake",
+          "cssls",
+          "denols",
+          "docker_compose_language_service",
+          "dockerls",
+          "html",
+          "htmx",
+          "jsonls",
+          "kotlin_language_server",
+          "lua_ls",
+          "mdx_analyzer",
+          "ocamllsp",
+          "openscad_lsp",
+          "pyright",
+          "rust_analyzer",
+          "sqlls",
+          "tailwindcss",
+          "terraformls",
+          "tsserver",
+          "yamlls",
+        },
+        handlers = {
+          lsp_zero.default_setup,
+          lua_ls = function()
+            -- (Optional) Configure lua language server for neovim
+            local lua_opts = lsp_zero.nvim_lua_ls()
+            require('lspconfig').lua_ls.setup(lua_opts)
+          end,
+          rust_analyzer = function()
+            require('lspconfig').rust_analyzer.setup {
+              -- Other Configs ...
+              settings = {
+                ["rust-analyzer"] = {
+                  -- Other Settings ...
+                  procMacro = {
+                    ignored = {
+                      leptos_macro = {
+                        "server",
+                        "component",
+                      },
+                    },
                   },
-              },
-            },
-          },
+                },
+              }
+            }
+          end,
         }
-      }
-
-      lsp.setup()
+      })
     end
   },
+
   {
     'Exafunction/codeium.vim',
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
     config = function()
+      require("codeium").setup({
+      })
       -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+      --vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+      --vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      --vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      --vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
     end
   },
-  {
-    "David-Kunz/gen.nvim",
-    opts = {
-        model = "mistral", -- The default model to use.
-        display_mode = "float", -- The display mode. Can be "float" or "split".
-        show_prompt = false, -- Shows the Prompt submitted to Ollama.
-        show_model = false, -- Displays which model you are using at the beginning of your chat session.
-        no_auto_close = false, -- Never closes the window automatically.
-        init = function(options) pcall(io.popen, "ollama serve > /dev/null 2>&1 &") end,
-        -- Function to initialize Ollama
-        command = "curl --silent --no-buffer -X POST http://localhost:11434/api/generate -d $body",
-        -- The command for the Ollama service. You can use placeholders $prompt, $model and $body (shellescaped).
-        -- This can also be a lua function returning a command string, with options as the input parameter.
-        -- The executed command must return a JSON object with { response, context }
-        -- (context property is optional).
-        list_models = '<function>', -- Retrieves a list of model names
-        debug = false -- Prints errors and the command which is run.
-    }
-},
 }
 
 local opts = nil
