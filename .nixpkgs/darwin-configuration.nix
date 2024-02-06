@@ -68,6 +68,7 @@
     "wezterm"
     "chromium"
     "spotify"
+    "sf"
   ];
 
   homebrew.masApps = {
