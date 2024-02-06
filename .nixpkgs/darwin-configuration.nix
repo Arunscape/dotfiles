@@ -3,33 +3,32 @@
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    [ pkgs.vim
-      pkgs.git
-      pkgs.jetbrains.pycharm-community
-      pkgs.vscode
-      pkgs.neovim
-      pkgs.thefuck
-      pkgs.starship
-      pkgs.wezterm
-      pkgs.pyenv
-      pkgs.nodejs_21
-      pkgs.p7zip
-      pkgs.ripgrep
-      pkgs.bat
-      pkgs.ranger
-      pkgs.rustup
-#      pkgs.opam
-      pkgs.lsd
-      pkgs.obsidian
-      pkgs.ollama
-      pkgs.jdk17
-      pkgs.maven
-      pkgs.uncrustify
-      pkgs.jq
-      pkgs.fzy
-      pkgs.libfido2
-      pkgs.openssh
+  environment.systemPackages = with pkgs;
+    [ vim
+      git
+      neovim
+      thefuck
+      starship
+      pyenv
+      nodejs_21
+      p7zip
+      ripgrep
+      bat
+      ranger
+      rustup
+#     opam
+      lsd
+      ollama
+      jdk17
+      maven
+      uncrustify
+      jq
+      fzy
+      libfido2
+      openssh
+      lua-language-server
+      chromedriver
+      lua
     ];
 
   # Use a custom configuration.nix location.
@@ -49,6 +48,39 @@
   system.stateVersion = 4;
 
   nixpkgs.config.allowUnfree = true;
+  nix.settings.auto-optimise-store = true;
+
+  homebrew.enable = true;
+
+  homebrew.brews = [
+    "colima"
+    "docker"
+    "pinentry-touchid"
+  ];
+
+  homebrew.casks = [
+    "zed"
+    "intellij-idea-ce"
+    "visual-studio-code"
+    "dbeaver-community"
+    "pycharm-ce"
+    "obsidian"
+    "wezterm"
+    "chromium"
+    "spotify"
+  ];
+
+  homebrew.masApps = {
+    Xcode = 497799835;
+  };
+
+  homebrew.taps = [
+    "jorgelbg/tap"
+  ];
+
+  homebrew.onActivation.autoUpdate = true;
+  homebrew.onActivation.cleanup = "zap";
+  homebrew.onActivation.upgrade = true;
   
 
 }

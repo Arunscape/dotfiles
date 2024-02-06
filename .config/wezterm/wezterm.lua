@@ -13,6 +13,23 @@ function change_opacity(window, amount)
   window:set_config_overrides(overrides)
 end
 
+function getOS()
+	-- ask LuaJIT first
+	if jit then
+		return jit.os
+	end
+
+	-- Unix, Linux variants
+	local fh,err = assert(io.popen("uname -o 2>/dev/null","r"))
+	if fh then
+		osname = fh:read()
+	end
+
+	return osname or "Windows"
+end
+
+local opacity_mod = getOS() == 'Darwin' and  'CTRL|SHIFT' or 'CTRL'
+
 wezterm.on('decrease-opacity', function(window, _pane)
   change_opacity(window, -0.1)
 end)
@@ -28,12 +45,12 @@ return {
   keys = {
     {
       key = 'LeftArrow',
-      mods = 'CTRL',
+      mods = opacity_mod,
       action = wezterm.action.EmitEvent 'increase-opacity',
     },
     {
       key = 'RightArrow',
-      mods = 'CTRL',
+      mods = opacity_mod,
       action = wezterm.action.EmitEvent 'decrease-opacity',
     },
     {
