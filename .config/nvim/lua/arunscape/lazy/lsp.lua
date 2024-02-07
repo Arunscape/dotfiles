@@ -13,7 +13,31 @@ return {
     require("fidget").setup({})
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "rust_analyzer", "tsserver" },
+      ensure_installed = {
+        "ansiblels",
+        "bashls",
+        "clangd",
+        "cmake",
+        "cssls",
+        "denols",
+        "docker_compose_language_service",
+        "dockerls",
+        "html",
+        "htmx",
+        "jsonls",
+        "kotlin_language_server",
+        "lua_ls",
+        "mdx_analyzer",
+        "ocamllsp",
+        --"openscad_lsp",
+        "pyright",
+        "rust_analyzer",
+        "sqlls",
+        "tailwindcss",
+        "terraformls",
+        "tsserver",
+        "yamlls",
+      },
       handlers = {
         function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup {
@@ -21,7 +45,7 @@ return {
           }
         end,
 
-        ["lua_ls"] = function()
+        lua_ls = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
             capabilities = capabilities,
@@ -33,7 +57,25 @@ return {
               }
             }
           }
-        end
+        end,
+        rust_analyzer = function()
+          require('lspconfig').rust_analyzer.setup {
+            -- Other Configs ...
+            settings = {
+              ["rust-analyzer"] = {
+                -- Other Settings ...
+                procMacro = {
+                  ignored = {
+                    leptos_macro = {
+                      "server",
+                      "component",
+                    },
+                  },
+                },
+              },
+            }
+          }
+        end,
       }
     })
 
