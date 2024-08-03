@@ -20,7 +20,6 @@ pacman_packages:
   - greetd-tuigreet
   - grim
   - hyprland
-  - hyprpaper
   - intellij-idea-community-edition
   - jdk-openjdk
   - linux
@@ -56,8 +55,14 @@ pacman_packages:
   - htop
   - mpv
   - cargo-watch
+  - cargo-edit
+  - cargo-update
+  - cargo-expand
   - zathura-pdf-mupdf
   - gnome-disk-utility
+  - libvirt
+  - dart-sass
+  - npm
   
 
 

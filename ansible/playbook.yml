@@ -58,6 +58,7 @@
         creates: /usr/bin/paru
       ansible.builtin.shell: |
         set -o pipefail
+        rustup default stable
         git clone https://aur.archlinux.org/paru.git
         cd paru
         yes | makepkg -si
@@ -94,8 +95,6 @@
         dest: /home/arunscape/dotfiles
 
     - name: Symlinks # noqa: no-changed-when
-      async: true
-      poll: 0
       ansible.builtin.shell: |
         ../symlinks.sh
 
@@ -125,13 +124,11 @@
 
     - name: Enable Services
       become: true
-      async: true
-      poll: 0
       ansible.builtin.service:
         name: "{{ item }}"
         enabled: true
       loop:
-        - greetd
+        - greetd.service
         - zfs-import-cache.service
         - zfs-mount.service
         - zfs-import.target
@@ -140,8 +137,6 @@
 
     - name: Make dash default sh # noqa: no-changed-when
       become: true
-      async: true
-      poll: 0
       ansible.builtin.shell: |
         [ -f /bin/dash ] && sudo ln -sf /bin/dash /bin/sh
 
@@ -159,35 +154,28 @@
 
     - name: Add myself to groups
       become: true
-      async: true
-      poll: 0
       ansible.builtin.user:
         name: arunscape
         groups:
           - input
           - libvirt
           - games
+          - video
 
     # todo: add when condition
     - name: Restart pipewire
-      async: true
-      poll: 0
       ansible.builtin.systemd_service:
         name: pipewire
         state: restarted
         scope: user
 
     - name: GTK prefer dark # noqa: no-changed-when
-      async: true
-      poll: 0
       ansible.builtin.shell: |
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
   handlers:
     - name: Restart sshd
       become: true
-      async: true
-      poll: 0
       ansible.builtin.service:
         name: sshd
         state: reloaded

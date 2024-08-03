@@ -8,3 +8,5 @@ aur_packages:
   - zfs-utils
   - prismlauncher
   - catppuccin-gtk-theme-mocha
+  - tailwindcss
+  - cargo-leptos
