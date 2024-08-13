@@ -4,31 +4,11 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
-    [ vim
-      git
-      neovim
-      thefuck
-      starship
-      pyenv
+    [ 
+      cacert
       nodejs_21
-      p7zip
-      ripgrep
-      bat
-      ranger
-      rustup
-#     opam
-      lsd
-      ollama
       jdk17
-      maven
-      uncrustify
-      jq
-      fzy
-      libfido2
-      openssh
-      lua-language-server
       chromedriver
-      lua
     ];
 
   # Use a custom configuration.nix location.
@@ -56,6 +36,28 @@
     "colima"
     "docker"
     "pinentry-touchid"
+    "git"
+    "neovim"
+    "thefuck"
+    "starship"
+    "pyenv"
+    "p7zip"
+    "ripgrep"
+    "bat"
+    "ranger"
+    "rustup"
+    "opam"
+    "lsd"
+    "ollama"
+    "maven"
+    "uncrustify"
+    "jq"
+    "fzy"
+    "libfido2"
+    "openssh"
+    "lua-language-server"
+    "lua"
+    "httpie"
   ];
 
   homebrew.casks = [
@@ -69,6 +71,9 @@
     "chromium"
     "spotify"
     "sf"
+    "httpie"
+    "android-studio"
+    "docker-buildx"
   ];
 
   homebrew.masApps = {
@@ -82,6 +87,10 @@
   homebrew.onActivation.autoUpdate = true;
   homebrew.onActivation.cleanup = "zap";
   homebrew.onActivation.upgrade = true;
+  security.pki.certificateFiles = [
+    "/etc/nix/ca_cert.pem"
+  ];
+
   
 
 }

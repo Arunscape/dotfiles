@@ -8,27 +8,27 @@ function change_opacity(window, amount)
   local opacity = overrides.window_background_opacity or window_background_opacity
 
   opacity = math.min(math.max(opacity + amount, 0), 1)
-  
+
   overrides.window_background_opacity = opacity
   window:set_config_overrides(overrides)
 end
 
 function getOS()
-	-- ask LuaJIT first
-	if jit then
-		return jit.os
-	end
+  -- ask LuaJIT first
+  if jit then
+    return jit.os
+  end
 
-	-- Unix, Linux variants
-	local fh,err = assert(io.popen("uname -o 2>/dev/null","r"))
-	if fh then
-		osname = fh:read()
-	end
+  -- Unix, Linux variants
+  local fh, err = assert(io.popen("uname -o 2>/dev/null", "r"))
+  if fh then
+    osname = fh:read()
+  end
 
-	return osname or "Windows"
+  return osname or "Windows"
 end
 
-local opacity_mod = getOS() == 'Darwin' and  'CTRL|SHIFT' or 'CTRL'
+local opacity_mod = getOS() == 'Darwin' and 'CTRL|SHIFT' or 'CTRL'
 
 wezterm.on('decrease-opacity', function(window, _pane)
   change_opacity(window, -0.1)
@@ -38,7 +38,8 @@ wezterm.on('increase-opacity', function(window, _pane)
 end)
 
 return {
-  font = wezterm.font 'Monocraft Nerd Font',
+  --font = wezterm.font 'Monocraft Nerd Font',
+  font = wezterm.font 'Miracode',
   color_scheme = "Catppuccin Mocha",
   window_background_opacity = window_background_opacity,
   scrollback_lines = 10000,
@@ -59,5 +60,5 @@ return {
       action = wezterm.action.DisableDefaultAssignment,
     },
   },
---  debug_key_events = true,
+  --  debug_key_events = true,
 }
