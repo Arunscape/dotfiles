@@ -38,8 +38,8 @@ wezterm.on('increase-opacity', function(window, _pane)
 end)
 
 return {
-  --font = wezterm.font 'Monocraft Nerd Font',
-  font = wezterm.font 'Miracode',
+  --font = wezterm.font 'Miracode',
+  font = wezterm.font 'Monocraft Nerd Font',
   color_scheme = "Catppuccin Mocha",
   window_background_opacity = window_background_opacity,
   scrollback_lines = 10000,

@@ -10,10 +10,20 @@ type -q starship; and starship init fish | source &
 type -q thefuck; and thefuck --alias | source &
 type -q gh; and gh completion -s fish | source &
 type -q bat; and set -x MANPAGER "sh -c 'col -bx | bat -l man -p'" &
-type -q opam; and eval eval (opam env --switch=default)
+type -q opam; and eval (opam env --switch=default)
 # open issue:
 # https://github.com/python-poetry/poetry/issues/5929
 #type -q poetry; and poetry completions fish | source &
 
 set -Ua fish_user_paths $HOME/.cargo/bin
 
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/home/arunscape/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+if path filter -d ~/Android/Sdk
+  # The path is a directory
+  set -Ux ANDROID_HOME ~/Android/Sdk
+end
+
+set -Ux VISUAL nvim

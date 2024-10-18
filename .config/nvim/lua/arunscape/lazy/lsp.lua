@@ -39,6 +39,10 @@ return {
           "terraformls",
           "tsserver",
           "yamlls",
+          "terraformls",
+          "typst_lsp",
+          "phpactor",
+          "denols",
         },
         handlers = {
           function(server_name) -- default handler (optional)
@@ -62,18 +66,37 @@ return {
           end,
           rust_analyzer = function()
             require('lspconfig').rust_analyzer.setup {
+              cargo = {
+                allFeatures = true,
+                loadOutDirsFromCheck = true,
+                runBuildScripts = true,
+              },
               -- Other Configs ...
               settings = {
                 ["rust-analyzer"] = {
-                  -- Other Settings ...
+                  -- Add clippy lints for Rust.
+                  checkOnSave = {
+                    allFeatures = true,
+                    command = "clippy",
+                    extraArgs = { "--no-deps" },
+                  },
                   procMacro = {
+                    enable = true,
                     ignored = {
                       leptos_macro = {
                         "server",
-                        "component",
+                        --"component",
                       },
                     },
                   },
+                  inlayHints = {
+                    bindingModeHints = {
+                      enable = true
+                    },
+                    closureCaptureHints = {
+                      enable = true
+                    },
+                  }
                 },
               }
             }
@@ -175,7 +198,7 @@ return {
         leptosfmt = {
           command = "leptosfmt",
           args = { "--stdin" },
-          condition = function(ctx)
+          condition = function(self, ctx)
             -- only run on rust files that import leptos
             return vim.bo.filetype == "rust" and vim.fn.search("use leptos") > 0
           end
