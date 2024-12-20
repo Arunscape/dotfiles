@@ -48,3 +48,5 @@ ln_overwrite_folder .config/eww $HOME/.config
 ln_overwrite_folder .config/hypr $HOME/.config
 ln_overwrite_folder .config/waybar $HOME/.config
 ln_overwrite_folder .config/pipewire $HOME/.config
+ln_overwrite_folder .config/containers $HOME/.config
+ln_overwrite_folder .config/systemd $HOME/.config

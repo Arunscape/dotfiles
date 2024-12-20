@@ -1,0 +1,12 @@
+[Container]
+AddCapability=NET_ADMIN
+AddDevice=/dev/net/tun
+ContainerName=gluetun
+Environment="VPN_SERVICE_PROVIDER=private internet access" "SERVER_REGIONS=CA Vancouver"
+Image=qmcgaw/gluetun
+PublishPort=8080:8080
+PublishPort=6881:6881
+Secret=pia_user,type=env,target=OPENVPN_USER
+Secret=pia_pass,type=env,target=OPENVPN_PASSWORD
+Volume=gluetun:/gluetun
+AutoUpdate=registry

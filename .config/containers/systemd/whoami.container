@@ -1,0 +1,10 @@
+[Unit]
+After = whoami.socket
+Requires=whoami.socket
+
+[Service]
+Sockets=whoami.socket
+
+[Container]
+Image=docker.io/traefik/whoami
+Exec=--port 1234

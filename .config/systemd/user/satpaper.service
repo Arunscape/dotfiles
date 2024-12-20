@@ -1,0 +1,18 @@
+[Unit]
+Description=Run Satpaper on login.
+
+# You should adjust these values as needed/preferred.
+[Service]
+Environment=SATPAPER_SATELLITE=goes-east
+Environment=SATPAPER_RESOLUTION_X=3840
+Environment=SATPAPER_RESOLUTION_Y=2160
+Environment=SATPAPER_DISK_SIZE=94
+Environment=SATPAPER_TARGET_PATH=/home/arunscape/dotfiles/.config/wallpapers/
+Environment=SATPAPER_WALLPAPER_COMMAND='swww img' 
+
+ExecStart=/home/arunscape/.cargo/bin/satpaper
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
