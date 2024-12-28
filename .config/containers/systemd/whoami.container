@@ -1,10 +1,10 @@
-[Unit]
-After = whoami.socket
-Requires=whoami.socket
-
-[Service]
-Sockets=whoami.socket
+#[Unit]
+#After=whoami.socket
+#Requires=whoami.socket
 
 [Container]
-Image=docker.io/traefik/whoami
-Exec=--port 1234
+Image=traefik/whoami
+PublishPort=1234:80
+Notify=true
+#this service doesn't need outgoing requests
+#Network=none

@@ -1,0 +1,14 @@
+# qbittorrent.container
+[Container]
+ContainerName=qbittorrent
+Environment=PUID=1000 PGID=1000 TZ=Canada/Mountain WEBUI_PORT=8080 TORRENTING_PORT=6881
+Image=lscr.io/linuxserver/qbittorrent:latest
+Network=container:gluetun
+PublishPort=8080:8080
+PublishPort=6881:6881
+PublishPort=6881:6881/udp
+Volume=/run/media/arunscape/znas/server/qbittorrent/config:/config
+Volume=/run/media/arunscape/znas/server/downloads:/downloads
+
+[Service]
+Restart=always

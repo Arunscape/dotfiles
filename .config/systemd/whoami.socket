@@ -1,6 +1,0 @@
-[Socket]
-ListenStream = 1234
-Service = whoami.service
-
-[Install]
-WantedBy = sockets.target

@@ -1,0 +1,9 @@
+[Socket]
+ListenStream=1234
+BindIPv6Only=both
+#Accept=yes
+#ListenSequentialPacket=1234
+#PartOf=whoami.service
+
+[Install]
+WantedBy=sockets.target
