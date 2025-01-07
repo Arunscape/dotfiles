@@ -7,7 +7,7 @@ return {
       flavour = "mocha",
       transparent_background = true,
       integrations = {
-        cmp = true,
+        blink_cmp = true,
         telescope = true,
         treesitter = true,
         indent_blankline = {

@@ -1,0 +1,11 @@
+# slskd.container
+[Container]
+ContainerName=slskd
+Environment=SLSKD_REMOTE_CONFIGURATION=true
+Image=slskd/slskd:latest
+Network=container:gluetun
+#PublishPort=5030:5030
+#PublishPort=5031:5031
+#PublishPort=50300:50300
+Volume=/run/media/arunscape/znas/server/slskd:/app
+AutoUpdate=registry

@@ -4,8 +4,11 @@ AddDevice=/dev/net/tun
 ContainerName=gluetun
 Environment="VPN_SERVICE_PROVIDER=private internet access" "SERVER_REGIONS=CA Vancouver"
 Image=docker.io/qmcgaw/gluetun
-PublishPort=8080:8080
+PublishPort=8080:8080 #qbitorrent
 PublishPort=6881:6881
+PublishPort=5030:5030 #slskd web
+PublishPort=5031:5031 #slskd web https
+PublishPort=50300:50300 #slskd
 Secret=pia_user,type=env,target=OPENVPN_USER
 Secret=pia_pass,type=env,target=OPENVPN_PASSWORD
 Volume=gluetun:/gluetun
