@@ -37,6 +37,7 @@ return {
           "terraformls",
           "phpactor",
           "denols",
+          "zls",
         },
         handlers = {
           function(server_name) -- default handler (optional)

@@ -1,2 +1,3 @@
-@daily rm /home/arunscape/Downloads/*.{mkv,mp4,webm}
+@daily rm /home/arunscape/Downloads/*
 @daily rsync -r -a --delete --exclude=node_modules --exclude=target --exclude=build --exclude=.venv  ~/code/. /run/media/arunscape/znas/dev -P
+@daily podman system prune -af --volumes

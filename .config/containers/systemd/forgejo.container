@@ -5,7 +5,7 @@ Environment=USER_GID=1000
 Image=codeberg.org/forgejo/forgejo:9
 PublishPort=3000:3000
 PublishPort=2222:22
-Volume=/run/media/arunscape/znas/server/forgejo:/data
+Volume=/run/media/arunscape/znas/server/forgejo:/data:z
 AutoUpdate=registry
 
 [Service]

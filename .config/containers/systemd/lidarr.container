@@ -1,0 +1,17 @@
+# lidarr.container
+[Container]
+ContainerName=lidarr
+Environment=PUID=0 PGID=0 UMASK=002 TZ=Canada/Mountain
+Image=ghcr.io/hotio/lidarr
+Network=container:gluetun
+#PublishPort=8686:8686
+Volume=/run/media/arunscape/znas/server/lidarr:/config
+Volume=/run/media/arunscape/znas/server/data:/data:z
+AutoUpdate=registry
+
+[Service]
+Restart=always
+BindsTo=gluetun.service
+
+[Install]
+WantedBy=default.target

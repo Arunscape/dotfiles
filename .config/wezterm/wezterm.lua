@@ -39,7 +39,7 @@ end)
 
 return {
   --font = wezterm.font 'Miracode',
-  font = wezterm.font 'Monocraft Nerd Font',
+  font = wezterm.font 'Monocraft',
   color_scheme = "Catppuccin Mocha",
   window_background_opacity = window_background_opacity,
   scrollback_lines = 10000,

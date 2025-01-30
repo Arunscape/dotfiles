@@ -9,3 +9,8 @@ Network=container:gluetun
 #PublishPort=50300:50300
 Volume=/run/media/arunscape/znas/server/slskd:/app
 AutoUpdate=registry
+
+
+[Service]
+Restart=always
+BindsTo=gluetun.service

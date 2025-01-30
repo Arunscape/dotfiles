@@ -1,15 +1,31 @@
 [Container]
+Image=docker.io/qmcgaw/gluetun
 AddCapability=NET_ADMIN
 AddDevice=/dev/net/tun
 ContainerName=gluetun
-Environment="VPN_SERVICE_PROVIDER=private internet access" "SERVER_REGIONS=CA Vancouver"
-Image=docker.io/qmcgaw/gluetun
-PublishPort=8080:8080 #qbitorrent
-PublishPort=6881:6881
-PublishPort=5030:5030 #slskd web
-PublishPort=5031:5031 #slskd web https
-PublishPort=50300:50300 #slskd
+Environment="VPN_SERVICE_PROVIDER=private internet access"
+AutoUpdate=registry
 Secret=pia_user,type=env,target=OPENVPN_USER
 Secret=pia_pass,type=env,target=OPENVPN_PASSWORD
+Secret=pia_region,type=env,target=SERVER_REGIONS
 Volume=gluetun:/gluetun
-AutoUpdate=registry
+
+# qbittorrent
+PublishPort=8080:8080
+PublishPort=6881:6881
+PublishPort=6881:6881/udp
+
+# slskd web http
+PublishPort=5030:5030
+# slskd web https
+PublishPort=5031:5031
+# slskd
+PublishPort=50300:50300
+
+# lidarr
+PublishPort=8686:8686
+
+
+
+[Install]
+WantedBy=default.target
