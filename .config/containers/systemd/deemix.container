@@ -7,6 +7,8 @@ Network=container:gluetun
 PublishPort=6595:6595
 Volume=/run/media/arunscape/znas/server/deemix:/config
 Volume=/run/media/arunscape/znas/server/data:/data:z
+#https://github.com/bambanah/deemix/issues/159
+Volume=/run/media/arunscape/znas/server/data/downloads:/downloads:z
 AutoUpdate=registry
 
 [Service]
