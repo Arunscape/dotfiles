@@ -2,15 +2,19 @@
 [Container]
 ContainerName=slskd
 Environment=SLSKD_REMOTE_CONFIGURATION=true
-Image=slskd/slskd:latest
+Image=docker.io/slskd/slskd:latest
 Network=container:gluetun
 #PublishPort=5030:5030
 #PublishPort=5031:5031
 #PublishPort=50300:50300
 Volume=/run/media/arunscape/znas/server/slskd:/app
+Volume=/run/media/arunscape/znas/server/data:/data:z
 AutoUpdate=registry
 
 
 [Service]
 Restart=always
+
+[Unit]
 BindsTo=gluetun.service
+After=gluetun.service

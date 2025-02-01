@@ -1,0 +1,20 @@
+# prowlarr.container
+[Container]
+ContainerName=prowlarr
+Environment=PUID=0 PGID=0 UMASK=002 TZ=Canada/Mountain
+Image=ghcr.io/hotio/prowlarr
+Volume=/run/media/arunscape/znas/server/prowlarr:/config
+AutoUpdate=registry
+PublishPort=9696:9696
+Network=servarr.network
+#Network=container:gluetun
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
+
+[Unit]
+#BindsTo=gluetun.service
+#After=gluetun.service

@@ -39,9 +39,13 @@ end)
 
 return {
   --font = wezterm.font 'Miracode',
-  font = wezterm.font 'Monocraft',
+  font = wezterm.font_with_fallback {
+    'Monocraft',
+    'Fira Code',
+  },
   color_scheme = "Catppuccin Mocha",
   window_background_opacity = window_background_opacity,
+  window_close_confirmation = "NeverPrompt",
   scrollback_lines = 10000,
   keys = {
     {

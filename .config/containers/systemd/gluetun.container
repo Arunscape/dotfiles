@@ -9,11 +9,13 @@ Secret=pia_user,type=env,target=OPENVPN_USER
 Secret=pia_pass,type=env,target=OPENVPN_PASSWORD
 Secret=pia_region,type=env,target=SERVER_REGIONS
 Volume=gluetun:/gluetun
+PublishPort=6969:6969
+Network=servarr.network
 
 # qbittorrent
 PublishPort=8080:8080
-PublishPort=6881:6881
-PublishPort=6881:6881/udp
+# nzbget
+PublishPort=6789:6789
 
 # slskd web http
 PublishPort=5030:5030
@@ -22,10 +24,40 @@ PublishPort=5031:5031
 # slskd
 PublishPort=50300:50300
 
+# deemix
+PublishPort=6595:6595
+
 # lidarr
-PublishPort=8686:8686
+#PublishPort=8686:8686
+# sonarr
+#PublishPort=8989:8989
+# radarr
+#PublishPort=7878
+# prowlarr
+#PublishPort=9696:9696
+# readarr
+#PublishPort=8787:8787
+# bazarr
+#PublishPort=6767:6767
+# jellyseerr
+#PublishPort=5055:5055
+
+# jellyfin
+PublishPort=8096:8096
 
 
 
 [Install]
 WantedBy=default.target
+WantedBy=qbittorrent.service
+WantedBy=slskd.service
+WantedBy=deemix.service
+#WantedBy=lidarr.service
+#WantedBy=sonarr.service
+#WantedBy=radarr.service
+#WantedBy=prowlarr.service
+#WantedBy=bazarr.service
+#WantedBy=jellyseerr.service
+
+[Service]
+Restart=Always

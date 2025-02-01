@@ -1,10 +1,10 @@
-# lidarr.container
+# radarr.container
 [Container]
-ContainerName=lidarr
+ContainerName=radarr
 Environment=PUID=0 PGID=0 UMASK=002 TZ=Canada/Mountain
-Image=ghcr.io/hotio/lidarr:pr-plugins
-PublishPort=8686:8686
-Volume=/run/media/arunscape/znas/server/lidarr:/config
+Image=ghcr.io/hotio/radarr
+PublishPort=7878:7878
+Volume=/run/media/arunscape/znas/server/radarr:/config
 Volume=/run/media/arunscape/znas/server/data:/data:z
 AutoUpdate=registry
 #Network=container:gluetun

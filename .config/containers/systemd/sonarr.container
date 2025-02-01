@@ -1,10 +1,10 @@
-# lidarr.container
+# sonarr.container
 [Container]
-ContainerName=lidarr
+ContainerName=sonarr
 Environment=PUID=0 PGID=0 UMASK=002 TZ=Canada/Mountain
-Image=ghcr.io/hotio/lidarr:pr-plugins
-PublishPort=8686:8686
-Volume=/run/media/arunscape/znas/server/lidarr:/config
+Image=ghcr.io/hotio/sonarr
+PublishPort=8989:8989
+Volume=/run/media/arunscape/znas/server/sonarr:/config
 Volume=/run/media/arunscape/znas/server/data:/data:z
 AutoUpdate=registry
 #Network=container:gluetun
