@@ -1,0 +1,21 @@
+# jellyfin.container
+[Container]
+Image=docker.io/jellyfin/jellyfin:latest
+AutoUpdate=registry
+PublishPort=8096:8096/tcp
+UserNS=keep-id
+AddDevice=/dev/dri/:/dev/dri/
+ContainerName=jellyfin
+Mount=type=bind,source=/run/media/arunscape/znas/server/data/tv,destination=/media/tv,readonly=true,relabel=private
+Mount=type=bind,source=/run/media/arunscape/znas/server/data/movies,destination=/media/movies,readonly=true,relabel=private
+Mount=type=bind,source=/run/media/arunscape/znas/server/data/music,destination=/media/music,readonly=true,relabel=private
+Volume=/run/media/arunscape/znas/server/jellyfin/cache:/cache:Z
+Volume=/run/media/arunscape/znas/server/jellyfin/config:/config:Z
+
+[Service]
+# Inform systemd of additional exit status
+SuccessExitStatus=0 143
+
+[Install]
+# Start by default on boot
+WantedBy=default.target

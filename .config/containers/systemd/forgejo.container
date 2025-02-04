@@ -1,7 +1,7 @@
 [Container]
 ContainerName=forgejo
-Environment=USER_UID=1000
-Environment=USER_GID=1000
+Environment=USER_UID=0
+Environment=USER_GID=0
 Image=codeberg.org/forgejo/forgejo:9
 PublishPort=3000:3000
 PublishPort=2222:22

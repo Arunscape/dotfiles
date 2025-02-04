@@ -30,7 +30,7 @@ ln_overwrite_folder(){
 
 # https://unix.stackexchange.com/questions/29769/trailing-slashes-on-symbolic-links-to-directories
 # no trailing slashes for this to work!
-ln_overwrite_folder .doom.d $HOME
+ln_overwrite_folder .config/doom $HOME
 ln_overwrite_folder .config/kitty $HOME/.config
 ln_overwrite_folder .config/sway $HOME/.config
 ln_overwrite_folder .config/fish $HOME/.config
@@ -50,3 +50,5 @@ ln_overwrite_folder .config/waybar $HOME/.config
 ln_overwrite_folder .config/pipewire $HOME/.config
 ln_overwrite_folder .config/containers $HOME/.config
 ln_overwrite_folder .config/systemd $HOME/.config
+ln_overwrite_folder .config/git $HOME/.config
+ln_overwrite_folder .config/environment.d $HOME/.config

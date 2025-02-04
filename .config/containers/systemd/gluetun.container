@@ -43,7 +43,7 @@ PublishPort=6595:6595
 #PublishPort=5055:5055
 
 # jellyfin
-PublishPort=8096:8096
+#PublishPort=8096:8096
 
 
 

@@ -17,15 +17,12 @@ type -q bat; and set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"; and set -x M
 # https://github.com/python-poetry/poetry/issues/5929
 #type -q poetry; and poetry completions fish | source &
 
-set -Ua fish_user_paths $HOME/.cargo/bin
+set -Ua fish_user_paths ~/.cargo/bin ~/.config/emacs/bin 
 
 
 if path filter -qd ~/Android/Sdk
   # The path is a directory
   set -Ux ANDROID_HOME ~/Android/Sdk
 end
-
-set -Ux VISUAL nvim
-set -Ux EDITOR nvim
 
 type -q fastfetch; and fastfetch

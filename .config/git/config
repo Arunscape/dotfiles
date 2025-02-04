@@ -1,0 +1,15 @@
+[user]
+	email = 8227297+Arunscape@users.noreply.github.com
+	name = Arunscape
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHVMzs2dfpHbo76Yuu4tylF4CdRLmwDi1Ni1SwN2FB/8 arunscape@pop-os
+[push]
+	autoSetupRemote = true
+[core]
+	excludesfile = ~/,config/git/gitignore_global
+	editor = nvim
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/arunscape/.ssh/allowed_signers
+[color]
+	ui = auto

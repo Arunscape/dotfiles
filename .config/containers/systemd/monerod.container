@@ -1,13 +1,14 @@
 # monerod.container
 [Container]
 ContainerName=monerod
-Exec='--rpc-restricted-bind-ip=0.0.0.0' '--rpc-restricted-bind-port=18089' --no-igd --no-zmq --enable-dns-blocklist
+Exec='--rpc-restricted-bind-ip=0.0.0.0' '--rpc-restricted-bind-port=18089' '--no-igd' '--no-zmq' '--enable-dns-blocklist' '--prune-blockchain'
 Image=ghcr.io/sethforprivacy/simple-monerod
 PublishPort=18080:18080
 PublishPort=18089:18089
-Volume=/run/media/arunscape/znas/server/bitmonero:/home/monero/.bitmonero:z
+Volume=/run/media/arunscape/znas/server/bitmonero:/home/monero/.bitmonero:Z
 AutoUpdate=registry
-User=0:0
+#User=0:0
+UserNS=keep-id
 
 [Service]
 Restart=always
