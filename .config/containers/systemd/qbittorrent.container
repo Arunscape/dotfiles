@@ -15,3 +15,6 @@ Restart=always
 [Unit]
 BindsTo=gluetun.service
 After=gluetun.service
+
+[Install]
+WantedBy=default.target

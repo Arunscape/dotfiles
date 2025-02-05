@@ -161,6 +161,9 @@
           - libvirt
           - games
           - video
+          - libvirt
+          - incus-admin
+          - gamemode
 
     # todo: add when condition
     - name: Restart pipewire

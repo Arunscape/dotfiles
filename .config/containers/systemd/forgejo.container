@@ -1,12 +1,15 @@
 [Container]
 ContainerName=forgejo
-Environment=USER_UID=0
-Environment=USER_GID=0
-Image=codeberg.org/forgejo/forgejo:9
+Image=codeberg.org/forgejo/forgejo:10-rootless
 PublishPort=3000:3000
-PublishPort=2222:22
-Volume=/run/media/arunscape/znas/server/forgejo:/data:z
+PublishPort=2222:2222
+#Volume=/run/media/arunscape/znas/server/forgejo:/data:z
+Volume=/run/media/arunscape/znas/server/forgejo/data:/var/lib/gitea
+Volume=/run/media/arunscape/znas/server/forgejo/conf:/etc/gitea
+#Volume=/etc/timezone:/etc/timezone:ro
+#Volume=/etc/localtime:/etc/localtime:ro
 AutoUpdate=registry
+UserNS=keep-id
 
 [Service]
 Restart=always
