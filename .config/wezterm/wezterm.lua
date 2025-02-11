@@ -42,6 +42,7 @@ return {
   font = wezterm.font_with_fallback {
     'Monocraft',
     'Fira Code',
+    'KanjiStrokeOrders',
   },
   color_scheme = "Catppuccin Mocha",
   window_background_opacity = window_background_opacity,
