@@ -13,3 +13,8 @@
 	allowedSignersFile = /home/arunscape/.ssh/allowed_signers
 [color]
 	ui = auto
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

@@ -9,6 +9,7 @@ ln -sf $HOME/dotfiles/.config/wallpaper $HOME/.config/wallpaper
 ln -sf $HOME/dotfiles/.config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf
 ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -sf $HOME/dotfiles/.local/share/applications/defaults.list $HOME/.local/share/applications/defaults.list
+#ln -sf $HOME/dotfiles/.config/gamemode.ini $HOME/.config/gamemode.ini
 
 
 ln_overwrite_folder(){

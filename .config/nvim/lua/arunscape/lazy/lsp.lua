@@ -26,7 +26,8 @@ return {
           "kotlin_language_server",
           "lua_ls",
           "mdx_analyzer",
-          "basedpyright",
+          --"basedpyright",
+          "ty",
           "ruff",
           "rust_analyzer",
           "sqlls",
@@ -60,9 +61,9 @@ return {
               }
             }
           end,
-          based_pyright = function()
+          basedpyright = function()
             local lspconfig = require("lspconfig")
-            lspconfig.based_pyright.setup {
+            lspconfig.basedpyright.setup {
               capabilities = capabilities,
               settings = {
                 basedpyright = {
