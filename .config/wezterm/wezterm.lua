@@ -40,7 +40,9 @@ end)
 return {
   --font = wezterm.font 'Miracode',
   font = wezterm.font_with_fallback {
+    'Monocraft Nerd Font',
     'Monocraft',
+    'Fira Code Nerd Font',
     'Fira Code',
     'KanjiStrokeOrders',
   },

@@ -1,0 +1,11 @@
+/etc/portage/make.conf
+/etc/portage/binrepos.conf
+/etc/portage/package.accept_keywords
+/etc/portage/package.license
+/etc/portage/package.use
+/etc/portage/patches
+/etc/portage/repos.conf
+#/etc/portage/savedconfig
+
+/etc/gamemode.ini
+

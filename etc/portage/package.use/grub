@@ -1,0 +1,3 @@
+#sys-boot/grub device-mapper
+#sys-fs/cryptsetup argon2 -static-libs
+sys-apps/systemd-utils boot kernel-install

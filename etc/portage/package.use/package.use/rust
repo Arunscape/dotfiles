@@ -1,0 +1,2 @@
+dev-lang/rust-bin clippy rust-analyzer rust-src rustfmt verify-sig
+dev-lang/rust clippy debug dist llvm-libunwind nightly mrustc-bootstrap parallel-compiler rust-analyzer rust-src rustfmt verify-sig wasm

@@ -1,0 +1,26 @@
+# created by eselect-repo
+
+[librewolf]
+location = /var/db/repos/librewolf
+sync-type = git
+sync-uri = https://codeberg.org/librewolf/gentoo.git
+
+[steam-overlay]
+location = /var/db/repos/steam-overlay
+sync-type = git
+sync-uri = https://github.com/anyc/steam-overlay.git
+
+[kzd]
+location = /var/db/repos/kzd
+sync-type = git
+sync-uri = https://gitlab.com/kzdixon/kzd-ebuilds.git
+
+[guru]
+location = /var/db/repos/guru
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/guru.git
+
+[aruns-gentoo-overlay]
+location = /var/db/repos/aruns-gentoo-overlay
+sync-type = git
+sync-uri = https://github.com/Arunscape/aruns-gentoo-overlay.git
