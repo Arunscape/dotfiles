@@ -8,7 +8,9 @@
 /etc/portage/repos.conf
 /etc/portage/env
 /etc/profile.d
-/etc/grub.d
+
+# lots of these are auto generated, I'll just manually pick the ones I added
+#/etc/grub.d
 /etc/localtime
 
 #/etc/portage/savedconfig
@@ -18,6 +20,6 @@
 /var/lib/portage/world
 /etc/fstab
 
-
-/etc/ssh/sshd_config.d/
+# lots of these are auto generated, I'll just manually pick the ones I added
+/etc/ssh/sshd_config.d/hardening
 
