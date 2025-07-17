@@ -3,9 +3,18 @@
 /etc/portage/package.accept_keywords
 /etc/portage/package.license
 /etc/portage/package.use
+/etc/portage/package.mask
 /etc/portage/patches
 /etc/portage/repos.conf
+/etc/portage/env
+/etc/profile.d
+/etc/grub.d
+/etc/localtime
+
 #/etc/portage/savedconfig
 
 /etc/gamemode.ini
+/etc/locale.gen
+/var/lib/portage/world
+/etc/fstab
 
