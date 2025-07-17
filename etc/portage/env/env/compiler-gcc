@@ -1,0 +1,12 @@
+COMMON_FLAGS="-O2 -march=native -flto"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+#LDFLAGS="-Wl,--as-needed -fuse-ld=mold"
+LDFLAGS="-Wl,--as-needed"
+
+CC="gcc"
+CXX="g++"
+CPP="gcc -E"
+AR="ar"
+NM="nm"
+RANLIB="ranlib"

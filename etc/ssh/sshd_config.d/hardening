@@ -1,0 +1,9 @@
+PermitEmptyPasswords no
+PermitRootLogin no
+Protocol 2
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+KerberosAuthentication no
+GSSAPIAuthentication no
+PubkeyAuthentication yes
+MaxAuthTries 3
