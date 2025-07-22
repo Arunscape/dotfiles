@@ -1,1 +1,5 @@
 www-client/firefox -X -telemetry dbus hwaccel jpegxl openh264 system-pipewire system-png wasm-sandbox en_CA
+# required by www-client/librewolf-140.0.2_p1::librewolf[system-libvpx]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libvpx-1.15.2 postproc

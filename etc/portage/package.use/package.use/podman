@@ -1,0 +1,4 @@
+# required by app-containers/containers-common-0.63.0::gentoo
+# required by app-containers/podman-5.5.2::gentoo
+# required by app-containers/podman (argument)
+>=net-firewall/iptables-1.8.11-r1 nftables

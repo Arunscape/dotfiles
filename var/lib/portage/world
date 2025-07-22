@@ -1,8 +1,11 @@
 app-admin/doas
 app-admin/sysklogd
+app-containers/podman
 app-editors/neovim
 app-emulation/proton-ge-custom-bin
 app-eselect/eselect-repository
+app-office/obsidian
+app-portage/gentoolkit
 app-shells/bash-completion
 app-shells/fish
 app-shells/starship
@@ -13,9 +16,13 @@ games-util/gamemode
 games-util/steam-launcher
 gui-wm/gamescope
 kde-apps/dolphin
+kde-apps/konsole
+kde-misc/kdeconnect
 kde-plasma/kdesu-gui
 kde-plasma/plasma-meta
 media-fonts/monocraft
+media-gfx/vkBasalt
+media-video/mpv
 net-im/discord
 net-libs/nodejs
 net-misc/chrony
@@ -23,6 +30,7 @@ net-misc/dhcpcd
 net-misc/nextcloud-client
 net-misc/openrsync
 net-misc/xmrig
+net-misc/yt-dlp
 net-p2p/syncthing
 sys-apps/bat
 sys-apps/lsd

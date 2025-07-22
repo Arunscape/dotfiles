@@ -16,6 +16,7 @@
 #/etc/portage/savedconfig
 
 /etc/gamemode.ini
+/etc/udev/rules.d/70-wooting.rules
 /etc/locale.gen
 /var/lib/portage/world
 /etc/fstab
