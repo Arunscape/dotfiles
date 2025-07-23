@@ -9,6 +9,7 @@ ln -sf $HOME/dotfiles/.config/wallpaper $HOME/.config/wallpaper
 ln -sf $HOME/dotfiles/.config/libinput-gestures.conf $HOME/.config/libinput-gestures.conf
 ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -sf $HOME/dotfiles/.local/share/applications/defaults.list $HOME/.local/share/applications/defaults.list
+ln -sf $HOME/dotfiles/.config/kdesurc $HOME/.config/kdesurc
 #ln -sf $HOME/dotfiles/.config/gamemode.ini $HOME/.config/gamemode.ini
 
 
@@ -31,7 +32,7 @@ ln_overwrite_folder(){
 
 # https://unix.stackexchange.com/questions/29769/trailing-slashes-on-symbolic-links-to-directories
 # no trailing slashes for this to work!
-ln_overwrite_folder .config/doom $HOME
+ln_overwrite_folder .config/doom $HOME/.config
 ln_overwrite_folder .config/kitty $HOME/.config
 ln_overwrite_folder .config/sway $HOME/.config
 ln_overwrite_folder .config/fish $HOME/.config

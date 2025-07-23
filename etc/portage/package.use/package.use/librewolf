@@ -1,4 +1,4 @@
-www-client/firefox -X -telemetry dbus hwaccel jpegxl openh264 system-pipewire system-png wasm-sandbox en_CA
+www-client/firefox -X clang gmp-autoupdate system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp -telemetry dbus -debug -gnome-shell hwaccel jpegxl openh264 system-pipewire system-png wasm-sandbox wayland
 # required by www-client/librewolf-140.0.2_p1::librewolf[system-libvpx]
 # required by @selected
 # required by @world (argument)

@@ -4,6 +4,7 @@ app-containers/podman
 app-editors/neovim
 app-emulation/proton-ge-custom-bin
 app-eselect/eselect-repository
+app-misc/fastfetch
 app-office/obsidian
 app-portage/gentoolkit
 app-shells/bash-completion
@@ -20,6 +21,7 @@ kde-apps/konsole
 kde-misc/kdeconnect
 kde-plasma/kdesu-gui
 kde-plasma/plasma-meta
+mail-client/thunderbird-bin
 media-fonts/monocraft
 media-gfx/vkBasalt
 media-video/mpv
