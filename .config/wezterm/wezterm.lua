@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local config = wezterm.config_builder()
 
 local window_background_opacity = 0.8
 
@@ -37,37 +38,41 @@ wezterm.on('increase-opacity', function(window, _pane)
   change_opacity(window, 0.1)
 end)
 
-return {
-  --font = wezterm.font 'Miracode',
-  font = wezterm.font_with_fallback {
-    { family = 'Monocraft Nerd Font', weight = 'Book' },
-    'Monocraft',
-    'Fira Code Nerd Font',
-    'Fira Code',
-    'Noto Sans Mono',
-    'Noto Color Emoji',
-    'KanjiStrokeOrders',
-  },
-  color_scheme = "Catppuccin Mocha",
-  window_background_opacity = window_background_opacity,
-  window_close_confirmation = "NeverPrompt",
-  scrollback_lines = 10000,
-  keys = {
-    {
-      key = 'LeftArrow',
-      mods = opacity_mod,
-      action = wezterm.action.EmitEvent 'increase-opacity',
-    },
-    {
-      key = 'RightArrow',
-      mods = opacity_mod,
-      action = wezterm.action.EmitEvent 'decrease-opacity',
-    },
-    {
-      key = 'w',
-      mods = 'CTRL|SHIFT',
-      action = wezterm.action.DisableDefaultAssignment,
-    },
-  },
-  --  debug_key_events = true,
+config.font = wezterm.font_with_fallback {
+  { family = 'Monocraft Nerd Font', weight = 'Book' },
+  'Monocraft',
+  'Fira Code Nerd Font',
+  'Fira Code',
+  'Noto Sans Mono',
+  'Noto Color Emoji',
+  'KanjiStrokeOrders',
 }
+
+config.color_scheme = "Catppuccin Mocha"
+config.window_background_opacity = window_background_opacity
+config.window_close_confirmation = "NeverPrompt"
+config.scrollback_lines = 10000
+config.keys = {
+  {
+    key = 'LeftArrow',
+    mods = opacity_mod,
+    action = wezterm.action.EmitEvent 'increase-opacity',
+  },
+  {
+    key = 'RightArrow',
+    mods = opacity_mod,
+    action = wezterm.action.EmitEvent 'decrease-opacity',
+  },
+  {
+    key = 'w',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+}
+--config.debug_key_events = true
+config.leader = { key = 'w', mods = 'CTRL', timeout_milliseconds = 1000 }
+wezterm.plugin.require("https://gitlab.com/xarvex/presentation.wez").apply_to_config(config)
+wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm").apply_to_config(config)
+
+
+return config

@@ -10,6 +10,7 @@ type -q starship; and starship init fish | source &
 type -q thefuck; and thefuck --alias | source &
 type -q gh; and gh completion -s fish | source &
 type -q opam; and eval (opam env --switch=default) &
+type -q zoxide; and zoxide init fish | source &
 
 
 type -q bat; and set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"; and set -x MANROFFOPT "-c"
@@ -27,6 +28,8 @@ end
 
 #type -q fastfetch; and fastfetch
 
+
+set -g fish_key_bindings fish_vi_key_bindings
 
 set -Ux XR_RUNTIME_JSON /home/arunscape/code/monado/build/openxr_monado-dev.json
 set -Ux VIT_SYSTEM_LIBRARY_PATH /usr/local/lib/libbasalt.so
