@@ -1,5 +1,5 @@
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
@@ -14,13 +14,19 @@ return {
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
+    -- Optional
+    "Saghen/blink.cmp",
+    "nvim-telescope/telescope.nvim",
+    "folke/snacks.nvim",
 
-    -- see below for full list of optional dependencies 👇
+    -- see above for full list of optional dependencies ☝️
   },
+  ---@module 'obsidian'
+  ---@type obsidian.config
   opts = {
     workspaces = {
       {
-        name = "atb",
+        name = "personal",
         path = "~/Documents/Obsidian Vault",
       },
     },

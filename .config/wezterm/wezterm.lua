@@ -14,22 +14,15 @@ function change_opacity(window, amount)
   window:set_config_overrides(overrides)
 end
 
-function getOS()
-  -- ask LuaJIT first
-  if jit then
-    return jit.os
-  end
-
-  -- Unix, Linux variants
-  local fh, err = assert(io.popen("uname -o 2>/dev/null", "r"))
-  if fh then
-    osname = fh:read()
-  end
-
-  return osname or "Windows"
+function isMacos()
+  return wezterm.target_triple:sub(- #"-apple-darwin") == '-apple-darwin'
 end
 
-local opacity_mod = getOS() == 'Darwin' and 'CTRL|SHIFT' or 'CTRL'
+local opacity_mod = 'CTRL'
+
+if isMacos() then
+  opacity_mod = opacity_mod .. '|SHIFT'
+end
 
 wezterm.on('decrease-opacity', function(window, _pane)
   change_opacity(window, -0.1)
@@ -38,10 +31,11 @@ wezterm.on('increase-opacity', function(window, _pane)
   change_opacity(window, 0.1)
 end)
 
+
 config.font = wezterm.font_with_fallback {
+  { family = "FiraCode Nerd Font",  weight = "DemiBold" },
   { family = 'Monocraft Nerd Font', weight = 'Book' },
   'Monocraft',
-  'Fira Code Nerd Font',
   'Fira Code',
   'Noto Sans Mono',
   'Noto Color Emoji',
@@ -72,7 +66,11 @@ config.keys = {
 --config.debug_key_events = true
 config.leader = { key = 'w', mods = 'CTRL', timeout_milliseconds = 1000 }
 wezterm.plugin.require("https://gitlab.com/xarvex/presentation.wez").apply_to_config(config)
-wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm").apply_to_config(config)
-
+local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+if isMacos() then
+  opacity_mod = opacity_mod .. '|SHIFT'
+  workspace_switcher.zoxide_path = "/opt/homebrew/bin/zoxide"
+end
+workspace_switcher.apply_to_config(config)
 
 return config

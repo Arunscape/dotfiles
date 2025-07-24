@@ -1,13 +1,14 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 [ -f ~/.atb.zsh ] && source ~/.atb.zsh
-[ -f ~/.zplug/init.zsh ] && source ~/.zplug/init.zsh
 
 
 if [ $TERM != "dumb" ]; then
+  [ -f ~/.zplug/init.zsh ] && source ~/.zplug/init.zsh
   eval "$(starship init zsh)"
   eval $(thefuck --alias)
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
+  eval "$(zoxide init zsh)"
 fi
 
 vim() {
@@ -60,7 +61,7 @@ PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-zplug "aperezdc/zsh-fzy"
+zplug "unixorn/fzf-zsh-plugin"
 zplug "zsh-users/zsh-history-substring-search"
 
 # Install plugins if there are plugins that have not been installed
