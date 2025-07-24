@@ -1,3 +1,2 @@
 #dev-lang/rust-bin clippy rust-analyzer rust-src rustfmt verify-sig
 #dev-lang/rust clippy debug dist llvm-libunwind nightly mrustc-bootstrap parallel-compiler rust-analyzer rust-src rustfmt verify-sig wasm
-# probably won't need any of these if I'm using rustup I think this package is just to compile other system packages with stable rust

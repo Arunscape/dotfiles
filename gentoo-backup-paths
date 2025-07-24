@@ -7,10 +7,10 @@
 /etc/portage/patches
 /etc/portage/repos.conf
 /etc/portage/env
-/etc/profile.d
 
 # lots of these are auto generated, I'll just manually pick the ones I added
 #/etc/grub.d
+#/etc/profile.d
 /etc/localtime
 
 #/etc/portage/savedconfig
