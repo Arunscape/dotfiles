@@ -33,7 +33,8 @@ vim.opt.autoindent = true
 vim.opt.copyindent = true
 vim.opt.smartindent = true
 
-vim.opt.wildignore = { '*/cache/*', '*/tmp/*', "*/target/*", "*/build/*", "*/node_modules/*" }
+vim.opt.wildignore = { '*/cache/*', '*/tmp/*', "*/target/*", "*/build/*", "*/node_modules/*", "*/.venv/*",
+  "*/__pycache__/*" }
 
 -- vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
 -- leader+y to copy to system clipboard
@@ -47,12 +48,5 @@ vim.api.nvim_set_keymap("", "<leader>p", [["+p]], {
   silent = true
 })
 
---vim.keymap.set('n', '<leader>f', function()
---    vim.lsp.buf.format {
---        async = true
---    }
---end, {})
 
 
--- inlay hints
-vim.lsp.inlay_hint.enable()

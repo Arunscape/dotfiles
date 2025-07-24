@@ -1,4 +1,9 @@
 return {
+  "neovim/nvim-lspconfig"
+}
+--[[
+
+return {
   {
     "neovim/nvim-lspconfig",
     dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "saghen/blink.cmp", "rafamadriz/friendly-snippets", "j-hui/fidget.nvim" },
@@ -179,3 +184,4 @@ return {
     log_level = vim.log.levels.DEBUG,
   }
 }
+--]]

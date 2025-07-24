@@ -40,10 +40,12 @@ end)
 return {
   --font = wezterm.font 'Miracode',
   font = wezterm.font_with_fallback {
-    'Monocraft Nerd Font',
+    { family = 'Monocraft Nerd Font', weight = 'Book' },
     'Monocraft',
     'Fira Code Nerd Font',
     'Fira Code',
+    'Noto Sans Mono',
+    'Noto Color Emoji',
     'KanjiStrokeOrders',
   },
   color_scheme = "Catppuccin Mocha",

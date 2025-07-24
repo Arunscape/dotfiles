@@ -1,0 +1,11 @@
+podman run \
+          --name jellyfin \
+          -p 8096:8096/tcp \
+          --userns=keep-id \
+          --device /dev/dri/:/dev/dri/ \
+          -v /run/media/arunscape/znas/server/data/tv:/media/tv:ro \
+          -v /run/media/arunscape/znas/server/data/movies:/media/movies:ro \
+          -v /run/media/arunscape/znas/server/data/music:/media/music:ro \
+          -v /run/media/arunscape/znas/server/jellyfin/cache:/cache:Z \
+          -v /run/media/arunscape/znas/server/jellyfin/config:/config:Z \
+          --cgroup-manager=cgroupfs --replace docker.io/jellyfin/jellyfin:latest
