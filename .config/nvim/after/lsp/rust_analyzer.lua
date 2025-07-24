@@ -8,10 +8,11 @@ return {
   settings = {
     ["rust-analyzer"] = {
       -- Add clippy lints for Rust.
-      checkOnSave = {
-        allFeatures = true,
+      checkOnSave = true,
+      check = {
         command = "clippy",
         extraArgs = { "--no-deps" },
+        features = "all"
       },
       procMacro = {
         enable = true,
