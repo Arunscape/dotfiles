@@ -10,7 +10,9 @@ app-office/obsidian
 app-portage/gentoolkit
 app-shells/bash-completion
 app-shells/fish
+app-shells/fzf
 app-shells/starship
+app-shells/zoxide
 app-text/harper
 app-text/tinymist
 app-text/tree
@@ -35,6 +37,7 @@ kde-plasma/kdesu-gui
 kde-plasma/plasma-meta
 mail-client/thunderbird-bin
 media-fonts/monocraft
+media-fonts/noto-cjk
 media-gfx/vkBasalt
 media-libs/noise-suppression-for-voice
 media-video/mpv
