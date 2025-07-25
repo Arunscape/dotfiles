@@ -33,13 +33,9 @@ end)
 
 
 config.font = wezterm.font_with_fallback {
-  { family = "FiraCode Nerd Font",  weight = "DemiBold" },
   { family = 'Monocraft Nerd Font', weight = 'Book' },
-  'Monocraft',
+  --{ family = "FiraCode Nerd Font",  weight = "DemiBold" },
   'Fira Code',
-  'Noto Sans Mono',
-  'Noto Color Emoji',
-  'KanjiStrokeOrders',
 }
 
 config.color_scheme = "Catppuccin Mocha"

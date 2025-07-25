@@ -26,6 +26,7 @@
 #/etc/pam.d/greetd
 /etc/conf.d/display-manager
 /etc/sddm.conf.d/autologin.conf
+/etc/rc.conf
 
 
 # lots of these are auto generated, I'll just manually pick the ones I added

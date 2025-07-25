@@ -1,0 +1,158 @@
+virtual/wine wayland
+# required by app-emulation/wine-vanilla-10.12::gentoo[vulkan]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/vulkan-loader-1.4.313.0 abi_x86_32
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/gst-plugins-base-1.24.11-r1 abi_x86_32
+# required by media-plugins/gst-plugins-faad-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[aac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/gstreamer-1.24.11 abi_x86_32
+# required by app-emulation/wine-vanilla-10.12::gentoo[unwind,-llvm-libunwind]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=sys-libs/libunwind-1.8.2 abi_x86_32
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-meta-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/gst-plugins-good-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[-dvd,a52]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-a52dec-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[aac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-faad-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[dts]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-dts-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[flac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-flac-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-a52dec-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[-dvd,a52]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/gst-plugins-ugly-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[mp3]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-mpg123-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[-dvd,-vcd,mpeg]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-mpeg2dec-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[pulseaudio]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-pulse-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[x264]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-plugins/gst-plugins-x264-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-x264-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[x264]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/x264-0.0.20240513 abi_x86_32
+# required by media-plugins/gst-plugins-mpeg2dec-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[-dvd,-vcd,mpeg]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/libmpeg2-0.5.1-r3 abi_x86_32
+# required by media-plugins/gst-plugins-dts-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[dts]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/libdca-0.0.7 abi_x86_32
+# required by media-libs/gst-plugins-base-1.24.11-r1::gentoo[orc]
+# required by media-libs/gst-plugins-good-1.24.11::gentoo
+# required by media-plugins/gst-plugins-flac-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[flac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=dev-lang/orc-0.4.41 abi_x86_32
+# required by media-plugins/gst-plugins-faad-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[aac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/gst-plugins-bad-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-faad-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[aac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/faad2-2.11.2 abi_x86_32
+# required by media-plugins/gst-plugins-a52dec-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[-dvd,a52]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/a52dec-0.7.4-r9 abi_x86_32
+# required by media-libs/gst-plugins-base-1.24.11-r1::gentoo[X]
+# required by media-libs/gst-plugins-good-1.24.11::gentoo
+# required by media-plugins/gst-plugins-flac-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[flac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=x11-libs/libXv-1.0.13 abi_x86_32
+# required by media-libs/gst-plugins-base-1.24.11-r1::gentoo[gles2,opengl]
+# required by media-libs/gst-plugins-good-1.24.11::gentoo
+# required by media-plugins/gst-plugins-flac-1.24.11::gentoo
+# required by media-plugins/gst-plugins-meta-1.24.11::gentoo[flac]
+# required by app-emulation/wine-vanilla-10.12::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/winetricks-20250102-r1::gentoo
+# required by winetricks (argument)
+>=media-libs/graphene-1.10.8-r1 abi_x86_32
