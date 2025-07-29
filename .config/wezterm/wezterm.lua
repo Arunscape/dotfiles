@@ -61,7 +61,8 @@ config.keys = {
 }
 --config.debug_key_events = true
 config.leader = { key = 'w', mods = 'CTRL', timeout_milliseconds = 1000 }
-wezterm.plugin.require("https://gitlab.com/xarvex/presentation.wez").apply_to_config(config)
+--wezterm.plugin.require("https://gitlab.com/xarvex/presentation.wez").apply_to_config(config)
+wezterm.plugin.require("/home/arunscape/code/presentation.wez/").apply_to_config(config)
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 if isMacos() then
   opacity_mod = opacity_mod .. '|SHIFT'

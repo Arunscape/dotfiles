@@ -1,0 +1,4 @@
+# required by dev-libs/libayatana-appindicator-0.5.94::gentoo
+# required by media-sound/spotify-1.2.63::gentoo
+# required by spotify (argument)
+>=dev-libs/libdbusmenu-16.04.0-r3 gtk3
