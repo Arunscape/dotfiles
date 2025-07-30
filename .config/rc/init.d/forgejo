@@ -8,14 +8,14 @@ output_log="${log_path}/${RC_SVCNAME}.log"
 error_log=$output_log
 command=podman
 command_args="run
-              --pidfile=$pidfile
+              --pidfile $pidfile
               --name $RC_SVCNAME
               -p $web_port:3000
               -p $ssh_port:2222
               -v $data_path:/var/lib/gitea
               -v $conf_path:/etc/gitea
-              --userns=keep-id
-              --cgroup-manager=cgroupfs
+              --userns keep-id
+              --cgroup-manager cgroupfs
               --replace
               $container_url
              "
