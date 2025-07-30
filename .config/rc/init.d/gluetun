@@ -19,6 +19,7 @@ command_args="run
             -e VPN_PORT_FORWARDING=on
             -v $gluetun_vol:/gluetun
             --replace
+            --network $network
             $ports
             $container_url
             "

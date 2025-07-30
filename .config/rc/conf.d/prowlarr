@@ -1,0 +1,5 @@
+container_url=ghcr.io/hotio/prowlarr
+tz=Canada/Mountain
+web_port=9696
+config_path=/run/media/arunscape/znas/server/prowlarr
+network=servarr

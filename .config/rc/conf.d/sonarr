@@ -1,0 +1,6 @@
+container_url=ghcr.io/hotio/sonarr
+tz=Canada/Mountain
+web_port=8989
+config_path=/run/media/arunscape/znas/server/sonarr
+data_path=/run/media/arunscape/znas/server/data
+network=servarr
