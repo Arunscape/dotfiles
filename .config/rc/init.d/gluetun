@@ -1,0 +1,63 @@
+#!/sbin/openrc-run
+
+description="Gluetun VPN container"
+run_path="${XDG_RUNTIME_DIR}/podman"
+log_path="${run_path}/log"
+pidfile="${run_path}/${RC_SVCNAME}.pid"
+output_log="${log_path}/${RC_SVCNAME}.log"
+error_log=$output_log
+command=podman
+command_args="run
+            --pidfile $pidfile
+            --name $RC_SVCNAME
+            --cap-add=NET_ADMIN
+            --device=/dev/net/tun
+            --secret $server_regions_podman_secret,type=env,target=SERVER_REGIONS
+            --secret $user_podman_secret,type=env,target=OPENVPN_USER
+            --secret $pass_podman_secret,type=env,target=OPENVPN_PASSWORD
+            --secret $server_provider_podman_secret,type=env,target=VPN_SERVICE_PROVIDER
+            -e VPN_PORT_FORWARDING=on
+            -v $gluetun_vol:/gluetun
+            --replace
+            $ports
+            $container_url
+            "
+command_background=true
+
+start_pre(){
+  checkpath -o $USER -d "${run_path}" "${log_path}"
+
+  ebegin "Checking $gluetun_vol"
+  checkpath -o $USER -d "${gluetun_vol}"
+  eend $? "Double check $gluetun_vol"
+
+  ebegin "Check /dev/net/tun"
+  checkpath -W /dev/net/tun
+  eend $? "Check /dev/net/tun"
+
+  ebegin "Check podman secret $user_podman_secret"
+  podman secret exists $user_podman_secret
+  eend $? "Check podman secrets"
+
+  ebegin "Check podman secret $pass_podman_secret"
+  podman secret exists $pass_podman_secret
+  eend $? "Check podman secrets"
+
+  ebegin "Check podman secret $server_regions_podman_secret"
+  podman secret exists $server_regions_podman_secret
+  eend $? "Check podman secrets"
+
+  ebegin "Check podman secret $server_provider_podman_secret"
+  podman secret exists $server_provider_podman_secret
+  eend $? "Check podman secrets"
+
+
+  ebegin "Pulling $container_url"
+  podman pull $container_url
+  eend $? "Failed to pull $container_url"
+}
+
+
+depend() {
+    use podman
+}

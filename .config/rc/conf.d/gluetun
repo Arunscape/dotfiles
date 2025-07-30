@@ -1,0 +1,7 @@
+container_url=ghcr.io/qdm12/gluetun
+server_regions_podman_secret=GLUETUN_SERVICE_REGIONS
+user_podman_secret=GLUETUN_USER
+pass_podman_secret=GLUETUN_PASSWORD
+server_provider_podman_secret=GLUETUN_SERVICE_PROVIDER
+gluetun_vol=/run/media/arunscape/znas/server/gluetun
+ports="-p 6969:6969 -p 8080:8080 -p 6789:6789 -p 5030:5030 -p 5031:5031 -p 50300:50300 -p 6595:6595"
