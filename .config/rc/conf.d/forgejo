@@ -1,0 +1,5 @@
+container_url=codeberg.org/forgejo/forgejo:12-rootless
+data_path=/run/media/arunscape/znas/server/forgejo/data
+conf_path=/run/media/arunscape/znas/server/forgejo/conf
+web_port=3000
+ssh_port=2222

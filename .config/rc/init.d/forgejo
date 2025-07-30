@@ -1,6 +1,6 @@
 #!/sbin/openrc-run
 
-description="Arun's forgejo instance with podman"
+description="Arun's $RC_SVCNAME instance with podman"
 run_path="${XDG_RUNTIME_DIR}/podman"
 log_path="${run_path}/log"
 pidfile="${run_path}/${RC_SVCNAME}.pid"
@@ -9,15 +9,15 @@ error_log=$output_log
 command=podman
 command_args="run
               --pidfile=$pidfile
-              --name forgejo
-              -p 3000:3000
-              -p 2222:2222
-              -v /run/media/arunscape/znas/server/forgejo/data:/var/lib/gitea
-              -v /run/media/arunscape/znas/server/forgejo/conf:/etc/gitea
+              --name $RC_SVCNAME
+              -p $web_port:3000
+              -p $ssh_port:2222
+              -v $data_path:/var/lib/gitea
+              -v $conf_path:/etc/gitea
               --userns=keep-id
               --cgroup-manager=cgroupfs
               --replace
-              codeberg.org/forgejo/forgejo:10-rootless
+              $container_url
              "
 command_background=true
 
@@ -28,8 +28,12 @@ depend() {
 
 start_pre(){
   checkpath -o $USER -d "${run_path}" "${log_path}"
-  ebegin "Updating forgejo container"
-  podman pull codeberg.org/forgejo/forgejo:10-rootless
-  eend $? "Failed to pull latest forgejo container"
 
+  ebegin "Checking $data_path and $conf_path"
+  checkpath -o $USER -d "${data_path}" "${conf_path}"
+  eend $? "Double check $data_path and $conf_path"
+
+  ebegin "Pulling $container_url"
+  podman pull $container_url
+  eend $? "Failed to pull $container_url"
 }
