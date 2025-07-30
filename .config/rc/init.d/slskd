@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+
+description="Arun's $RC_SVCNAME instance with podman"
+run_path="${XDG_RUNTIME_DIR}/podman"
+log_path="${run_path}/log"
+pidfile="${run_path}/${RC_SVCNAME}.pid"
+output_log="${log_path}/${RC_SVCNAME}.log"
+error_log=$output_log
+command=podman
+command_args="run
+              --pidfile $pidfile
+              --name $RC_SVCNAME
+              -e SLSKD_REMOTE_CONFIGURATION=true
+              -v $app_path:/app
+              -v $data_path:/data
+              --replace
+              --network $network
+              $container_url
+             "
+command_background=true
+
+
+depend() {
+    use podman
+    need gluetun
+}
+
+start_pre(){
+  checkpath -o $USER -d "${run_path}" "${log_path}"
+
+  ebegin "Pulling $container_url"
+  podman pull $container_url
+  eend $? "Failed to pull $container_url"
+}
+
+

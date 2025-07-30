@@ -1,0 +1,4 @@
+container_url=docker.io/slskd/slskd:latest
+app_path=/run/media/arunscape/znas/server/slskd
+data_path=/run/media/arunscape/znas/server/data
+network=container:gluetun
