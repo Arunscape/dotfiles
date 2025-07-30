@@ -1,0 +1,7 @@
+container_url=docker.io/jellyfin/jellyfin:latest
+web_port=8096
+tv_path=/run/media/arunscape/znas/server/data/tv
+movies_path=/run/media/arunscape/znas/server/data/movies
+music_path=/run/media/arunscape/znas/server/data/music
+cache_path=/run/media/arunscape/znas/server/jellyfin/cache
+config_path=/run/media/arunscape/znas/server/jellyfin/config

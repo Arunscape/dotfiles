@@ -1,6 +1,6 @@
 #!/sbin/openrc-run
 
-description="Gluetun VPN container"
+description="Arun's $RC_SVCNAME instance with podman"
 run_path="${XDG_RUNTIME_DIR}/podman"
 log_path="${run_path}/log"
 pidfile="${run_path}/${RC_SVCNAME}.pid"

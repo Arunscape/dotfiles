@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+
+description="Arun's $RC_SVCNAME instance with podman"
+run_path="${XDG_RUNTIME_DIR}/podman"
+log_path="${run_path}/log"
+pidfile="${run_path}/${RC_SVCNAME}.pid"
+output_log="${log_path}/${RC_SVCNAME}.log"
+error_log=$output_log
+command=podman
+command_args="run
+              --pidfile $pidfile
+              --name $RC_SVCNAME
+              --userns=keep-id
+              --device /dev/dri/:/dev/dri/
+              -p $web_port:8096/tcp
+              --mount type=bind,source=$tv_path,destination=/media/tv,readonly=true,relabel=private
+              --mount type=bind,source=$movies_path,destination=/media/movies,readonly=true,relabel=private
+              --mount type=bind,source=$music_path,destination=/media/music,readonly=true,relabel=private
+              -v $cache_path:/cache
+              -v $config_path:/config
+              --replace
+              $container_url
+             "
+command_background=true
+
+
+depend() {
+    use podman
+}
+
+start_pre(){
+  checkpath -o $USER -d "${run_path}" "${log_path}"
+
+  ebegin "Pulling $container_url"
+  podman pull $container_url
+  eend $? "Failed to pull $container_url"
+}
