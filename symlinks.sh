@@ -55,3 +55,4 @@ ln_overwrite_folder .config/systemd $HOME/.config
 ln_overwrite_folder .config/git $HOME/.config
 ln_overwrite_folder .config/environment.d $HOME/.config
 ln_overwrite_folder .config/mpv $HOME/.config
+ln_overwrite_folder .config/rc $HOME/.config

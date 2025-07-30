@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+
+description="Arun's forgejo instance with podman"
+run_path="${XDG_RUNTIME_DIR}/podman"
+log_path="${run_path}/log"
+pidfile="${run_path}/${RC_SVCNAME}.pid"
+output_log="${log_path}/${RC_SVCNAME}.log"
+error_log=$output_log
+command=podman
+command_args="run
+              --pidfile=$pidfile
+              --name forgejo
+              -p 3000:3000
+              -p 2222:2222
+              -v /run/media/arunscape/znas/server/forgejo/data:/var/lib/gitea
+              -v /run/media/arunscape/znas/server/forgejo/conf:/etc/gitea
+              --userns=keep-id
+              --cgroup-manager=cgroupfs
+              --replace
+              codeberg.org/forgejo/forgejo:10-rootless
+             "
+command_background=true
+
+
+depend() {
+    use podman
+}
+
+start_pre(){
+  checkpath -o $USER -d "${run_path}" "${log_path}"
+  ebegin "Updating forgejo container"
+  podman pull codeberg.org/forgejo/forgejo:10-rootless
+  eend $? "Failed to pull latest forgejo container"
+
+}
