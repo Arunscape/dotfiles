@@ -1,0 +1,9 @@
+container_url=ghcr.io/hotio/qbittorrent
+puid=0
+pgid=0
+umask=002
+tz="Canada/Mountain"
+webui_ports="8080/tcp,8080/udp"
+config_path=/run/media/arunscape/znas/server/qbittorrent
+data_path=/run/media/arunscape/znas/server/data
+network=container:gluetun

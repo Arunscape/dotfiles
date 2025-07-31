@@ -1,0 +1,5 @@
+container_url=ghcr.io/sethforprivacy/simple-monerod
+p2p_port=18080
+rpc_port=18089
+data_path=/run/media/arunscape/znas/server/bitmonero
+extra_args="--rpc-restricted-bind-ip=0.0.0.0 --rpc-restricted-bind-port=18089 --no-igd --no-zmq --enable-dns-blocklist --prune-blockchain --sync-pruned-blocks"
