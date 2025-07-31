@@ -18,7 +18,7 @@ command_args="run
               $container_url
              "
 command_background=true
-
+supervisor=supervise-daemon
 
 depend() {
     use podman
