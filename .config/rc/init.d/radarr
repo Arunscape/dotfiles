@@ -14,10 +14,11 @@ command_args="run
               -e PGID=0
               -e UMASK=002
               -e TZ=$tz
-              -p $web_port:9696
+              -p $web_port:7878
               -v $config_path:/config
-              --replace
+              -v $data_path:/data
               --network $network
+              --replace
               $container_url
              "
 command_background=true
@@ -25,6 +26,7 @@ supervisor=supervise-daemon
 
 depend() {
     use podman
+    need gluetun prowlarr
 }
 
 start_pre(){
