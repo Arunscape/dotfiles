@@ -24,6 +24,7 @@ command_args="run
             $container_url
             "
 command_background=true
+supervisor=supervise-daemon
 
 start_pre(){
   checkpath -o $USER -d "${run_path}" "${log_path}"
@@ -51,6 +52,15 @@ start_pre(){
   ebegin "Check podman secret $server_provider_podman_secret"
   podman secret exists $server_provider_podman_secret
   eend $? "Check podman secrets"
+
+#  ebegin "Check for existing container"
+#  existing_id=$(podman ps --filter name=$RC_SVCNAME --format "{{.ID}}")
+#  if [ -n $existing_id ]; then
+#    einfo "Found existing container $existing_id Nuking it..."
+#    podman stop $existing_id
+#    podman rm $existing_id
+#  fi
+#  eend $? "Done checking for existing container"
 
 
   ebegin "Pulling $container_url"
