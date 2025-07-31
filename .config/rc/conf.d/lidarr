@@ -1,6 +1,6 @@
 container_url=ghcr.io/hotio/lidarr:pr-plugins
-tz="Canada/Mountain"
+tz=Canada/Mountain
 web_port=8686
 config_path=/run/media/arunscape/znas/server/lidarr
 data_path=/run/media/arunscape/znas/server/data
-network=servarr.network
+network=servarr
