@@ -1,9 +1,0 @@
-container_url=ghcr.io/bambanah/deemix:latest
-config_path=/run/media/arunscape/znas/server/deemix
-data_path=/run/media/arunscape/znas/server/data
-
-#https://github.com/bambanah/deemix/issues/159
-downloads_path=$data_path/downloads 
-
-web_port=6595
-network=container:gluetun
