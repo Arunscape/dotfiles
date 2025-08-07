@@ -1,0 +1,5 @@
+container_url=docker.io/syncthing/syncthing
+web_port=8384
+config_path=/run/media/arunscape/znas/server/syncthing
+obsidian_vault_path="/home/arunscape/Documents/Obsidian\ Vault"
+camera_backup_path=/run/media/arunscape/znas/sync/phonecamera

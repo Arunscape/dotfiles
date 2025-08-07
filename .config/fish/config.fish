@@ -33,3 +33,7 @@ set -g fish_key_bindings fish_vi_key_bindings
 
 set -Ux XR_RUNTIME_JSON /home/arunscape/code/monado/build/openxr_monado-dev.json
 set -Ux VIT_SYSTEM_LIBRARY_PATH /usr/local/lib/libbasalt.so
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
