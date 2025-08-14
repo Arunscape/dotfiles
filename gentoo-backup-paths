@@ -27,6 +27,8 @@
 /etc/conf.d/display-manager
 /etc/sddm.conf.d/autologin.conf
 /etc/rc.conf
+/etc/security/limits.d/lutris.conf
+/usr/lib/sysctl.d/10-steam-proton-vm-max-map-count.conf
 
 
 # lots of these are auto generated, I'll just manually pick the ones I added

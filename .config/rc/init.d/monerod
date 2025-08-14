@@ -33,3 +33,8 @@ start_pre(){
   eend $? "Failed to pull $container_url"
 }
 
+stop_post(){
+  ebegin "Stopping $RC_SVCNAME"
+  podman stop $RC_SVCNAME
+  eend $? "Failed to stop $RC_SVCNAME"
+}
