@@ -1,0 +1,4 @@
+container_url=docker.io/ollama/ollama:rocm
+data_path=/home/arunscape/.ollama
+web_port=11434
+network=ollama

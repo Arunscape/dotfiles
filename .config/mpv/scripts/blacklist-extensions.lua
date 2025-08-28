@@ -1,5 +1,5 @@
 opts = {
-  blacklist = "jpg,png",
+  blacklist = "jpg,png,ogg,mp3",
   whitelist = "",
   remove_files_without_extension = false,
   oneshot = true,

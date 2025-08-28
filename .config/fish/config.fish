@@ -41,6 +41,7 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 set -x OPENAI_MODEL gpt-oss:20b
 set -x OPENAI_BASE_URL http://localhost:11434/v1
+set -x OPENAI_API_KEY ollama
 
 # uv
 fish_add_path "/home/arunscape/.local/bin"

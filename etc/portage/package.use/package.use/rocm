@@ -1,0 +1,4 @@
+# required by dev-libs/rocm-opencl-runtime-6.4.1::gentoo
+# required by dev-libs/rocm-opencl-runtime (argument)
+>=media-libs/mesa-25.1.7 -opencl
+sci-ml/ollama rocm

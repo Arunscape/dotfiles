@@ -1,0 +1,4 @@
+# required by www-misc/libkiwix-14.0.0::guru
+# required by www-misc/kiwix-desktop-2.4.0::guru
+# required by kiwix-desktop (argument)
+>=net-misc/aria2-1.37.0 metalink bittorrent xmlrpc

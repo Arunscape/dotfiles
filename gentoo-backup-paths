@@ -12,6 +12,7 @@
 #/etc/grub.d
 #/etc/profile.d
 /etc/localtime
+/etc/ugrd/config.toml
 
 #/etc/portage/savedconfig
 
