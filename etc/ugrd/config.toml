@@ -93,7 +93,3 @@ kmod_autodetect_lspci = true
 #header_file = "/etc/ugrd/rootfs.luks.header"
 #include_header = true
 #validate_header = false
-
-
-# Disable ZFS detection since root filesystem is bcachefs
-autodetect_root_zfs = false

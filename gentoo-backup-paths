@@ -7,6 +7,7 @@
 /etc/portage/patches
 /etc/portage/repos.conf
 /etc/portage/env
+/etc/portage/package.env
 
 # lots of these are auto generated, I'll just manually pick the ones I added
 #/etc/grub.d

@@ -1,1 +1,72 @@
 sys-apps/xdg-desktop-portal udev -geolocation
+# required by media-libs/tiff-4.7.0-r1::gentoo[webp]
+# required by media-libs/opencv-4.12.0-r1::gentoo[tiff]
+# required by kde-plasma/spectacle-6.5.1::gentoo
+# required by kde-plasma/plasma-meta-6.5.1::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/libwebp-1.6.0 abi_x86_32
+
+
+
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=media-plugins/gst-plugins-libav-1.24.11 abi_x86_32
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=media-video/ffmpeg-8.0 abi_x86_32
+# required by media-video/ffmpeg-8.0::gentoo[dav1d]
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=media-libs/dav1d-1.5.1 abi_x86_32
+# required by media-video/ffmpeg-8.0::gentoo[jpegxl]
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libjxl-0.11.1 abi_x86_32
+# required by media-video/ffmpeg-8.0::gentoo[libass]
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libass-0.17.4 abi_x86_32
+# required by media-video/ffmpeg-8.0::gentoo[xvid]
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=media-libs/xvid-1.3.7-r2 abi_x86_32
+# required by media-libs/libjxl-0.11.1::gentoo
+# required by media-video/ffmpeg-8.0::gentoo[jpegxl]
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=app-arch/brotli-1.2.0 abi_x86_32
+# required by media-libs/libjxl-0.11.1::gentoo
+# required by media-video/ffmpeg-8.0::gentoo[jpegxl]
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=dev-cpp/highway-1.3.0 abi_x86_32
+# required by media-libs/libjxl-0.11.1::gentoo[gif]
+# required by media-video/ffmpeg-8.0::gentoo[jpegxl]
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+>=media-libs/giflib-5.2.2 abi_x86_32
+# required by media-libs/mesa-25.2.6::gentoo
+# required by kde-plasma/kpipewire-6.5.2::gentoo
+# required by kde-plasma/plasma-desktop-6.5.2::gentoo[screencast]
+# required by kde-plasma/plasma-meta-6.5.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=virtual/zlib-1.3.1-r1 abi_x86_32

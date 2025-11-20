@@ -8,6 +8,7 @@ LABEL=BOOTX		/boot		ext4		defaults,noatime	0 0
 #LABEL=rootfs
 #UUID=8a7fcd3f-914b-41b7-9ed1-327a100829bb	
 PARTUUID="68e63923-49f1-4c0e-9381-68bee2ceb3ba"		/		bcachefs	defaults,noatime,background_compression=zstd,discard	0 0
+/dev/mapper/swap  none   swap    defaults   0       0
 
 # See the manpage fstab(5) for more information.
 #

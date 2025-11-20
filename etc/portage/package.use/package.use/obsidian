@@ -1,1 +1,6 @@
 app-office/obsidian -X
+# required by x11-libs/pango-1.56.4-r2::gentoo
+# required by app-office/obsidian-1.8.10::guru
+# required by @selected
+# required by @world (argument)
+>=media-libs/freetype-2.14.0 harfbuzz

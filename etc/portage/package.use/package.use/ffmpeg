@@ -1,0 +1,5 @@
+# required by media-plugins/gst-plugins-libav-1.24.11::gentoo
+# required by app-emulation/wine-proton-10.0.2d::gentoo[gstreamer]
+# required by @selected
+# required by @world (argument)
+=media-video/ffmpeg-7.1.2 abi_x86_32
