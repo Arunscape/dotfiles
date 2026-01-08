@@ -14,6 +14,7 @@ app-misc/agg
 app-misc/broot
 app-misc/fastfetch
 app-misc/jq
+app-misc/ranger
 app-misc/tmux
 app-mobilephone/scrcpy
 app-office/obsidian
@@ -28,11 +29,11 @@ app-text/tinymist
 app-text/tree
 app-text/typst
 dev-build/meson
-dev-cpp/gtest
-dev-cpp/tbb
+dev-dotnet/dotnet-sdk-bin
 dev-java/openjdk-bin:17
 dev-java/openjdk:21
 dev-lang/ocaml
+dev-lang/zig-bin
 dev-libs/rocm-opencl-runtime
 dev-ml/opam
 dev-python/uv
@@ -41,7 +42,7 @@ dev-util/android-tools
 dev-util/android-udev-rules
 dev-util/bash-language-server
 dev-util/gemini-cli
-dev-util/idea-community
+dev-util/intellij-idea
 dev-util/lua-language-server
 dev-util/rustup
 dev-util/typescript-language-server
@@ -62,6 +63,7 @@ kde-apps/gwenview
 kde-apps/konsole
 kde-apps/ksystemlog
 kde-apps/kwalletmanager
+kde-frameworks/kwallet
 kde-misc/kdeconnect
 kde-plasma/kdesu-gui
 kde-plasma/kwallet-pam
@@ -70,12 +72,9 @@ mail-client/thunderbird-bin
 media-fonts/monocraft
 media-fonts/noto-cjk
 media-gfx/blender-bin
-media-gfx/vkBasalt
 media-libs/glew
 media-libs/noise-suppression-for-voice
-media-libs/openxr-loader
 media-libs/shaderc
-media-sound/audacity
 media-sound/spotify
 media-video/mpv
 net-analyzer/nmap
@@ -91,13 +90,12 @@ net-misc/streamlink
 net-misc/xmrig
 net-misc/yt-dlp
 net-vpn/tailscale
+net-vpn/tor
 sci-libs/onnxruntime-bin
-sci-ml/ollama
 sys-apps/bat
 sys-apps/lsd
 sys-apps/portage
 sys-apps/ripgrep
-sys-devel/mold
 sys-fs/bcachefs-tools
 sys-fs/btrfs-progs
 sys-fs/zfs

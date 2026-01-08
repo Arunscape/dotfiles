@@ -17,6 +17,7 @@ command_args="run
               --userns keep-id
               --cgroup-manager cgroupfs
               --replace
+              --network $network
               $container_url
              "
 command_background=true
@@ -32,6 +33,15 @@ start_pre(){
   ebegin "Checking $data_path and $conf_path"
   checkpath -o $USER -d "${data_path}" "${conf_path}"
   eend $? "Double check $data_path and $conf_path"
+
+  if [ -n "$network" ]; then
+    ebegin "Checking for podman network $network"
+    if ! podman network exists $network >/dev/null 2>&1; then
+        einfo "Creating podman network $network"
+        podman network create $network >/dev/null
+    fi
+    eend $? "Failed to check/create network"
+  fi
 
   ebegin "Pulling $container_url"
   podman pull $container_url
