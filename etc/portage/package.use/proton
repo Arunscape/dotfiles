@@ -1,0 +1,69 @@
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=media-libs/speex-1.2.1-r2 abi_x86_32
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=media-libs/libtheora-1.2.0-r1 abi_x86_32
+# required by media-libs/gst-plugins-bad-1.24.13::gentoo
+# required by app-emulation/proton-ge-custom-bin-10.32::kzd
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=media-libs/gst-plugins-base-1.24.13 abi_x86_32
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=media-sound/mpg123-1.32.3-r100 abi_x86_32
+# required by media-libs/gst-plugins-base-1.24.13::gentoo[orc]
+# required by media-libs/gst-plugins-bad-1.24.13::gentoo
+# required by app-emulation/proton-ge-custom-bin-10.32::kzd
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=dev-lang/orc-0.4.41 abi_x86_32
+# required by media-libs/gst-plugins-base-1.24.13::gentoo[X]
+# required by media-libs/gst-plugins-bad-1.24.13::gentoo
+# required by app-emulation/proton-ge-custom-bin-10.32::kzd
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=x11-libs/libXv-1.0.13 abi_x86_32
+# required by media-libs/gst-plugins-base-1.24.13::gentoo[opengl,gles2]
+# required by media-libs/gst-plugins-bad-1.24.13::gentoo
+# required by app-emulation/proton-ge-custom-bin-10.32::kzd
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=media-libs/graphene-1.10.8-r1 abi_x86_32
+# required by media-libs/gst-plugins-bad-1.24.13::gentoo
+# required by app-emulation/proton-ge-custom-bin-10.32::kzd
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=media-libs/gstreamer-1.24.13 abi_x86_32
+# required by app-emulation/wine-proton-10.0.4::gentoo[unwind,-llvm-libunwind]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=sys-libs/libunwind-1.8.3 abi_x86_32
+# required by app-emulation/wine-proton-10.0.4::gentoo[gstreamer]
+# required by virtual/wine-0-r11::gentoo
+# required by app-emulation/proton-ge-custom-meta-1-r1::kzd
+# required by proton-ge-custom-meta (argument)
+>=media-libs/gst-plugins-bad-1.24.13 abi_x86_32
+# required by app-emulation/wine-proton-10.0.4::gentoo[gstreamer]
+# required by @preserved-rebuild (argument)
+>=media-plugins/gst-plugins-libav-1.24.13 abi_x86_32
+# required by media-plugins/gst-plugins-libav-1.24.13::gentoo
+# required by app-emulation/wine-proton-10.0.4::gentoo[gstreamer]
+# required by @preserved-rebuild (argument)
+>=media-video/ffmpeg-8.0.1 abi_x86_32
+# required by media-video/ffmpeg-8.0.1::gentoo[dav1d]
+# required by media-plugins/gst-plugins-libav-1.24.13::gentoo
+# required by app-emulation/wine-proton-10.0.4::gentoo[gstreamer]
+# required by @preserved-rebuild (argument)
+>=media-libs/dav1d-1.5.1 abi_x86_32
+# required by media-video/ffmpeg-8.0.1::gentoo[libass]
+# required by media-plugins/gst-plugins-libav-1.24.13::gentoo
+# required by app-emulation/wine-proton-10.0.4::gentoo[gstreamer]
+# required by @preserved-rebuild (argument)
+>=media-libs/libass-0.17.4 abi_x86_32
+# required by media-video/ffmpeg-8.0.1::gentoo[xvid]
+# required by media-plugins/gst-plugins-libav-1.24.13::gentoo
+# required by app-emulation/wine-proton-10.0.4::gentoo[gstreamer]
+# required by @preserved-rebuild (argument)
+>=media-libs/xvid-1.3.7-r2 abi_x86_32

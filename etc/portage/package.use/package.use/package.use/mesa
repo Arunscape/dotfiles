@@ -1,3 +1,0 @@
-media-libs/mesa opencl vulkan wayland lm-sensors vaapi -nouveau
-# https://wiki.gentoo.org/wiki/OpenCL#Mesa_.28rusticl.29
-sys-apps/lm-sensors abi_x86_32

@@ -1,0 +1,8 @@
+>=x11-base/xlibre-server-25.1.2 -minimal
+# required by x11-base/xorg-server-25.1.2::xlibre
+# required by gui-apps/sddm-gentoo-config-0::gentoo[-kwin,-weston]
+# required by x11-misc/sddm-0.21.0_p20251101::gentoo
+# required by kde-plasma/sddm-kcm-6.6.1::gentoo
+# required by kde-plasma/plasma-meta-6.6.1::gentoo[display-manager,sddm]
+# required by plasma-meta (argument)
+>=x11-base/xlibre-server-25.1.2 -xvfb

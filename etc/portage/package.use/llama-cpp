@@ -1,0 +1,2 @@
+sci-misc/llama-cpp hip vulkan
+sci-ml/ollama rocm vulkan blas

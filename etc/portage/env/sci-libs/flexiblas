@@ -1,0 +1,5 @@
+CFLAGS="${CFLAGS/-flto=thin/}"
+CXXFLAGS="${CXXFLAGS/-flto=thin/}"
+FFLAGS="${FFLAGS/-flto=thin/}"
+FCFLAGS="${FCFLAGS/-flto=thin/}"
+LDFLAGS="${LDFLAGS/-flto=thin/}"

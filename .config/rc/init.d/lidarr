@@ -7,8 +7,7 @@ pidfile="${run_path}/${RC_SVCNAME}.pid"
 output_log="${log_path}/${RC_SVCNAME}.log"
 error_log=$output_log
 command=podman
-command_args="run
-              --pidfile $pidfile
+command_args_foreground="run
               --name lidarr
               -e PUID=0
               -e PGID=0

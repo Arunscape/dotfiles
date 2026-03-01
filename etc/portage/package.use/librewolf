@@ -1,0 +1,1 @@
+www-client/firefox -X clang gmp-autoupdate system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp -telemetry dbus -debug -gnome-shell hwaccel openh264 system-pipewire system-png wasm-sandbox wayland

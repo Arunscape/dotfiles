@@ -1,34 +1,44 @@
 #!/usr/bin/env sh
+set -e  # Exit on any error
 
 while IFS= read -r line; do
-  # Skip empty lines and comments
-  if [ -z "$line" ] || [ "${line%${line#?}}"x = '#x' ]; then
+  # Skip empty lines/comments (POSIX case clearer)
+  case "$line" in
+    '' | '#'* ) continue ;;
+  esac
+
+  # Trim whitespace (pure sh, no spawn)
+  path=${line#"${line%%[![:space:]]*}"}; path=${path%"${path##*[![:space:]]}"}
+  [ -z "$path" ] && continue
+
+  dest="$PWD/$path"
+  src_dir=$(dirname "$dest")
+
+  if [ ! -e "$path" ]; then
+    printf "Source not found: '%s'\n" "$path"
     continue
   fi
 
-  # Remove leading/trailing whitespace from the line
-  path=$(echo "$line" | xargs)
-
-  # Check if the path is empty after trimming whitespace
-  if [ -z "$path" ]; then
-    continue
-  fi
-
-  destination_path="$PWD/$path"
-  destination_dir=$(dirname "$destination_path")
-  mkdir -p "$destination_dir"
-
-  if [ -e "$path" ]; then
-    cp -r "$path" "$destination_path"
-    if [ $? -eq 0 ]; then
-      printf "Successfully copied: '%s' to '%s'\n" "$path" "$destination_path"
-    else
-      printf "Error copying: '%s' to '%s'\n" "$path" "$destination_path"
+  if [ -d "$path" ]; then
+    mkdir -p "$dest"
+    if ! cp -r "$path/." "$dest/"; then
+      printf "Error copying dir: '%s' to '%s'\n" "$path" "$dest"
+      continue
+    fi
+  elif [ -f "$path" ]; then
+    mkdir -p "$src_dir"
+    if ! cp "$path" "$dest"; then
+      printf "Error copying file: '%s' to '%s'\n" "$path" "$dest"
+      continue
     fi
   else
-    printf "Source path not found: '%s'\n" "$path"
+    printf "Unsupported type: '%s'\n" "$path"
+    continue
   fi
+
+  printf "Copied: '%s' -> '%s'\n" "$path" "$dest"
 
 done < gentoo-backup-paths
 
 echo "Done."
+

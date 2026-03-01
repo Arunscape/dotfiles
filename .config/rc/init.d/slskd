@@ -7,8 +7,7 @@ pidfile="${run_path}/${RC_SVCNAME}.pid"
 output_log="${log_path}/${RC_SVCNAME}.log"
 error_log=$output_log
 command=podman
-command_args="run
-              --pidfile $pidfile
+command_args_foreground="run
               --name $RC_SVCNAME
               -e SLSKD_REMOTE_CONFIGURATION=true
               -v $app_path:/app

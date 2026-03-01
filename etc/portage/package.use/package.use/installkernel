@@ -1,2 +1,0 @@
-sys-kernel/installkernel grub -dracut ugrd
-#sys-kernel/installkernel systemd systemd-boot -dracut ugrd
