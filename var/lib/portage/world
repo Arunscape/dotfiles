@@ -2,9 +2,11 @@ app-admin/doas
 app-admin/eclean-kernel
 app-admin/sysklogd
 app-arch/7zip
+app-containers/incus
 app-containers/podman
 app-editors/neovim
 app-emulation/proton-ge-custom-meta
+app-emulation/virt-manager
 app-emulation/wine-mono
 app-eselect/eselect-repository
 app-misc/agg
@@ -14,6 +16,10 @@ app-misc/jq
 app-misc/ranger
 app-misc/rlwrap
 app-misc/tmux
+app-mobilephone/scrcpy
+app-office/hledger
+app-office/hledger-ui
+app-office/hledger-web
 app-office/obsidian
 app-portage/gentoolkit
 app-portage/pfl
@@ -28,6 +34,7 @@ app-text/tree
 app-text/typst
 dev-build/meson
 dev-dotnet/dotnet-sdk-bin
+dev-haskell/hlint
 dev-java/openjdk-bin:17
 dev-java/openjdk:21
 dev-lang/ocaml
@@ -39,6 +46,7 @@ dev-util/android-tools
 dev-util/android-udev-rules
 dev-util/bash-language-server
 dev-util/gemini-cli
+dev-util/google-antigravity
 dev-util/intellij-idea
 dev-util/lua-language-server
 dev-util/rustup
@@ -50,6 +58,7 @@ games-action/prismlauncher
 games-action/supertuxkart
 games-emulation/eden
 games-util/gamemode
+games-util/lutris
 games-util/steam-launcher
 gui-apps/wl-clipboard
 gui-libs/vte
@@ -66,12 +75,18 @@ kde-misc/kdeconnect
 kde-plasma/kdesu-gui
 kde-plasma/kwallet-pam
 kde-plasma/plasma-meta
+mail-client/thunderbird-bin
 media-fonts/monocraft
 media-fonts/noto-cjk
+media-gfx/blender-bin
 media-libs/mesa
 media-libs/noise-suppression-for-voice
+media-sound/ardour
 media-sound/spotify
+media-sound/strawberry
+media-video/ffmpeg
 media-video/mpv
+net-analyzer/nmap
 net-firewall/nftables
 net-im/discord
 net-libs/nodejs
@@ -83,7 +98,7 @@ net-misc/openrsync
 net-misc/streamlink
 net-misc/xmrig
 net-misc/yt-dlp
-net-vpn/i2pd
+net-p2p/qbittorrent
 net-vpn/tailscale
 net-vpn/tor
 sci-misc/llama-cpp
@@ -92,6 +107,7 @@ sys-apps/flatpak
 sys-apps/lsd
 sys-apps/portage
 sys-apps/ripgrep
+sys-apps/usbutils
 sys-fs/bcachefs-tools
 sys-fs/btrfs-progs
 sys-fs/zfs
@@ -103,4 +119,5 @@ sys-kernel/zen-sources
 sys-process/bottom
 sys-process/fcron
 www-client/librewolf
+www-client/ungoogled-chromium-bin
 x11-terms/wezterm

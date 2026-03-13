@@ -1,0 +1,4 @@
+media-video/ffmpeg lame vulkan x265
+# required by media-video/ffmpeg-8.0.1::gentoo[x265]
+# required by media-video/ffmpeg (argument)
+>=media-libs/x265-4.1 abi_x86_32

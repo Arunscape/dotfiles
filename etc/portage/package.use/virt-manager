@@ -1,0 +1,22 @@
+app-emulation/virt-manager gui
+app-emulation/qemu spice usbredir pipewire opengl wayland sdl sdl-image zstd virtfs
+
+# required by app-emulation/virt-manager-5.1.0-r1::gentoo[gui]
+# required by app-emulation/virt-manager (argument)
+>=net-misc/spice-gtk-0.42-r4 usbredir
+# required by app-emulation/libvirt-12.1.0::gentoo[virt-network]
+# required by app-emulation/libvirt-glib-5.0.0-r1::gentoo
+# required by app-emulation/virt-manager-5.1.0-r1::gentoo
+# required by app-emulation/virt-manager (argument)
+>=net-dns/dnsmasq-2.91 script
+# required by app-emulation/libvirt-12.1.0::gentoo[virt-network]
+# required by app-emulation/libvirt-glib-5.0.0-r1::gentoo
+# required by app-emulation/virt-manager-5.1.0-r1::gentoo
+# required by app-emulation/virt-manager (argument)
+>=sys-apps/iproute2-6.19.0 -minimal
+# required by app-crypt/swtpm-0.10.1::gentoo
+# required by app-emulation/libvirt-12.1.0::gentoo[qemu]
+# required by app-emulation/libvirt-glib-5.0.0-r1::gentoo
+# required by app-emulation/virt-manager-5.1.0-r1::gentoo
+# required by app-emulation/virt-manager (argument)
+>=net-libs/gnutls-3.8.12-r1 pkcs11 tools

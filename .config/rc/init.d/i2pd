@@ -9,12 +9,15 @@ error_log=$output_log
 command=podman
 command_args_foreground="run
               --name $RC_SVCNAME
-              -e PUID=0
-              -e PGID=0
-              -e UMASK=002
-              -e TZ=$tz
-              -p $web_port:9696
-              -v $config_path:/config
+              --userns=keep-id:uid=1000,gid=1000
+              -p $web_port:7070
+              -p $http_proxy_port:4444
+              -p $https_proxy_port:4445
+              -p $socks_proxy_port:4447
+              -p $sam_port:7656
+              -p $transport_port:4567
+              -p $transport_port:4567/udp
+              -v $data_path:/home/i2pd/data
               --replace
               --network $network
               $container_url
@@ -24,12 +27,20 @@ supervisor=supervise-daemon
 
 depend() {
     use podman
-    need gluetun
-    need i2pd
 }
 
 start_pre(){
   checkpath -o $USER -d "${run_path}" "${log_path}"
+
+  ebegin "Checking $data_path"
+  checkpath -o $USER -d "${data_path}"
+  eend $? "Double check $data_path"
+
+  ebegin "Checking network $network"
+  if ! podman network exists "$network"; then
+    podman network create "$network" --ipv6
+  fi
+  eend $? "Failed to check or create network $network"
 
   ebegin "Pulling $container_url"
   podman pull $container_url

@@ -1,0 +1,9 @@
+container_url=purplei2p/i2pd
+data_path=/run/media/arunscape/znas/server/i2pd
+web_port=7070
+http_proxy_port=4444
+https_proxy_port=4445
+socks_proxy_port=4447
+sam_port=7656
+transport_port=4567
+network=i2p

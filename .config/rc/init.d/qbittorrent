@@ -14,10 +14,10 @@ command_args_foreground="run
               -e UMASK=002
               -e TZ=$tz
               -e WEBUI_PORTS=$webui_ports
-              --network $network
               -v $config_path:/config
               -v $data_path:/data
               --replace
+              --network $network
               $container_url
              "
 command_background=true

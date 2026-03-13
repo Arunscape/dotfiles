@@ -1,0 +1,13 @@
+# required by app-containers/incus-6.22::gentoo
+# required by app-containers/incus (argument)
+>=dev-libs/raft-0.22.1 lz4
+# required by app-containers/incus-6.22::gentoo
+# required by app-containers/incus (argument)
+>=dev-util/xdelta-3.0.11-r1 lzma
+# required by app-containers/incus-6.22::gentoo
+# required by app-containers/incus (argument)
+>=sys-fs/squashfs-tools-4.7.5 lzma
+# required by app-containers/lxc-6.0.6::gentoo[caps,tools]
+# required by app-containers/incus-6.22::gentoo
+# required by app-containers/incus (argument)
+>=sys-libs/libcap-2.77 static-libs

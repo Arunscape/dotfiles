@@ -3,4 +3,4 @@ tz=Canada/Mountain
 web_port=7878
 config_path=/run/media/arunscape/znas/server/radarr
 data_path=/run/media/arunscape/znas/server/data
-network=servarr
+network=vpn
