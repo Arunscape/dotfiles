@@ -1,2 +1,2 @@
-sci-misc/llama-cpp hip vulkan
+sci-misc/llama-cpp hip vulkan curl openssl
 sci-ml/ollama rocm vulkan blas

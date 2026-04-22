@@ -4,8 +4,10 @@ app-admin/sysklogd
 app-arch/7zip
 app-containers/incus
 app-containers/podman
+app-containers/podman-compose
 app-editors/neovim
 app-emulation/proton-ge-custom-meta
+app-emulation/protontricks
 app-emulation/virt-manager
 app-emulation/wine-mono
 app-eselect/eselect-repository
@@ -34,6 +36,7 @@ app-text/tree
 app-text/typst
 dev-build/meson
 dev-dotnet/dotnet-sdk-bin
+dev-dotnet/libgdiplus
 dev-haskell/hlint
 dev-java/openjdk-bin:17
 dev-java/openjdk:21
@@ -56,7 +59,8 @@ dev-vcs/git
 dev-vcs/git-lfs
 games-action/prismlauncher
 games-action/supertuxkart
-games-emulation/eden
+games-arcade/supertux
+games-emulation/RetroArch
 games-util/gamemode
 games-util/lutris
 games-util/steam-launcher
@@ -102,6 +106,7 @@ net-p2p/qbittorrent
 net-vpn/tailscale
 net-vpn/tor
 sci-misc/llama-cpp
+sys-apps/arch-chroot
 sys-apps/bat
 sys-apps/flatpak
 sys-apps/lsd

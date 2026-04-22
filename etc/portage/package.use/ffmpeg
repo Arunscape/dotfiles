@@ -2,3 +2,11 @@ media-video/ffmpeg lame vulkan x265
 # required by media-video/ffmpeg-8.0.1::gentoo[x265]
 # required by media-video/ffmpeg (argument)
 >=media-libs/x265-4.1 abi_x86_32
+
+# required by media-video/ffmpeg-8.1::gentoo[vulkan]
+# required by kde-plasma/kpipewire-6.6.3::gentoo
+# required by kde-plasma/plasma-desktop-6.6.3::gentoo[screencast]
+# required by kde-plasma/plasma-meta-6.6.3::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/shaderc-2026.1 abi_x86_32
