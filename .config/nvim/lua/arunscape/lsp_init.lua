@@ -1,16 +1,9 @@
+-- 1. Global Keymaps
 vim.keymap.set('n', '<leader>f', function()
-  vim.lsp.buf.format {
-    async = true
-  }
-end, {})
+  vim.lsp.buf.format({ async = true })
+end, { desc = "LSP: Format current buffer" })
 
--- inlay hints
-vim.lsp.inlay_hint.enable()
-
-vim.lsp.config('*', {
-  root_markers = { '.git' },
-})
-
+-- 2. Diagnostic Configuration
 vim.diagnostic.config({
   -- update_in_insert = true,
   float = {
@@ -23,34 +16,55 @@ vim.diagnostic.config({
   }
 })
 
+-- 3. Default LSP Config (Neovim 0.11+)
+-- This sets defaults for all servers managed by the built-in lsp engine
+vim.lsp.config('*', {
+  root_markers = { '.git' },
+})
 
+-- 4. LSP Attachment Logic
+-- Define augroups outside the callback to prevent redundant creation
+local lsp_group = vim.api.nvim_create_augroup("my.lsp", { clear = true })
+local format_group = vim.api.nvim_create_augroup("my.lsp.format", { clear = false })
 
--- auto format on save
 vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("my.lsp", {}),
+  group = lsp_group,
   callback = function(args)
-    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    -- MODERNIZATION: get_client_by_id is deprecated in 0.11+
+    -- We now use get_clients and filter by id.
+    local client = assert(vim.lsp.get_clients({ id = args.data.client_id })[1])
     local bufnr = args.buf
 
-    -- Enable formatting on save if supported
-    if client.supports_method("textDocument/formatting", nil) then
+    -- FIXED: Changed the dot (.) to a colon (:)
+    -- The client object is now a metatable class in Neovim 0.11+
+    local can_format = client:supports_method("textDocument/formatting", { bufnr = bufnr })
+
+    -- Auto-format on save
+    if can_format then
       vim.api.nvim_create_autocmd("BufWritePre", {
-        group = vim.api.nvim_create_augroup("my.lsp.format", { clear = false }),
+        group = format_group,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 1000 })
+          vim.lsp.buf.format({ bufnr = bufnr, id = client.id, timeout_ms = 1000 })
         end,
       })
+    end
+
+    -- FIXED: Also updated to the colon (:) syntax here
+    if client:supports_method("textDocument/inlayHint", { bufnr = bufnr }) then
+      vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
     end
   end,
 })
 
-
--- basically, all I need to do is create a file that returns an empty table for
--- each default config from nvim/nvim-lspconfig that I want to use
+-- 5. Dynamic Server Loading
+-- Automatically enables any server that has a corresponding file in after/lsp/
 local lsp_files = vim.api.nvim_get_runtime_file("after/lsp/*.lua", true)
 for _, file in ipairs(lsp_files) do
-  --local name = file:gsub("%.lua$", "")
-  local name = file:gsub(".*/(.-)%.lua$", "%1")
-  vim.lsp.enable({ name })
+  -- Extract filename without path or extension (e.g., "lua_ls" from "/.../lua_ls.lua")
+  local name = file:match("([^/]+)%.lua$")
+  if name then
+    -- Using the modern vim.lsp.enable
+    vim.lsp.enable(name)
+  end
 end
