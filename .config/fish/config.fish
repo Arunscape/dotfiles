@@ -9,7 +9,7 @@ end
 type -q starship; and starship init fish | source &
 type -q thefuck; and thefuck --alias | source &
 type -q gh; and gh completion -s fish | source &
-type -q opam; and eval (opam env --switch=default) &
+type -q opam; and eval (opam env)&
 type -q zoxide; and zoxide init fish | source &
 
 
