@@ -2,4 +2,5 @@
  (public_name a)
  (package libarun)
  (name main)
- (libraries libarun base stdio))
+ (preprocess (pps ppx_jane))
+ (libraries libarun base core core_unix core_unix.command_unix))

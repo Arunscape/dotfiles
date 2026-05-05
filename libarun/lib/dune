@@ -1,2 +1,3 @@
 (library
- (name libarun))
+ (name libarun)
+ (libraries base stdio))
