@@ -22,6 +22,7 @@ app-mobilephone/scrcpy
 app-office/hledger
 app-office/hledger-ui
 app-office/hledger-web
+app-office/libreoffice-bin
 app-office/obsidian
 app-portage/gentoolkit
 app-portage/pfl
@@ -42,6 +43,7 @@ dev-java/openjdk-bin:17
 dev-java/openjdk:21
 dev-lang/ocaml
 dev-lang/zig-bin
+dev-libs/wooting-analog-sdk
 dev-ml/opam
 dev-python/uv
 dev-util/android-studio
@@ -115,7 +117,6 @@ sys-apps/ripgrep
 sys-apps/usbutils
 sys-fs/bcachefs-tools
 sys-fs/btrfs-progs
-sys-fs/zfs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel

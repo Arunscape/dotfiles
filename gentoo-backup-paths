@@ -12,7 +12,6 @@
 # lots of these are auto generated, I'll just manually pick the ones I added
 #/etc/grub.d
 #/etc/profile.d
-/etc/localtime
 /etc/ugrd/config.toml
 
 #/etc/portage/savedconfig
@@ -33,6 +32,8 @@
 /usr/lib/sysctl.d/10-steam-proton-vm-max-map-count.conf
 
 
-# lots of these are auto generated, I'll just manually pick the ones I added
 /etc/ssh/sshd_config.d/hardening
 
+
+# kernel config
+/usr/src/linux/.config

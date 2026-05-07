@@ -59,6 +59,10 @@ config.keys = {
     action = wezterm.action.DisableDefaultAssignment,
   },
 }
+
+config.use_fancy_tab_bar = false
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+
 --config.debug_key_events = true
 config.leader = { key = 'w', mods = 'CTRL', timeout_milliseconds = 1000 }
 --wezterm.plugin.require("https://gitlab.com/xarvex/presentation.wez").apply_to_config(config)

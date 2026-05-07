@@ -45,3 +45,6 @@ set -x OPENAI_API_KEY ollama
 
 # uv
 fish_add_path "/home/arunscape/.local/bin"
+
+# libarun
+alias a='dune exec --root ~/dotfiles/libarun --profile release a --'
