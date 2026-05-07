@@ -50,7 +50,6 @@ dev-util/android-studio
 dev-util/android-tools
 dev-util/android-udev-rules
 dev-util/bash-language-server
-dev-util/gemini-cli
 dev-util/google-antigravity
 dev-util/intellij-idea
 dev-util/lua-language-server
@@ -125,5 +124,4 @@ sys-kernel/zen-sources
 sys-process/bottom
 sys-process/fcron
 www-client/librewolf
-www-client/ungoogled-chromium-bin
 x11-terms/wezterm

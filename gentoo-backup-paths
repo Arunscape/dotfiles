@@ -37,3 +37,4 @@
 
 # kernel config
 /usr/src/linux/.config
+/etc/kernel/postinst.d/99-cleanup.sh
