@@ -6,7 +6,6 @@ app-containers/incus
 app-containers/podman
 app-containers/podman-compose
 app-editors/neovim
-app-emulation/proton-ge-custom-meta
 app-emulation/protontricks
 app-emulation/virt-manager
 app-emulation/wine-mono
@@ -24,6 +23,7 @@ app-office/hledger-ui
 app-office/hledger-web
 app-office/libreoffice-bin
 app-office/obsidian
+app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
 app-shells/bash-completion
@@ -42,6 +42,7 @@ dev-haskell/hlint
 dev-java/openjdk-bin:17
 dev-java/openjdk:21
 dev-lang/ocaml
+dev-lang/rust-bin
 dev-lang/zig-bin
 dev-libs/wooting-analog-sdk
 dev-ml/opam
@@ -50,6 +51,7 @@ dev-util/android-studio
 dev-util/android-tools
 dev-util/android-udev-rules
 dev-util/bash-language-server
+dev-util/bindgen
 dev-util/google-antigravity
 dev-util/intellij-idea
 dev-util/lua-language-server
@@ -117,7 +119,6 @@ sys-apps/usbutils
 sys-fs/bcachefs-tools
 sys-fs/btrfs-progs
 sys-kernel/gentoo-kernel-bin
-sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/zen-sources

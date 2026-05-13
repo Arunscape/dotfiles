@@ -1,3 +1,4 @@
-media-libs/mesa opencl vulkan wayland lm-sensors vaapi -nouveau
+media-libs/mesa opencl vulkan wayland lm-sensors vaapi -nouveau -llvm_slot_21 llvm_slot_22
 # https://wiki.gentoo.org/wiki/OpenCL#Mesa_.28rusticl.29
 sys-apps/lm-sensors abi_x86_32
+llvm-core/libclc spirv
