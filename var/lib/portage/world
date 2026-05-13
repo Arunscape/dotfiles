@@ -116,7 +116,6 @@ sys-apps/lsd
 sys-apps/portage
 sys-apps/ripgrep
 sys-apps/usbutils
-sys-fs/bcachefs-tools
 sys-fs/btrfs-progs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/installkernel
