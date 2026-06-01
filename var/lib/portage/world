@@ -6,6 +6,7 @@ app-containers/incus
 app-containers/podman
 app-containers/podman-compose
 app-editors/neovim
+app-emulation/proton-cachyos-bin
 app-emulation/protontricks
 app-emulation/virt-manager
 app-emulation/wine-mono

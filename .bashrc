@@ -19,3 +19,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/arunscape/.local/bin:$PATH"
