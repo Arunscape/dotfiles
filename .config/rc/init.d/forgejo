@@ -11,8 +11,8 @@ command_args_foreground="run
               --name $RC_SVCNAME
               -p $web_port:3000
               -p $ssh_port:2222
-              -v $data_path:/var/lib/gitea
-              -v $conf_path:/etc/gitea
+              -v $data_path:/var/lib/gitea:U
+              -v $conf_path:/etc/gitea:U
               --userns keep-id
               --cgroup-manager cgroupfs
               --replace
@@ -21,6 +21,7 @@ command_args_foreground="run
              "
 command_background=true
 supervisor=supervise-daemon
+supervise_daemon_args="--env XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR} --env HOME=${HOME} --env USER=${USER}"
 
 depend() {
     use podman
