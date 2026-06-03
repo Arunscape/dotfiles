@@ -1,8 +1,8 @@
 container_url=docker.io/jellyfin/jellyfin:latest
 web_port=8096
-tv_path=/run/media/arunscape/znas/server/data/tv
-movies_path=/run/media/arunscape/znas/server/data/movies
-music_path=/run/media/arunscape/znas/server/data/music
-cache_path=/run/media/arunscape/znas/server/jellyfin/cache
-config_path=/run/media/arunscape/znas/server/jellyfin/config
+tv_path=/mnt/znas/server/data/tv
+movies_path=/mnt/znas/server/data/movies
+music_path=/mnt/znas/server/data/music
+cache_path=/mnt/znas/server/jellyfin/cache
+config_path=/mnt/znas/server/jellyfin/config
 network=vpn

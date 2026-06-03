@@ -1,4 +1,4 @@
 container_url=ghcr.io/open-webui/open-webui:main
-data_path=/run/media/arunscape/znas/server/openwebui
+data_path=/mnt/znas/server/openwebui
 web_port=3030
 network=host
