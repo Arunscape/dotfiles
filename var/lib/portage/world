@@ -15,6 +15,7 @@ app-misc/agg
 app-misc/broot
 app-misc/fastfetch
 app-misc/jq
+app-misc/radeontop
 app-misc/ranger
 app-misc/rlwrap
 app-misc/tmux
@@ -56,6 +57,7 @@ dev-util/bindgen
 dev-util/google-antigravity
 dev-util/intellij-idea
 dev-util/lua-language-server
+dev-util/opencode-bin
 dev-util/rustup
 dev-util/typescript-language-server
 dev-util/yaml-language-server
@@ -126,5 +128,6 @@ sys-kernel/linux-firmware
 sys-kernel/zen-sources
 sys-process/bottom
 sys-process/fcron
+sys-process/htop
 www-client/librewolf
 x11-terms/wezterm

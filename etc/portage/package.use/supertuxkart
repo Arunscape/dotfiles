@@ -1,0 +1,5 @@
+# required by media-libs/openal-1.25.2::gentoo[sdl]
+# required by games-action/supertuxkart-1.5::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/libsdl3-3.4.10 abi_x86_32

@@ -1,0 +1,6 @@
+media-video/mpv -X -xv vaapi
+
+# required by media-video/mpv-0.41.0-r2::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-video/ffmpeg-8.1.1 vaapi

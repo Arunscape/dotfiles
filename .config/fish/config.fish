@@ -48,7 +48,3 @@ fish_add_path "/home/arunscape/.local/bin"
 
 # libarun
 alias a='dune exec --root ~/dotfiles/libarun --profile release a --'
-
-
-# Added by Antigravity CLI installer
-set -gx PATH "/home/arunscape/.local/bin" $PATH

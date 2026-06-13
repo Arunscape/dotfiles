@@ -1,3 +1,4 @@
+www-client/librewolf -X clang gmp-autoupdate system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp -telemetry dbus -debug -gnome-shell hwaccel openh264 system-pipewire system-png wasm-sandbox wayland
 www-client/firefox -X clang gmp-autoupdate system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp -telemetry dbus -debug -gnome-shell hwaccel openh264 system-pipewire system-png wasm-sandbox wayland
 
 # required by media-video/ffmpeg-8.0.1::gentoo[jpegxl]
@@ -6,3 +7,7 @@ www-client/firefox -X clang gmp-autoupdate system-av1 system-harfbuzz system-icu
 # required by @world (argument)
 >=media-libs/libjxl-0.11.2 abi_x86_32
 
+# required by www-client/librewolf-151.0.3_p1::librewolf[system-png]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libpng-1.6.58 apng
