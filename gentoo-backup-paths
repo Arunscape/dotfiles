@@ -32,7 +32,7 @@
 /usr/lib/sysctl.d/10-steam-proton-vm-max-map-count.conf
 
 
-/etc/ssh/sshd_config.d/hardening
+/etc/ssh/sshd_config.d/01-hardening.conf
 
 
 # kernel config

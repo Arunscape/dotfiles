@@ -15,8 +15,8 @@ command_args_foreground="run
               --mount type=bind,source=$tv_path,destination=/media/tv,readonly=true,relabel=private
               --mount type=bind,source=$movies_path,destination=/media/movies,readonly=true,relabel=private
               --mount type=bind,source=$music_path,destination=/media/music,readonly=true,relabel=private
-              -v $cache_path:/cache
-              -v $config_path:/config
+              -v $cache_path:/cache:U
+              -v $config_path:/config:U
               --replace
               $container_url
              "

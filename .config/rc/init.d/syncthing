@@ -16,8 +16,8 @@ command_args_foreground="run
               -p 22000:22000/udp
               -p 21027:21027/udp
               -v $config_path:/var/syncthing
-              -v "$obsidian_vault_path:/var/syncthing/obsidian-vault"
-              -v $camera_backup_path:/var/syncthing/camera_backup
+              -v "$obsidian_vault_path:/var/syncthing/obsidian-vault:U"
+              -v $camera_backup_path:/var/syncthing/camera_backup:U
               --replace
               --userns keep-id
               $container_url

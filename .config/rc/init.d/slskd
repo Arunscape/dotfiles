@@ -10,8 +10,8 @@ command=podman
 command_args_foreground="run
               --name $RC_SVCNAME
               -e SLSKD_REMOTE_CONFIGURATION=true
-              -v $app_path:/app
-              -v $data_path:/data
+              -v $app_path:/app:U
+              -v $data_path:/data:U
               --replace
               --network $network
               $container_url

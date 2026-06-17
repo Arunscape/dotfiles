@@ -11,7 +11,7 @@ command_args="run
               --pidfile $pidfile
               --name $RC_SVCNAME
               -p $web_port:8080
-              -v $data_path:/app/backend/data
+              -v $data_path:/app/backend/data:U
               --replace
               --network $network
               $container_url

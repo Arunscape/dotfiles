@@ -14,8 +14,8 @@ command_args_foreground="run
               -e UMASK=002
               -e TZ=$tz
               -p $web_port:7878
-              -v $config_path:/config
-              -v $data_path:/data
+              -v $config_path:/config:U
+              -v $data_path:/data:U
               --network $network
               --replace
               $container_url

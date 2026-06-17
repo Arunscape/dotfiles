@@ -16,7 +16,7 @@ command_args_foreground="run
             --secret $pass_podman_secret,type=env,target=OPENVPN_PASSWORD
             --secret $server_provider_podman_secret,type=env,target=VPN_SERVICE_PROVIDER
             -e VPN_PORT_FORWARDING=on
-            -v $gluetun_vol:/gluetun
+            -v $gluetun_vol:/gluetun:U
             --replace
             --network $network
             $ports

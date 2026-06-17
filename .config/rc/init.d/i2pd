@@ -17,7 +17,7 @@ command_args_foreground="run
               -p $sam_port:7656
               -p $transport_port:4567
               -p $transport_port:4567/udp
-              -v $data_path:/home/i2pd/data
+              -v $data_path:/home/i2pd/data:U
               --replace
               --network $network
               $container_url

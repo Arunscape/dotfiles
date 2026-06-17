@@ -25,7 +25,6 @@ app-office/hledger-ui
 app-office/hledger-web
 app-office/libreoffice-bin
 app-office/obsidian
-app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
 app-shells/bash-completion
