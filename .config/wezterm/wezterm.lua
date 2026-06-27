@@ -60,7 +60,7 @@ config.keys = {
   },
 }
 
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
 --config.debug_key_events = true

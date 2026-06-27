@@ -1,5 +1,6 @@
 app-admin/doas
 app-admin/eclean-kernel
+app-admin/haskell-updater
 app-admin/sysklogd
 app-arch/7zip
 app-containers/incus
@@ -21,7 +22,6 @@ app-misc/rlwrap
 app-misc/tmux
 app-mobilephone/scrcpy
 app-office/hledger
-app-office/hledger-ui
 app-office/hledger-web
 app-office/libreoffice-bin
 app-office/obsidian
@@ -69,6 +69,7 @@ games-emulation/RetroArch
 games-util/gamemode
 games-util/lutris
 games-util/steam-launcher
+games-util/steamtinkerlaunch
 gui-apps/wl-clipboard
 gui-libs/vte
 gui-wm/gamescope

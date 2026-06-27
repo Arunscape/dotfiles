@@ -30,6 +30,7 @@
 /etc/rc.conf
 /etc/security/limits.d/lutris.conf
 /usr/lib/sysctl.d/10-steam-proton-vm-max-map-count.conf
+/etc/dispatch-conf.conf
 
 
 /etc/ssh/sshd_config.d/01-hardening.conf
