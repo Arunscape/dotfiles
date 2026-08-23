@@ -66,6 +66,7 @@ games-action/prismlauncher
 games-action/supertuxkart
 games-arcade/supertux
 games-emulation/RetroArch
+games-emulation/eden
 games-util/gamemode
 games-util/lutris
 games-util/steam-launcher
@@ -122,7 +123,7 @@ sys-apps/usbutils
 sys-fs/bcachefs-tools
 sys-fs/btrfs-progs
 sys-fs/zfs
-sys-kernel/gentoo-kernel-bin
+sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/zen-sources

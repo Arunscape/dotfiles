@@ -1,0 +1,13 @@
+--- a/fs/data/compress.c
++++ b/fs/data/compress.c
+@@ -174,10 +174,11 @@ static int __bio_map_or_bounce(struct bch_fs *c, struct bio *bio,
+ 			unsigned offset = 0;
+ 
+ 			while (offset < bvec->bv_len) {
++				struct bio_vec iter_bv = bio_iter_iovec(bio, start);
++				void *bv_addr = bvec_virt(&iter_bv);
+ 				sb_add(sb,
+-					.b	= bvec_virt(&bio_iter_iovec(bio, start)),
++					.b	= bv_addr,
+ 					.len	= min_t(unsigned, PAGE_SIZE - offset,
+ 						bvec->bv_len - offset),

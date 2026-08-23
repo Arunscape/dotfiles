@@ -3,3 +3,7 @@
 # required by @selected
 # required by @world (argument)
 >=net-firewall/iptables-1.8.13 nftables
+# required by app-containers/podman-6.0.1::gentoo
+# required by @selected
+# required by @world (argument)
+>=app-containers/container-libs-0.68.0-r1 extra
