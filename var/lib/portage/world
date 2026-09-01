@@ -7,6 +7,7 @@ app-containers/incus
 app-containers/podman
 app-containers/podman-compose
 app-editors/neovim
+app-editors/vscodium
 app-emulation/proton-cachyos-bin
 app-emulation/protontricks
 app-emulation/virt-manager
@@ -39,6 +40,9 @@ app-text/typst
 dev-build/meson
 dev-dotnet/dotnet-sdk-bin
 dev-dotnet/libgdiplus
+dev-embedded/arduino-cli
+dev-embedded/arduino-ide
+dev-embedded/openocd
 dev-haskell/hlint
 dev-java/openjdk-bin:17
 dev-java/openjdk:21
@@ -122,6 +126,7 @@ sys-apps/ripgrep
 sys-apps/usbutils
 sys-fs/bcachefs-tools
 sys-fs/btrfs-progs
+sys-fs/fuse:0
 sys-fs/zfs
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
